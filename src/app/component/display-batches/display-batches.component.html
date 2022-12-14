@@ -1,0 +1,155 @@
+<!-- <div class="bdetails" fxFlex=100  infiniteScroll [infiniteScrollDistance]="1"
+  [scrollWindow]="false" [alwaysCallback]="true" (scrolled)="onScrollingGetBatch(false)" cdkScrollable>
+
+  <div >
+
+    <div *ngIf='!isGrid' fxLayout="row wrap" fxFlex=100 fxLayoutAlign="start center">
+      <div class="card" fxFlex.xs="95" fxFlex.sm="95" *ngFor='let batch of BatchList;  trackBy:identify'>
+        <div fxLayout="row" fxLayoutAlign="space-between" fxFex="90">
+          <div class="txt" fxFlex="75%" fxLayout="row" (click)="goToDetails(batch.batch.id)">
+            <span class="batch-name">{{batch.batch.batchName}}</span>
+            <mat-chip class="span number">{{batch.batchCandidateCountDTO.totalEnrolledCount}}</mat-chip>
+
+
+
+          </div>
+          <div FxFlex="5" class="more">
+            <button mat-mini-fab [autofocus]="false" fxLayoutAlign="center" class="bbttnn"
+              [matMenuTriggerFor]="beforeMenu" (click)="setCandidateId(batch.batch)">
+              <img class="white-icon" src="../../../assets//icons/ic_more_vert_24px.svg">
+            </button>
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+              <button mat-menu-item class="menu-button" (click)="updateBatch()">
+                <mat-icon class="edit">edit</mat-icon>
+                Edit
+              </button>
+              <button mat-menu-item class="menu-button" (click)="openDeleteConfirmDialog()">
+                <mat-icon class="edit">delete</mat-icon>
+                Delete
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+        <div class="listDetails" (click)="goToDetails(batch.batch.id)">
+          <div class="list-wrapper">
+            <div class="red-line"></div>
+            <div class="list-item-wrapper">
+              <div class="list-bullet"></div>
+              <div class="list-item" fxLayout="row" fxLayoutAlign="none center">
+                <div class="list-text">{{batch.batch.startDate}}</div>
+                <div class="day">(Start)</div>
+              </div>
+            </div>
+
+            <div class="list-item-wrapper">
+              <div class="list-bullet2"></div>
+              <div class="list-item" fxLayout="row" fxLayoutAlign="none center">
+                <div class="list-text">{{batch.batch.computedFinishDate}}</div>
+                <div class="day">(End)</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div fxLayoutAlign="flex-end flex-end">
+          <img class="imge" src="{{s3BucketUrl+batch.batch.techStackImageUrl}}">
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div *ngIf="isGrid" fxLayout='column' fxFlex=100 style="margin-top: 15px;">
+
+    <div class="tablebox " infiniteScroll [infiniteScrollDistance]="1" [scrollWindow]="false" [alwaysCallback]="true"
+      (scrolled)="onScrollingGetBatch(false)" cdkScrollable>
+      <div class="table-div">
+
+        <table class="display" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr class="sub-heading">
+
+              <th class="mentorName-head background-head">Batch Name</th>
+             
+
+              <th class="email-haed background-head">Tech Stack</th>
+              <th class="phnNum-head background-head">Start Date</th>
+              <th class="mentorType-head background-head">Computed Finish Date</th>
+
+              <th class="categiry-head background-head">Practice Head</th>
+              <th class="techStack-head background-head">Main Mentor </th>
+              <th class="techStack-head background-head">Support Mentor </th>
+
+              <th class="techStack-head background-head">Backup Mentor </th>
+
+              <th class="techStack-head background-head">Co-ordinator </th>
+              <th class="phnNum-head background-head">Session Time</th>
+              <th class="email-haed background-head">Batch Status</th>
+              <th class="enrollment background-head">Total Enrolled</th>
+              <th class="enrollment background-head">Final Size</th>
+
+
+
+              <th class="email-haed background-head">Batch Sheet URL</th>
+
+
+              <th class="background-head"></th>
+            </tr>
+
+            <tr class="mentor-data" *ngFor='let batch of BatchList;  trackBy:identify'>
+
+              <td (click)="goToDetails(batch.batch.id)" class="mentorName-data"> {{batch.batch.batchName}} </td>
+
+
+
+              <td class="email-data"> {{batch.batch.techStack}} </td>
+
+              <td class="phnNum-data"> {{batch.batch.startDate}}</td>
+              <td class="mentorType-data"> {{batch.batch.computedFinishDate}} </td>
+
+              <td class="categiry-data" matTooltip="{{batch.batch.praticeHead}}"> {{batch.batch.praticeHead}}</td>
+
+              <td class="techStack-data">{{batch.batch.mainMentorType | slice:0:3}} / {{batch.batch.mainMentor}}
+              </td>
+              <td class="techStack-data" matTooltip="{{batch.batch.support}}">
+                {{batch.batch.mainMentorType | slice:0:3}}/{{batch.batch.support}} </td>
+
+              <td class="techStack-data"> {{batch.batch.backupMentor}}</td>
+
+              <td class="techStack-data"> {{batch.batch.coordinator}} </td>
+              <td class="techStack-data"> {{batch.batch.sessionTime}} </td>
+              <td class="email-data"> {{batch.batch.status}} </td>
+              <td class="count"> {{batch.batchCandidateCountDTO.totalEnrolledCount}} </td>
+
+              <td class="count"> {{batch.batchCandidateCountDTO.finalCount}} </td>
+
+
+              <td class="email-data"> <a (click)="openSite(batch.batch.batchSheetUrl)" class="livelink">Batch
+                  Sheet URL</a> </td>
+
+              <td class="unassign-more" [matMenuTriggerFor]="beforeMenu" (click)="setCandidateId(batch.batch)">
+                <img src="../../../assets/icons/ic_more_vert_24px.svg">
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+          <button mat-menu-item class="menu-button" (click)="updateBatch()">
+            <mat-icon class="edit">edit</mat-icon>
+            Edit
+          </button>
+          <button mat-menu-item class="menu-button" (click)="openDeleteConfirmDialog()">
+            <mat-icon class="edit">delete</mat-icon>
+            Delete
+          </button>
+        </mat-menu>
+      </div>
+
+    </div>
+  </div>
+
+
+</div> -->

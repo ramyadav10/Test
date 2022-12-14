@@ -1,0 +1,188 @@
+// @import '../../config/LMS-theme.scss';
+
+.user-avatar{
+    background-color: #F5F5F5;
+    width: 55px;
+    height: 55px;
+    margin-right: 1.5em;
+    
+}
+.image{
+    margin-top: 11%;
+    margin-left: 19%;
+}
+.pincode{
+    overflow: overlay;
+    width: 11%;
+    ;
+}
+.close-div{
+    width: 42%;
+    direction: rtl;
+    color: #707070;
+    position: absolute;
+    top: 2%;
+    left: 57%;
+}
+.close-button{
+    background-color: white;
+    color: #707070;
+    box-shadow: none;
+}
+
+.percentage{
+    overflow: overlay;
+    width: 7%;
+}
+.name{
+    margin: 0%;
+    color: #413F54;
+    font-weight: 550;
+    margin-bottom: 1em;
+    width: fit-content;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+.call-icon{
+    font-size: small;
+    width: 0%;
+    color: #676668;
+}
+.email-icon{
+    font-size: small;
+    width: 0%;
+    color: #676668;
+    margin-top: 1%;
+
+}
+.phoneno{
+    margin: 0%;
+    font-size:$_subinput_font_size;
+    color: $_input_font_color;
+    padding-left: 20px;
+}
+.email{
+    margin: 0%;
+    font-size:$_subinput_font_size;
+    color: $_input_font_color;
+    padding-left: 20px;
+}
+.join-button{
+    height: 1.75em;
+    width: 1.75em;
+    background-color: #7F961E;
+    bottom: 0.50em;
+    left: 0.50em;
+    box-shadow: none;
+}
+.join-text{
+    position: absolute;
+    margin: 0%;
+    font-size: xx-small;
+    top: 1%;
+    right: 8%;
+    color: white;
+}
+
+  table {
+   
+      color: #3D3D3D;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+
+  }
+  
+  td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    font-size: 15px;
+    font-family: Lato,Regular;
+  }
+  th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    background-color: #E2E2E2;
+    font-family: Lato,Bold;
+  }
+.table-div{
+    margin-top: 3%;
+}
+
+.remark-td{
+    padding: 0;
+    border: 1px solid #dddddd;
+    text-align: center;
+    font-size: 15px;
+    font-family: Lato,Regular;
+}
+.attitude-td{
+    padding: 0;
+    border: 1px solid #dddddd;
+    text-align: center;
+    font-size: 15px;
+    font-family: Lato,Regular;
+}
+.communication-td{
+    padding: 0;
+    border: 1px solid #dddddd;
+    text-align: center;
+    font-size: 15px;
+    font-family: Lato,Regular;
+}
+.knowledge-td{
+    padding: 0;
+    border: 1px solid #dddddd;
+    text-align: center;
+    font-size: 15px;
+    font-family: Lato,Regular;
+}
+.attitude-th{
+    border: none;
+    text-align: center;
+    padding: 8px;
+    background-color: #E2E2E2;
+    font-family: Lato,Bold;
+}
+.communication-th{
+    border: none;
+    text-align: center;
+    padding: 8px;
+    background-color: #E2E2E2;
+    font-family: Lato,Bold;
+}
+.knowledge-th{
+    border: none;
+    text-align: center;
+    padding: 8px;
+    background-color: #E2E2E2;
+    font-family: Lato,Bold;
+}
+.table-header{
+    height: 5em;
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    background-color: #E2E2E2;
+    font-family: Lato,Bold;
+}
+.attitude{
+    width: 22%;
+    border-right: 1px solid #dddddd;
+    text-align: center;
+    padding: 5%;
+}
+.communication{
+    width: 47%;
+    border-right: 1px solid #dddddd;
+    text-align: center;
+    padding: 5%;
+}
+.knowledge{
+    width: 32%;
+    padding: 5%;
+    text-align: center;
+}

@@ -1,0 +1,343 @@
+<!-- <div class="maindiv" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card fxLayout="row" *ngIf="data === null" fxLayoutAlign="center center" class="editprofile-card">New Batch
+  </mat-card> -->
+  <div class="maindiv">
+    <div class="topdiv" fxLayoutAlign="center center" *ngIf="data === null">New Batch</div>
+  <!-- <mat-card fxLayout="row" *ngIf="data !== null" fxLayoutAlign="center center" class="editprofile-card">Update Batch
+  </mat-card> -->
+
+<div class="addbatch">
+
+  <div class="box">
+    <!-- <div class="addbatchform"> -->
+
+    <form [formGroup]="AddBatchDetails" autocomplete="off"  style="width: 100%;margin-left: 6%;padding-bottom: 21px;" class="batch-div">
+
+      <div fxLayoutAlign="center center" class="martop">
+        <mat-form-field appearance="outline" class="wid">
+          <mat-label>Batch Name</mat-label>
+          <input matInput type="text" placeholder="Batch Name" formControlName="BatchName" [(ngModel)]="b.BatchName"
+            class="email" [readonly]="enable" required>
+          <mat-error *ngIf="hasError('BatchName', 'required')">Batch Name is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="row" fxLayoutGap="30px" class="batch-div1">
+          <div class="batch-div1" fxFlex="60" fxLayout="row" fxLayoutAlign="space-between center">
+            
+              <mat-form-field appearance="outline"  [style.fontSize.px]="11.5" autocomplete="off" class="option1">
+                <mat-label class="dropdown">Batch Type</mat-label>
+                <mat-select (selectionChange)="selectOption($event.value)" [compareWith]="compareBathType" formControlName="BatchType" required>
+                  <div class="select">
+                    <!-- <mat-option *ngFor="let btype of batchType" [value]="btype">{{btype.acronym}}</mat-option> -->
+                    <mat-option value="bTyp" >{{bTyp}}</mat-option>
+
+                  </div>
+                </mat-select>
+                <mat-error *ngIf="hasError('BatchType', 'required')"> Batch Type is required</mat-error>
+              </mat-form-field>
+            </div>
+            <div *ngIf="data === null" class="date enddatecss" fxFlex="60" fxLayout="row"
+            fxLayoutAlign="space-between center">
+              <mat-form-field appearance="outline" class="option1" [style.fontSize.px]="10" fxFlex.xs="100">
+                <mat-label>Batch Number</mat-label> 
+                 <input matInput type="text" placeholder="Batch Number"  
+                   class="email" formControlName="batchNumber" [(ngModel)]="bNumber" required> 
+                <mat-error *ngIf="hasError('batchNumber', 'required')">Batch Number is required</mat-error>
+              </mat-form-field>
+            </div> 
+            <div *ngIf="data !== null" class="date enddatecss" fxFlex="60" fxLayout="row"
+            fxLayoutAlign="space-between center">
+              <mat-form-field appearance="outline" class="option1" [style.fontSize.px]="10" fxFlex.xs="100">
+                <mat-label>Batch Number</mat-label> 
+                 <input matInput type="text" placeholder="Batch Number"  
+                   class="email" formControlName="batchNumber" [(ngModel)]="bNumber" required> 
+                <mat-error *ngIf="hasError('batchNumber', 'required')">Batch Number is required</mat-error>
+              </mat-form-field>
+            </div> 
+  
+          </div>
+        </div> 
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="row" fxLayoutGap="30px" class="batch-div1">
+          <div class="batch-div1" fxFlex="60" fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-form-field appearance="outline" [style.fontSize.px]="11.5" autocomplete="off" class="option1">
+              <mat-label class="dropdown">Start Date</mat-label>
+              <input matInput (dateChange)="selectDate($event)" [matDatepicker]="picker" formControlName="StartDate"
+                required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="hasError('StartDate', 'required')">Start Date is required</mat-error>
+            </mat-form-field>
+          </div>
+
+
+          <div *ngIf="data === null" class="date enddatecss" fxFlex="60" fxLayout="row"
+            fxLayoutAlign="space-between center">
+            <mat-form-field appearance="outline" [style.fontSize.px]="11.5" autocomplete="off" class="option1">
+              <mat-label class="dropdown">Computed Finish Date</mat-label>
+              <input matInput [matDatepicker]="picker1" placeholder="Computed Finish Date" [(ngModel)]='enddate'
+                formControlName="EndDate" required>
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+              <mat-error *ngIf="hasError('EndDate', 'required')">Computed Finish Date is required</mat-error>
+            </mat-form-field>
+          </div>
+
+
+          <div *ngIf="data !== null" class="date enddatecss"  fxFlex="60" fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-form-field appearance="outline" [style.fontSize.px]="11.5" autocomplete="off" class="option1">
+              <mat-label class="dropdown">Computed Finish Date</mat-label>
+              <input matInput [matDatepicker]="picker1" placeholder="Computed Finish Date" [(ngModel)]='enddate'
+                formControlName="EndDate" required>
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+              <mat-error *ngIf="hasError('EndDate', 'required')">Computed Finish Date is required</mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="row" fxLayoutGap="30px" class="batch-div1">
+          <div class="batch-div1" fxFlex="60" fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-form-field appearance="outline" [style.fontSize.px]="11.5" autocomplete="off" class="option1">
+              <mat-label class="dropdown">Actual End Date</mat-label>
+              <input matInput [matDatepicker]="picker2" formControlName="ActualEndDate">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+              <mat-error *ngIf="hasError('ActualEndDate', 'required')">Actual End Date is required</mat-error>
+            </mat-form-field>
+          </div>
+
+
+          <div class="enddatecss" fxFlex="60" fxLayoutAlign="space-between center">
+            <mat-form-field appearance="outline" [style.fontSize.px]="11.5" autocomplete="off" class="option1">
+              <mat-label class="dropdown">Session Time</mat-label>
+              <mat-select [compareWith]="compareSessionTime" (selectionChange)="selectTimeSlot($event.value)"
+                formControlName="SessionTime" required>
+                <div class="select">
+                  <mat-option *ngFor="let slot of timeSlots" [value]="slot">{{slot.timeSlot}}</mat-option>
+                </div>
+              </mat-select>
+              <mat-error *ngIf="hasError('SessionTime', 'required')"> SessionTime is required</mat-error>
+            </mat-form-field>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="row" fxLayoutGap="30px" class="batch-div1">
+          <div class="batch-div1" fxFlex="60" fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-form-field appearance="outline" [style.fontSize.px]="11.5" autocomplete="off" class="option1">
+              <mat-label class="dropdown">Practice Head</mat-label>
+              <mat-select [compareWith]="compareMainMentor" formControlName="PracticeHead"
+                (selectionChange)="selectLead($event.value)" required>
+                <div class="select">
+    
+                  <mat-option *ngFor="let su of practiceHead" [value]="su">{{su.firstName}} {{su.lastName}}</mat-option>
+                </div>
+              </mat-select>
+              <mat-error *ngIf="hasError('PracticeHead', 'required')"> Practice Head Name is required</mat-error>
+            </mat-form-field>
+          </div>
+
+
+
+          <div class="enddatecss" fxFlex="60" fxLayoutAlign="space-between center">
+            <mat-form-field appearance="outline" [style.fontSize.px]="11.5" autocomplete="off" class="option1">
+              <mat-label class="dropdown">Main Mentor</mat-label>
+              <mat-select [compareWith]="compareMainMentor" formControlName="MainMentor"
+                (selectionChange)="selectedMainMentor($event.value)" required>
+                <div class="select">
+                  <mat-option *ngFor="let le of mainbackup" [value]="le">{{le.firstName}} {{le.lastName}} </mat-option>
+                </div>
+              </mat-select>
+              <mat-error *ngIf="hasError('MainMentor', 'required')"> Main Mentor Name is required</mat-error>
+            </mat-form-field>
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="row" fxLayoutGap="30px" class="batch-div1">
+
+          <div class="batch-div1" fxFlex="60" fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-form-field appearance="outline" [style.fontSize.px]="11.5" autocomplete="off" class="option1">
+              <mat-label class="dropdown">Tech Stack</mat-label>
+              <mat-select (selectionChange)="selectStack($event.value)" [compareWith]="compareFunction"
+                formControlName="teckSatck" required>
+                <div class="select">
+                  <mat-option *ngFor="let le of techStack" [value]="le">
+                    {{le.techname}}
+                  </mat-option>
+                  <!-- <mat-option *ngFor="let tech of techStack" (click)="getTechStackImage(tech)" [(value)]="tech"  >
+                      {{tech.techName}}
+                  </mat-option> -->
+                </div>
+              </mat-select>
+              <mat-error *ngIf="hasError('teckSatck', 'required')">Teck Stack is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="enddatecss" fxLayoutAlign="center center">
+            <mat-form-field appearance="outline" [style.fontSize.px]="10" class="option1" fxFlex.xs="100">
+              <mat-label>Tech Type</mat-label>
+              <input matInput type="text" placeholder="Tech Type" formControlName="TechType" class="email">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="row" fxLayoutGap="30px" class="batch-div1">
+
+          <div class="batch-div1" fxFlex="60" fxLayout="row" fxLayoutAlign="space-between center">
+
+            <mat-form-field appearance="outline" [style.fontSize.px]="11.5" autocomplete="off" class="option1">
+              <mat-label class="dropdown">Support Mentor</mat-label>
+              <mat-select (selectionChange)="SelectSupportMentor($event.value)" [compareWith]="compareMainMentor"
+                formControlName="Support">
+                <div class="select">
+                  <mat-option *ngFor="let s of support" [value]="s">
+                    {{s.firstName}} {{s.lastName}}
+                  </mat-option>
+                </div>
+              </mat-select>
+              <mat-error *ngIf="hasError('Support', '')"> Support Name is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="enddatecss" fxLayoutAlign="center center">
+
+            <mat-form-field appearance="outline" [style.fontSize.px]="11.5" autocomplete="off" class="option1">
+              <mat-label class="dropdown">Backup Mentor</mat-label>
+              <mat-select (selectionChange)="SelectBackupMentor($event.value)" [compareWith]="compareMainMentor"
+                formControlName="BackupMentor">
+                <div class="select">
+                  <mat-option *ngFor="let b of buddy" [value]="b">
+                    {{b.firstName}} {{b.lastName}}
+                  </mat-option>
+                </div>
+              </mat-select>
+              <mat-error *ngIf="hasError('BackupMentor', 'required')">Backup mentor is required</mat-error>
+            </mat-form-field>
+          </div>
+
+
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="row" fxLayoutGap="30px" class="batch-div1">
+
+          <div class="batch-div1" fxFlex="60" fxLayout="row" fxLayoutAlign="space-between center">
+
+            <mat-form-field appearance="outline" [style.fontSize.px]="11.5" autocomplete="off" class="option1">
+              <mat-label class="dropdown">Coordinator(Hr)</mat-label>
+              <mat-select (selectionChange)="SelectCoordinaror($event.value)" [compareWith]="compareCoordinator"
+                formControlName="Coordinator" required>
+                <div class="select">
+                  <mat-option *ngFor="let coordinator of coordinators" [value]="coordinator">
+                    {{coordinator.firstName}}
+                    {{coordinator.lastName}}
+                  </mat-option>
+                </div>
+              </mat-select>
+              <mat-error *ngIf="hasError('Coordinator', 'required')"> Coordinator Name is required</mat-error>
+            </mat-form-field>
+          </div>
+
+
+          <div class="enddatecss" fxLayoutAlign="center center">
+
+            <mat-form-field appearance="outline" [style.fontSize.px]="10" class="option1" fxFlex.xs="100">
+              <mat-label> NPS Survey URL</mat-label>
+              <input matInput type="text" placeholder="NPS Survey URL" formControlName="NpsSurveyUrl" class="email">
+              <mat-error *ngIf="hasError('NpsSurveyUrl', 'required')"> NPS Survey url is required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="row" fxLayoutGap="30px" class="batch-div1">
+
+          <div class="batch-div1" fxFlex="60" fxLayout="row" fxLayoutAlign="space-between center">
+
+            <mat-form-field appearance="outline" class="option1" [style.fontSize.px]="10" fxFlex.xs="100">
+              <mat-label>Session Live Link(Mark Attendance)</mat-label>
+              <input matInput type="text" placeholder="Session Live Link(Mark Attendance)" formControlName="SessionLink"
+                class="email" required>
+              <mat-error *ngIf="hasError('SessionLink', 'required')"> Session Live Link is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="enddatecss" fxLayoutAlign="center center">
+
+            <mat-form-field appearance="outline" class="option1" [style.fontSize.px]="10" fxFlex.xs="100">
+              <mat-label>Google Class Link</mat-label>
+              <input matInput type="text" placeholder="Google Class Link" formControlName="GoogleClassLink"
+                class="email" required>
+              <mat-error *ngIf="hasError('GoogleClassLink', 'required')"> GoogleClassLink is required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="row" fxLayoutGap="30px" class="batch-div1">
+
+          <div class="batch-div1" fxFlex="60" fxLayout="row" fxLayoutAlign="space-between center">
+
+            <mat-form-field appearance="outline" class="option1" [style.fontSize.px]="10" fxFlex.xs="100">
+              <mat-label>Batch Sheet URL</mat-label>
+              <input matInput type="text" placeholder="Batch Sheet URL" formControlName="BatchSheetUrl" class="email"
+                required>
+              <mat-error *ngIf="hasError('BatchSheetUrl', 'required')"> Batch Sheet URL is required</mat-error>
+            </mat-form-field>
+
+          </div>
+
+          <div class="enddatecss" fxLayoutAlign="center center">
+            <mat-form-field appearance="outline" class="option1" [style.fontSize.px]="10" fxFlex.xs="100">
+              <mat-label class="dropdown">Maker Link URL</mat-label>
+              <input matInput type="text" placeholder="Maker Link URL" formControlName="MakerLink" class="email">
+              <mat-error *ngIf="hasError('MakerLink', 'required')"> Maker Link URL is required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- </div> -->
+
+
+
+      <div fxLayout="row" fxLayoutGap="60px" class="btn2" fxLayoutAlgin="end">
+
+        <button mat-button class="can" (click)="onNoClick()">Cancel</button>
+
+
+        <div class="btn2">
+
+          <button *ngIf="data === null"  mat-raised-button class="btn btxt" (click)="addBatch()" > Create </button>
+          <button *ngIf="data !== null" mat-raised-button class="btn btxt" (click)="addBatch()"> Update </button>
+
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="60px" class="btn2" fxLayoutAlgin="end">
+      </div>
+    </form>
+  </div>
+
+</div>
+</div>

@@ -1,0 +1,149 @@
+<div style="width: 100%;">
+    <div fxLayout="row" fxLayoutAlign="space-between center"
+      style="text-align: center;background-color: #FFFFFF; width: 100%">
+      <span class="title" fxFlex="70" fxLayoutAlign="start center" style="margin-top:15px;color:#78827A">New Learners
+      </span>
+  
+  
+      <span fxFlex="50" fxLayoutGap="20px" style="text-align: right;margin: 2% 0 2% 0;">
+  
+        <button mat-raised-button class="submitBtn" (click)="submit()">
+          <span class="textStyle">Submit</span>
+        </button>
+  
+        <button mat-raised-button class="cancelBtn" (click)="close()">
+          <span class="textStyle">Cancel</span>
+        </button>
+      </span>
+    </div>
+    <mat-card> 
+    <div fxLayout="column" fxLayoutAlign="start" style="height:calc(100vh - 130px);width: 100%;">
+      <table>
+        <tr>
+          <th>Sr.</th>
+          <th>CIC ID<sup style="color: red">*</sup></th>
+          <th>Candidate Name<sup style="color: red">*</sup></th>
+          <th>Email Id<sup style="color: red">*</sup></th>
+          <th>Mobile<sup style="color: red">*</sup></th>
+          <th>Hired Date<sup style="color: red">*</sup></th>
+          <th>Degree<sup style="color: red">*</sup></th>
+          <th class="percentage">Agg. Degree%<sup style="color: red">*</sup></th>
+          <th>Passed Out Year<sup style="color: red">*</sup></th>
+  
+          <table>
+            <tr>
+              <th colspan="3" scope="colgroup">Remark</th>
+            </tr>
+            <tr>
+              <th scope="col">Attitude</th>
+              <th scope="col">Communication</th>
+              <th scope="col">Knowledge</th>
+            </tr>
+          </table>
+          <th class="col">City<sup style="color: red">*</sup></th>
+          <th class="col">State<sup style="color: red">*</sup></th>
+          <th class="pincode">Preferred Region<sup style="color: red">*</sup></th>
+        </tr>
+        <tr *ngFor="let data of candidateDetails; let i= index">
+          <td>{{i+1}}</td>
+          <td matTooltip="{{data.cicId}}">
+            <input matInput type="text" [(ngModel)]="data.cicId" autocomplete="off" pattern="^([a-zA-Z0-9]).*">
+          </td>
+          <td matTooltip="{{data.fullName}}">
+            <input matInput type="text" [(ngModel)]="data.fullName" autocomplete="off" pattern="^([a-zA-Z]).*">
+          </td>
+          <td matTooltip="{{data.lastName}}">
+            <input matInput type="text" [(ngModel)]="data.lastName" autocomplete="off" pattern="^([a-zA-Z]).*">
+          </td>
+          <td matTooltip="{{data.email}}">
+            <input matInput type="email" [(ngModel)]="data.email" autocomplete="off" [email]="true">
+          </td>
+          <td matTooltip="{{data.mobileNum}}">
+            <input matInput type="number" pattern="[6-9]{1}[0-9]{9}" minlength="10" maxlength="10"
+              [(ngModel)]="data.mobileNum" autocomplete="off">
+          </td>
+            <td matTooltip = "{{data.hiredCity}}">
+          <input matInput type  = "text" [(ngModel)] = "data.hiredCity"  autocomplete = "off" pattern = "^([a-zA-Z]).*">
+  
+                  </td>
+          <td matTooltip="{{data.hiredDate}}">
+            <input matInput type="date" [(ngModel)]="data.hiredDate" autocomplete="off">
+          </td>
+          <td matTooltip="{{data.degree}}">
+            <input matInput type="text" [(ngModel)]="data.degree" autocomplete="off" pattern="^([a-zA-Z]).*">
+            <mat-select [(value)]="data.degree">
+              <mat-option value="BE">BE</mat-option>
+              <mat-option value="B.Tech">B.Tech</mat-option>
+              <mat-option value="MCA">MCA</mat-option>
+            </mat-select>
+          </td>
+          <td matTooltip="{{data.aggrPer}}">
+            <input matInput type="number" [(ngModel)]="data.aggrPer" autocomplete="off" min="0" max="100">
+          </td>
+          <td>
+            <input matInput type="number" [(ngModel)]="data.passedOutYear" autocomplete="off" min="0">
+          </td>
+           <td    matTooltip    = "{{data.joinDate}}">
+          <input matInput type = "date" [(ngModel)] = "data.joinDate" autocomplete = "off">
+          </td>
+                 <!-- pattern       = "^[0-9]{6,6}$", -->
+          <td    matTooltip    = "{{data.Location}}">
+          <input matInput type = "text" [(ngModel)] = "data.Location" autocomplete = "off" pattern = "^([a-zA-Z]).*">
+  
+          </td>
+          <td>
+            <mat-select [(value)] = "data.hiredLab">
+            <mat-option value     = "Lab1">Lab1</mat-option>
+            <mat-option value     = "Lab2">Lab2</mat-option>
+            <mat-option value     = "Lab3">Lab3</mat-option>
+  
+            </mat-select>
+  
+          </td> 
+          <td class="remark-td">
+  
+            <div fxLayout="row">
+              <div class="attitude">
+                <mat-select [(value)]="data.attitudeRemark">
+                  <mat-option value="Ok">Ok</mat-option>
+                  <mat-option value="Good">Good</mat-option>
+                  <mat-option value="Fine">Fine</mat-option>
+  
+                </mat-select>
+              </div>
+              <div class="communication">
+                <mat-select [(value)]="data.communicationRemark">
+                  <mat-option value="Ok">Ok</mat-option>
+                  <mat-option value="Good">Good</mat-option>
+                  <mat-option value="Fine">Fine</mat-option>
+                </mat-select>
+              </div>
+              <div class="knowledge">
+                <mat-select [(value)]="data.knowledgeRemark">
+                  <mat-option value="Ok">Ok</mat-option>
+                  <mat-option value="Good">Good</mat-option>
+                  <mat-option value="Fine">Fine</mat-option>
+                </mat-select>
+              </div>
+            </div>
+  
+          </td> 
+          <td matTooltip="{{data.city}}">
+            <input matInput type="text" [(ngModel)]="data.city" autocomplete="off" pattern="^([a-zA-Z]).*">
+          </td>
+          <td matTooltip="{{data.state}}">
+            <input matInput type="text" [(ngModel)]="data.state" autocomplete="off" pattern="^([a-zA-Z]).*">
+          </td>
+          <td matTooltip="{{data.preferredJobLocation}}">
+            <input matInput type="text" [(ngModel)]="data.preferredJobLocation" autocomplete="off" pattern="^([a-zA-Z]).*">
+          </td>
+  
+        </tr>
+  
+      </table>
+      <div style="direction: rtl">
+        <button class="addrow-button" mat-flat-button (click)="addtable()">Add More Rows</button>
+      </div>
+    </div>
+     </mat-card> 
+  </div>

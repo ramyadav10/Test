@@ -1,0 +1,270 @@
+.maindiv
+{
+    background-color: #FFFFFF;
+}
+.widthclass{
+    width: 116% !important;
+}
+
+.names-mentors{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 5%;
+}
+.mat-button-toggle-label-content {
+    flex-wrap: wrap !important;
+  }
+.topdiv
+{
+    width: 212px;
+    height: 43px;
+    background-color: #7F961E;
+    margin-left: 72px;
+    margin-right: 77px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #FFFFFF;
+    position: absolute;
+    margin-top: -44PX;
+    display: flex;
+    align-items: center;
+    place-content: center;
+}
+.mentorType{
+    margin-right: 20px;
+    display: flex;
+    font: normal normal normal 14px/19px Segoe UI;
+    letter-spacing: 0px;
+    color: #143A50;
+    text-transform: capitalize;
+    opacity: 1;
+    flex-direction: row;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    overflow: visible;
+   padding: 0.6em 0 0.6em 0;
+  
+    }
+    
+    :host ::ng-deep .mat-form-field-infix {
+    border-top-width: .35375em;
+    }
+
+    :host::ng-deep.mat-form-field-appearance-outline .mat-form-field-wrapper {
+        margin: -5px; 
+    }
+    
+:host::ng-deep.mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary {
+    color: #FFFFFF;
+    background-color: #7F961E;
+    width: 104px;
+    height: 39px;
+}
+:host ::ng-deep.mat-input-element {
+    caret-color: #7F961E;
+}
+.firstfield
+{
+    width:165px;
+}
+.firstName-1{
+    width: 92%;
+    left: -16px;
+}
+.firstName-2{
+    width: 92%;
+    margin-left : 35px;
+}
+:host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color:   #7F961E !important;
+}
+
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color:   #7F961E !important;
+    
+}
+.imageContent{
+    // width: 131px;
+    // height: 70px;
+    padding-left: 39%;
+}
+
+.menton-button-tog{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3%;
+}
+.ImageIcon{
+    width: 60px;
+    height: 60px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+}
+.profile-icon1{
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+
+  }
+.imagetext{
+    font: normal normal normal 10px/12px Lato;
+    letter-spacing: 0px;
+    color: #A2B3BD;
+    opacity: 1;
+    margin-left: -6%;
+}
+:host::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 1.25em;
+    width: 340px;
+    height: 74px;
+    border:1px solid  #7F961E;
+}
+.techstackName{
+    margin-right: 266px;
+    font-size: 12px;
+}
+:host::ng-deep.mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: rgba(0,0,0,.42);
+    background-color: white;
+    display: none;
+}
+
+.textcolor {
+    color: white;
+    background-color: white;
+    font-weight: 900;
+    height: 37px;
+    width: 100px;
+    }
+    .unselected {
+    background-color:#7F961E;
+    font-size: 15px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: white;
+    
+    }
+    .selected {
+    color: darkgray;
+    background-color: white;
+    font-size: 15px;
+    border-radius: 4px;
+    font-size: 13px;
+    }
+
+ :host::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+        padding: 0 .75em 0 .75em;
+        position: relative;
+    }
+    :host::ng-deep .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+        transform: translateY(4%);
+    }
+    .buttonClass{
+        width: 19.5em;
+        margin-bottom: 12px;
+        margin-top: 12px;
+        font-size: 18px;
+    }
+    .subdiv{
+        height: 11em;
+        margin: 0em;
+    }
+    
+      :host ::ng-deep .mat-button-toggle-group-appearance-standard, .mat-button-toggle-standalone.mat-button-toggle-appearance-standard {
+        border-radius: 4px;
+        height: 32px;
+        width: 100%;
+    }
+    :host ::ng-deep .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+        line-height: 48px;
+    }
+    :host ::ng-deep .mat-button[disabled][disabled] {
+        opacity: 0.4;
+        background-color: #7F961E;
+        color:#FFFFFF;
+        }
+        :host ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+            background-color: #7F961E;
+        }
+        :host ::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+            border-color: #7F961E;
+        }
+        
+        .profile-pic{
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+        }
+        .phoneNum{
+            width:160px;
+        }
+        .practicehead{
+            width:114%;
+            margin-top: 15px;
+        }
+        
+        .email{
+            width:160px;
+        }
+        .prefferdTime{
+            width: 160px;
+        }
+        .option1{
+        width: 160px;
+        }
+        .remark
+        {
+            border:1px solid #E8E8E8;
+            height: 20px;
+            width:332px;
+            padding: 10px;
+            overflow-x: hidden;
+            margin-top:-10px;
+            border-radius: 3px;
+            resize: none;
+            outline: none;
+            color: #143A50;
+            font-size: 14px
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+          
+            }
+            
+            ::-webkit-scrollbar-track {
+            background: #f5f5f5;
+            border-radius: 10px;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #ccc;
+            }
+    .cancel{
+        font-size: 18px;
+    }
+    .create{
+        font-size: 18px;
+        margin-left: 4%;
+    }
+    .button{
+        height: 39px;
+        width: 100%;
+       
+    }
+.practiceHead{
+    margin-top: 3%;
+    width: 88%;
+}
+    .buttonClass {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+         margin-left: 5%;
+        margin-top: 10%;
+    }

@@ -1,0 +1,513 @@
+<div>
+  <div class="batchname" fxLayout="row" style="display: flex;">
+    <div class="nametxt1" (click)="toBatch()">Batch</div>
+    <div class="sign">></div>
+    <span class="nametxt" (click)="goToDetails()">{{batchDetails?.batchName}}</span>
+    <div class="sign2" *ngIf="showing">></div>
+    <span class="nametxt" *ngIf="showing">{{pathCandidateName | titlecase}}</span>
+  </div>
+
+  <!-- <app-candidateinfo *ngIf="showing" [candidateInformation]="CandiDateInfo"></app-candidateinfo>  -->
+
+  <div fxLayout="row row-new" id="row-new-id" class="main" *ngIf="!showing" style="display: flex;">
+
+    <div fxLayoutAlign="row" fxFlex="100" class="dev-1">
+      <div fxFelx="40" class="react">
+        <div fxLayout="row" class="rect-content">
+          <div class="txt" fxFlex="100" fxLayout="row">
+            <p class="b-title">{{batchDetails?.batchName}} </p>
+            <div FxFlex="40"> <span class="number">{{batchCount}}</span></div>
+          </div>
+        </div>
+        <div class="sheetURLLinks" fxLayout="row">
+          <div fxLayout="row" fxFlex=50 fxLayoutGap="10px" class="applyLinks">
+            <img class="des" src="../../../assets/icons/description-24px.svg">
+            <div class="livelink" style=" white-space: nowrap; overflow: hidden;"
+              (click)="routerLink(batchDetails.sessionLiveLink)"> Session Live Link (Mark Attendance)</div>
+          </div>
+          <div fxFlex=50 fxLayout="row" fxLayoutGap="10px" class="applyLinks">
+            <img class="des" src="../../../assets/icons/description-24px.svg">
+            <div class="livelink" (click)="routerLink(batchDetails.batchSheetUrl)"> Batch Sheet URL</div>
+          </div>
+
+        </div>
+
+        <div class="sheetURLLinks" fxLayout="row" style="flex-direction: row; box-sizing: border-box; display: flex;">
+          <div fxFlex=50 fxLayout="row" fxLayoutGap="10px" class="applyLinks">
+            <img class="des" src="../../../assets/icons/description-24px.svg">
+            <div class="livelink" (click)="routerLink(batchDetails.googleClassLink)"> Google Class Link</div>
+          </div>
+          <div fxFlex=50 class="sessiontime" fxLayout="row" fxLayoutGap="10px"
+            style="flex-direction: row; box-sizing: border-box; display: flex; flex: 1 0 100%; max-width: 50%;">
+            <img class="des" src="../../../assets/icons/description-24px.svg">
+            <div class="livelink" (click)="routerLink(batchDetails.npsSurveyUrl)"> NPS Survey URL </div>
+          </div>
+        </div>
+
+        <div class="sheetURLLinks" fxLayout='row' style="flex-direction: row; box-sizing: border-box; display: flex;">
+          <div fxFlex=50 fxLayout="row" fxLayoutGap="10px" class="applyLinks">
+            <img class="des" src="../../../assets/icons/description-24px.svg">
+            <div class="livelink" (click)="routerLink(batchDetails.programMakerLink)"> Program Maker Link</div>
+          </div>
+
+          <div class="sessiontime" fxLayout="row" fxLayoutGap="10px"
+            style="flex-direction: row; box-sizing: border-box; display: flex;">
+            <img class="des" src="../../../assets/icons/description-24px.svg">
+            <div fxLayout='row' style="flex-direction: row; box-sizing: border-box; display: flex;">
+              <div class="techT">Session Time : </div>
+              <div class="tttime"> {{ batchDetails?.sessionTime}}</div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <div class="rect-content-time" fxLayout="row" style="margin-top: -7px;">
+
+            <div class=" " fxFlex=50 fxLayout="row" fxLayoutGap="10px" style="display: flex;align-items: end; margin-left: 14px;
+              margin-top: 10px;">
+              <img class="des1" style="margin-top: 12px; margin-left: 0px;"
+                src="../../../assets/icons/description-24px.svg">
+              <div class="livelink" (click)="routerLink(batchDetails.batchSheetUrl)"> Batch Sheet URL</div>
+
+            </div>
+
+            <div fxFlex=50 class="sessiontime" fxLayout="row" fxLayoutGap="10px">
+              <img class="des1" src="../../../assets/icons/description-24px.svg">
+              <div class="livelink" (click)="routerLink(batchDetails.npsSurveyUrl)"> NPS Survey URL </div>
+            </div>
+
+            <div class="sessiontime" fxLayout="row" fxLayoutGap="10px">
+              <img class="des1" src="../../../assets/icons/description-24px.svg">
+              <div fxLayout='row' style="display: flex;
+                align-items: center;
+                margin-top: 10px;
+                margin-left: 5px;">
+                <div class="techT ">Session Time : </div>
+                <div class="tttime"> {{ batchDetails?.sessionTime}}</div>
+              </div>
+
+
+
+            </div>
+
+          </div> -->
+        <!-- </div> -->
+
+        <!-- <div class="rect-content-time" fxLayout='row'> -->
+
+        <!-- </div> -->
+
+
+      </div>
+
+      <div fxFlex=10 class="next" fxLayout="column" fxLayoutAlign="start center">
+        <div class="tech"> Tech Stack</div>
+        <div class="btnjava" fxLayout="row" fxLayoutAlign="space-around center">
+          <div class="tech-merge">
+            <!-- <img class="javaimg" src="{{s3BucketUrl+batchDetails?.techStackImageUrl}}"> -->
+            <img class="javaimg" src="../../../assets/icons/java.png" alt="">
+          </div>
+          <mat-divider vertical class="line mat-divider mat-divider-vertical" role="separator"></mat-divider>
+
+          <!-- <div class="jtxt">{{batchDetails?.techStack}}</div> -->
+          <div class="jtxt">Java</div>
+
+        </div>
+        <div class="bdate">
+          Batch Date
+        </div>
+        <div style="margin-top: 1px;margin-right: 0px;">
+          <div class="list-wrapper">
+            <div class="red-line"></div>
+            <div class="list-item-wrapper">
+              <div class="list-bullet"></div>
+              <div class="list-item" fxLayout="row" fxLayoutAlign="none center">
+                <div class="list-text">{{batchDetails?.startDate}} </div>
+                <div class="day">(Start)</div>
+              </div>
+            </div>
+
+            <div class="list-item-wrapper">
+              <div class="list-bullet2"></div>
+              <div class="list-item" fxLayout="row" fxLayoutAlign="none center">
+                <div class="list-text"> {{batchDetails?.computedFinishDate}} </div>
+                <div class="day">(EST. End)</div>
+              </div>
+            </div>
+            <div class="list-item-wrapper">
+              <div class="bullet3"></div>
+              <div class="list-item" fxLayout="row" fxLayoutAlign="none center">
+                <div class="list-text">{{batchDetails?.actualEndDate}}</div>
+                <div class="day">(End)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="third">
+        <div class="mar" fxLayout="row wrap " fxLayoutAlign="start center">
+          <div class="mgn small-cards" fxLayout="column" fxLayoutAlign="center center">
+            <div (click)="showDetails(batchDetails.practiceHeadId)" class="nmbox" fxLayout="column"
+              fxLayoutAlign="center center">
+              <div class="spr">Practice Head</div>
+              <div fxLayout="row" class="names">
+                <img class="wrkr" src="../../../assets/images/worker.png">
+                <span class="namewrkr">{{batchDetails?.praticeHead}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="mgn small-cards" fxLayout="row" fxLayoutAlign="center center">
+            <div class="nmbox" (click)="showDetails(batchDetails.mainMentorId)" fxLayout="column"
+              fxLayoutAlign="center center">
+              <div class="spr">Main</div>
+              <div fxLayout="row" class="names">
+                <img class="wrkr" src="../../../assets/images/worker.png">
+                <span class="namewrkr">{{batchDetails?.mainMentor}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="mgn small-cards" fxLayout="row" fxLayoutAlign="center center">
+            <div class="nmbox" fxLayout="column" (click)="showDetails(batchDetails.supportId)"
+              fxLayoutAlign="center center">
+              <div class="spr">Support</div>
+              <div fxLayout="row" class="names">
+                <img class="wrkr" src="../../../assets/images/worker.png">
+                <span class="namewrkr">{{batchDetails?.support}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="mgn small-cards" fxLayout="row" fxLayoutAlign="center center">
+            <div class="nmbox" (click)="showDetails(batchDetails.backupMentorId)" fxLayout="column"
+              fxLayoutAlign="center center">
+              <div class="spr">Backup </div>
+              <div fxLayout="row" class="names">
+                <img class="wrkr" src="../../../assets/images/worker.png">
+                <span class="namewrkr">{{batchDetails?.backupMentor}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="mgn small-cards" fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayout="column" (click)="showCoordinator(batchDetails.coordinatorId)" fxLayoutAlign="center center"
+              class="nmbox">
+              <div class="spr">Coordinator</div>
+              <div fxLayout="row" class="names">
+                <img class="wrkr" src="../../../assets/icons/track_changes_black_18dp.svg">
+
+                <span class="namewrkr">{{batchDetails?.coordinator}}</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="mgn small-cards" fxLayout="row" fxLayoutAlign="center center" (click)="ChangeBatchStatusDailog()">
+            <div fxLayout="column" fxLayoutAlign="center center" class="nmbox">
+              <div class="spr"> Batch status</div>
+              <div fxLayout="row" class="names">
+                <img class="wrkr" src="../../../assets/icons/check_circle_outline_black_18dp.svg"
+                  *ngIf="batchDetails?.status == 'Completed'">
+                <img class="wrkr" src="../../../assets/icons/in-progress.svg"
+                  *ngIf="batchDetails?.status == 'In Progress'">
+                <img class="wrkr" src="../../../assets/icons/highlight_off_black_18dp.svg"
+                  *ngIf="batchDetails?.status == 'Terminated'">
+
+
+                <span class="namewrkr">{{batchDetails?.status}}</span>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="mgn small-cards" fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayout="column" fxLayoutAlign="center center" class="nmbox">
+              <div class="spr">Total Enrolled</div>
+              <div fxLayout="row" class="names">
+                <img class="wrkr" src="../../../assets/images/worker.png">
+                <span class="namewrkr">{{TotalEnrolledCount}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="mgn small-cards" fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayout="column" fxLayoutAlign="center center" class="nmbox">
+              <div class="spr">Current Size</div>
+              <div fxLayout="row" class="names">
+                <img class="wrkr" src="../../../assets/images/worker.png">
+                <span class="namewrkr">{{FinalSize}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="mgn small-cards" fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayout="column" fxLayoutAlign="center center" class="nmbox">
+              <div class="spr">Remap</div>
+              <div fxLayout="row" class="names">
+                <img class="wrkr" src="../../../assets/images/worker.png">
+                <span class="namewrkr">{{remapcount}}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mgn small-cards" fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayout="column" fxLayoutAlign="center center" class="nmbox">
+              <div class="spr">Delayed</div>
+              <div fxLayout="row" class="names">
+                <img class="wrkr" src="../../../assets/images/worker.png">
+                <span class="namewrkr">{{delayed}}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mgn small-cards" fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayout="column" fxLayoutAlign="center center" class="nmbox">
+              <div class="spr">Dropped</div>
+              <div fxLayout="row" class="names">
+                <img class="wrkr" src="../../../assets/images/worker.png">
+                <span class="namewrkr">{{dropped}}</span>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="mgn small-cards" fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayout="column" fxLayoutAlign="center center" class="nmbox">
+              <div class="spr"> Total Days</div>
+              <div fxLayout="row" class="names">
+                <img class="wrkr" src="../../../assets/icons/date_range_black_18dp.svg">
+
+                <span class="namewrkr">{{Totaldays}}</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <mat-tab-group class="remove-border-bottom" fxLayoutGap="15" (selectedTabChange)="tabClick($event)"
+    [selectedIndex]="selectedIndex" *ngIf="!showing" style="margin-top: -35px;">
+    <mat-tab class="tab1" label="UNASSIGNED" class="tablebox">
+
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="maindiv">
+        <div class="buttons">
+          Candidate Details
+        </div>
+        <!-- <div class="button-div" fxFlex="36" fxLayout="row" fxLayoutAlign="space-between center">
+
+          <div floatLabel="never" class="search-div" fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+            <div fxLayoutAlign="center center" class="search-icon-div">
+              <mat-icon matPrefix class="search-icon">search</mat-icon>
+            </div>
+             <input placeholder="Search" class="search" (input)="searchCandidate($event.target.value)" -->
+        <!-- [(ngModel)]="searchText"> 
+            <mat-icon [matMenuTriggerFor]="beforeSearchMenu"
+              style="font-size: 16px; height: 16px; margin-top:-3%; display: flex; color: #707070; cursor: pointer;margin-left: 565px;">
+              view_headline</mat-icon> -->
+        <div fxLayout="row" class="subdiv">
+        <div class="button-div" fxFlex="60" fxLayout="row" fxLayoutAlign="space-between center">
+          <div floatLabel="never" class="search-div" fxLayout="row" fxFlex="72">
+            <div fxLayoutAlign="center center" class="search-icon-div">
+              <mat-icon matPrefix class="search-icon">search</mat-icon>
+            </div>
+
+            <input placeholder="Search" [(ngModel)]="searchWords" #searchbar class="search" />
+            <mat-icon [matMenuTriggerFor]="beforeSearchMenu"
+              style="font-size: 16px; height: 16px; margin-top: 2%; color: #707070; cursor: pointer">
+              view_headline</mat-icon>
+
+            <mat-menu #beforeSearchMenu="matMenu" xPosition="before">
+
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='cicId' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('CIC_ID')" (click)="searchByKeyword('CIC_ID')">CICID</button>
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='fullName' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('NAME')" (click)="searchByKeyword('NAME')">Candidate Name</button>
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='email' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('EMAIL')" (click)="searchByKeyword('EMAIL')">Email </button>
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='mobileNum' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('PHONE_NUMBER')" (click)="searchByKeyword('PHONE_NUMBER')">Phone
+                Number</button>
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='degree' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('DEGREE')" (click)="searchByKeyword('DEGREE')">Degree</button>
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='aggrPer' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('PERCENTAGE')" (click)="searchByKeyword('PERCENTAGE')">Agg. Degree
+                %*</button>
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='passedOutYear' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('YEAR')" (click)="searchByKeyword('YEAR')">Passing Year</button>
+
+
+
+            </mat-menu>
+
+          </div>
+
+
+        </div>
+        <div class="Assign-new">
+          <button mat-button class="save" (click)="assignedCandidatesDailog()">Assign</button>
+        </div>
+       </div>
+      </div>
+      
+      <div class="tablebox " infiniteScroll (scrolled)="getUnassignedCandidates()" cdkScrollable>
+        <div class="table-div">
+
+          <table class="display" cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr class="sub-heading">
+                <th class="background-head" style="padding-right: 1px;">
+                  <mat-checkbox style="margin-left: 10%;padding-right: 1px;" aria-label="Select All"
+                    (click)="$event.stopPropagation()" [checked]="isChecked()" [indeterminate]="isIndeterminate()"
+                    (change)="$event ? toggleAll($event) : null">
+                    All
+                  </mat-checkbox>
+                </th>
+                <th class="countHead background-head">Sr. No.</th>
+                <th class="phnNum-head background-head">CIC-ID</th>
+                <th class="mentorName-head background-head">Candidate Name</th>
+                <th class="email-haed background-head">Email</th>
+                <th class="phnNum-head background-head">Phone Number</th>
+                <th class="mentorType-head background-head">Degree</th>
+                <th class="categiry-head background-head">Agg. Degree %*</th>
+                <th class="techStack-head background-head">Passing Year</th>
+                <th class="techStack-head background-head">Status</th>
+              </tr>
+
+              <tr class="mentor-data"
+                *ngFor="let candidate of candidates.dataList | filterLearners:searchWords let i = index ; trackBy:identify">
+                <td class="checkboxdata">
+                  <mat-checkbox style="margin-left: 15%;padding-right: 1px;" (click)="$event.stopPropagation()"
+                    (change)="$event ? toggle(candidate, $event) : null" [checked]="exists(candidate)">
+                  </mat-checkbox>
+                </td>
+                <td class="countdata">{{i+1}}</td>
+                <td class=" phnNum-data">{{candidate?.cicId}}
+                </td>
+                <td class="mentorName-data">{{candidate?.fullName |titlecase}}</td>
+                <td class="email-data">{{candidate?.email}}</td>
+                <td class="phnNum-data">{{candidate?.mobileNum}}</td>
+                <td class="mentorType-data">{{candidate?.degree}}</td>
+                <td class="categiry-data">{{candidate?.aggrPer}}</td>
+                <td class="techStack-data">{{candidate?.passedOutYear}}</td>
+                <td class="more-button" (click)="remapHistoryDailog(candidate)">
+                  {{candidate?.candidateStatus}}</td>
+
+
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+    </mat-tab>
+
+
+    <mat-tab class="tab1 active leftside" label="ASSIGNED" class="tablebox">
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="maindiv">
+        <div class="buttons">
+          Candidate Details
+        </div>
+        <div class="button-div" fxFlex="40" fxLayout="row" fxLayoutAlign="end center">
+
+          <div floatLabel="never" class="search-div" fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+            <div fxLayoutAlign="center center" class="search-icon-div">
+              <mat-icon matPrefix class="search-icon">search</mat-icon>
+            </div>
+
+            <input placeholder="Search" [(ngModel)]="searchWordsAssigned " #searchbar class="search-assigned">
+            <mat-icon [matMenuTriggerFor]="beforeSearchMenu"
+              style="font-size: 16px; height: 16px; color: #707070; cursor: pointer; margin-top: 2%; margin-left: 522px;">
+              view_headline</mat-icon>
+
+            <mat-menu #beforeSearchMenu="matMenu" xPosition="before">
+
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='cicId' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('CIC_ID')" (click)="searchByKeyword('CIC_ID')">CICID</button>
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='fullName' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('NAME')" (click)="searchByKeyword('NAME')">Candidate Name</button>
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='email' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('EMAIL')" (click)="searchByKeyword('EMAIL')">Email </button>
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='mobileNum' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('PHONE_NUMBER')" (click)="searchByKeyword('PHONE_NUMBER')">Phone
+                Number</button>
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='degree' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('DEGREE')" (click)="searchByKeyword('DEGREE')">Degree</button>
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='aggrPer' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('PERCENTAGE')" (click)="searchByKeyword('PERCENTAGE')">Agg. Degree
+                %*</button>
+              <button mat-menu-item [ngStyle]="{'color' : searchBy==='passedOutYear' ? 'blue' : 'rgba(0,0,0,.54)'}"
+                (click)="applyFilterCoordinator('YEAR')" (click)="searchByKeyword('YEAR')">Passing Year</button>
+
+            </mat-menu>
+
+          </div>
+        </div>
+      </div>
+      <div class="tablebox">
+        <div class="table-div">
+          <table class="display" cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr class="sub-heading">
+
+                <th class="countHead background-head">Sr. No.</th>
+
+                <th class="phnNum-head background-head">CIC-ID</th>
+                <th class="mentorName-head background-head">Candidate Name</th>
+                <th class="email-haed background-head">Email</th>
+                <th class="phnNum-head background-head">Phone Number</th>
+                <th class="mentorType-head background-head">Degree</th>
+                <th class="categiry-head background-head">Agg. Degree %*</th>
+                <th class="techStack-head background-head">Passing Year</th>
+                <th class="background-head">Status</th>
+                <th class="background-head"></th>
+              </tr>
+              <tr class="mentor-data"
+                *ngFor="let candidate of batchCandidates | filterLearners:searchWordsAssigned; let i = index  ; trackBy:identify">
+
+                <td class="countdata">{{i+1}}</td>
+
+                <td class="phnNum-data" style="cursor: pointer;" (click)="gotoInfo(candidate)">{{candidate?.cicId}}
+                </td>
+                <td class="mentorName-data">{{candidate?.fullName | titlecase}}</td>
+                <td class="email-data">{{candidate?.email}}</td>
+                <td class="phnNum-data">{{candidate?.mobileNum}}</td>
+                <td class="mentorType-data">{{candidate?.degree}}</td>
+                <td class="categiry-data">{{candidate?.aggrPer}}</td>
+                <td class="techStack-data">{{candidate?.passedOutYear}}</td>
+                <td class="more-button" (click)="remapHistoryDailog(candidate)">
+                  {{candidate?.candidateStatus}}</td>
+
+                <td style="width: 20px;text-align: center; cursor: pointer;"
+                  [ngClass]="{ 'disabled' :candidate?.candidateStatus === statusModel.DROPPED ||
+                   candidate?.candidateStatus === statusModel.REMAPTORFP ||
+                   candidate?.candidateStatus === statusModel.MOVETOCFP || candidate?.candidateStatus ===  'REMAP' || candidate?.candidateStatus === 'MOVECFP' }"
+                  [matMenuTriggerFor]="beforeMenu" (click)="remapcandidate(candidate)"
+                  (click)="setCandidateId(candidate.id)">
+                  <img src="../../../assets/icons/ic_more_vert_24px.svg">
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+
+            <button mat-menu-item class="menu-button" (click)="unasineConfrim(id)">
+              Unassigned
+            </button>
+            <button mat-menu-item class="menu-button" (click)="changeCandidateStatus()">
+              Change Status
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
+
+</div>

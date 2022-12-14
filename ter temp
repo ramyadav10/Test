@@ -1,0 +1,660 @@
+* [33m193a2a1[m[33m ([m[1;36mHEAD -> [m[1;32mtemp[m[33m, [m[1;31morigin/feature-LMS2.O[m[33m)[m added and refactored old batch component and fixed css issues
+* [33m7512c3a[m batch component search issue resolved
+*   [33m8844feb[m git merge conflict resolving
+[32m|[m[33m\[m  
+[32m|[m *   [33mb49f049[m Merge pull request #11 from BridgeLabzSource/batch-LMS2.O
+[32m|[m [34m|[m[35m\[m  
+[32m|[m * [35m\[m   [33m1882b95[m fixed merge conflicts
+[32m|[m [36m|[m[1;31m\[m [35m\[m  
+[32m|[m [36m|[m * [35m\[m   [33m7e73e2e[m Merge pull request #9 from BridgeLabzSource/batch-LMS2.O
+[32m|[m [36m|[m [1;32m|[m[1;33m\[m [35m\[m  
+[32m|[m * [1;32m|[m [1;33m|[m [35m|[m [33m5e009d5[m create batch html changes
+[32m|[m [1;32m|[m[1;32m/[m [1;33m/[m [35m/[m  
+* [1;32m|[m [1;33m|[m [35m|[m   [33m28899a3[m Merge pull request #10 from BridgeLabzSource/batch-LMS2.O
+[1;34m|[m[35m\[m [1;32m\[m [1;33m\[m [35m\[m  
+[1;34m|[m [35m|[m [1;32m|[m[35m_[m[1;33m|[m[35m/[m  
+[1;34m|[m [35m|[m[35m/[m[1;32m|[m [1;33m|[m   
+[1;34m|[m * [1;32m|[m [1;33m|[m [33m0e49b0c[m[33m ([m[1;31morigin/batch-LMS2.O[m[33m)[m Fetching the data from backend in learners
+[1;34m|[m [1;33m|[m [1;32m|[m[1;33m/[m  
+[1;34m|[m [1;33m|[m[1;33m/[m[1;32m|[m   
+[1;34m|[m * [1;32m|[m [33m1946c52[m Learner api integration is done and fetching the data in dynamically
+[1;34m|[m * [1;32m|[m [33mc71351e[m Merge branch 'feature-LMS2.O' of https://github.com/BridgeLabzSource/EJET-LMS-WebApp into batch-LMS2.O
+[1;34m|[m [1;36m|[m[1;32m\[m[1;32m|[m 
+[1;34m|[m [1;36m|[m *   [33m8d5aac6[m refactored and updated css changes
+[1;34m|[m [1;36m|[m [32m|[m[33m\[m  
+[1;34m|[m [1;36m|[m * [33m|[m [33mb0fb88b[m refactored and updated css changes
+[1;34m|[m [1;36m|[m[1;34m/[m [33m/[m  
+[1;34m|[m[1;34m/[m[1;36m|[m [33m|[m   
+[1;34m|[m * [33m|[m [33mebbc199[m logout issue is solved
+[1;34m|[m [33m|[m[33m/[m  
+[1;34m|[m * [33m0592581[m Merge pull request #8 from BridgeLabzSource/profile_css_fix
+[1;34m|[m[1;34m/[m[35m|[m 
+[1;34m|[m * [33m4ced1c0[m[33m ([m[1;31morigin/profile_css_fix[m[33m)[m Added : css fixes in profile
+[1;34m|[m[1;34m/[m  
+*   [33m11cfe43[m Merge pull request #7 from BridgeLabzSource/batch-LMS2.O
+[36m|[m[1;31m\[m  
+[36m|[m * [33m9adce7b[m Batch component searchbar and new batch button issue is solved
+[36m|[m[36m/[m  
+*   [33m0aa3c78[m[33m ([m[1;31morigin/batch_css_fix[m[33m)[m Merge pull request #6 from BridgeLabzSource/batch_css_fix
+[1;32m|[m[1;33m\[m  
+[1;32m|[m *   [33m465db7d[m Merge branch 'feature-LMS2.O' of https://github.com/BridgeLabzSource/EJET-LMS-WebApp into batch_css_fix
+[1;32m|[m [1;34m|[m[1;32m\[m  
+[1;32m|[m [1;34m|[m[1;32m/[m  
+[1;32m|[m[1;32m/[m[1;34m|[m   
+* [1;34m|[m   [33me847f75[m Merge pull request #5 from BridgeLabzSource/databinding-LMS2.0
+[1;36m|[m[31m\[m [1;34m\[m  
+[1;36m|[m * [1;34m|[m [33m2ca5f13[m[33m ([m[1;31morigin/databinding-LMS2.0[m[33m)[m Searchbar responsive issue is solved
+[1;36m|[m[1;36m/[m [1;34m/[m  
+[1;36m|[m * [33mc36b4fe[m Added : batch css fix
+[1;36m|[m[1;36m/[m  
+*   [33m9be14d5[m Merge pull request #4 from BridgeLabzSource/learners_API_Intergraton
+[32m|[m[33m\[m  
+[32m|[m * [33mae814ef[m[33m ([m[1;31morigin/learners_API_Intergraton[m[33m)[m Added : intergration of API
+[32m|[m[32m/[m  
+*   [33m55be301[m Merge pull request #3 from BridgeLabzSource/databinding-LMS2.0
+[34m|[m[35m\[m  
+[34m|[m * [33mb255a69[m leraners databinding and searchbar issue is solved
+[34m|[m[34m/[m  
+*   [33mb6b647b[m Merge pull request #2 from BridgeLabzSource/searchbar_css_fix_data_binding
+[36m|[m[1;31m\[m  
+[36m|[m * [33mdb3eb39[m[33m ([m[1;31morigin/searchbar_css_fix_data_binding[m[33m)[m Added : search-box css fix
+[36m|[m[36m/[m  
+*   [33m8f421da[m Merge pull request #1 from BridgeLabzSource/FeatureLMS2.O-Searchbar
+[1;32m|[m[1;33m\[m  
+[1;32m|[m * [33m09aa47c[m[33m ([m[1;31morigin/FeatureLMS2.O-Searchbar[m[33m)[m search bar icon and cancel icon bugs are solved
+[1;32m|[m[1;32m/[m  
+* [33m3aea56f[m Added: Intergration of login API with backend is done and resolved few bugs in learners component
+* [33m4ca71d4[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/LMS2.0[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m solved issue in adding candidate data
+* [33m778287d[m tooltip added
+*   [33m3481691[m add 2 pannel classes
+[1;34m|[m[1;35m\[m  
+[1;34m|[m * [33m7c81976[m minor design fixes at configuration component
+* [1;35m|[m [33mee04619[m add 2 pannel classes
+[1;35m|[m[1;35m/[m  
+*   [33meafa205[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m[31m\[m  
+[1;36m|[m *   [33m538ed4a[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m [32m|[m[33m\[m  
+[1;36m|[m [32m|[m * [33maa9d87a[m add special remark placeholder
+[1;36m|[m [32m|[m * [33m5e9d221[m setting
+[1;36m|[m [32m|[m * [33m3bb8e66[m added pannel class
+[1;36m|[m [32m|[m *   [33m53472da[m added pannel class
+[1;36m|[m [32m|[m [34m|[m[35m\[m  
+[1;36m|[m [32m|[m [34m|[m *   [33m1f1d7af[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m [32m|[m [34m|[m [36m|[m[1;31m\[m  
+[1;36m|[m [32m|[m [34m|[m * [1;31m|[m [33mbfe26d0[m Settings Component
+[1;36m|[m [32m|[m * [1;31m|[m [1;31m|[m [33me76161c[m added pannel class
+[1;36m|[m [32m|[m [1;31m|[m [1;31m|[m[1;31m/[m  
+[1;36m|[m [32m|[m [1;31m|[m[1;31m/[m[1;31m|[m   
+[1;36m|[m [32m|[m * [1;31m|[m [33medf85f7[m added pannel class
+[1;36m|[m [32m|[m [1;32m|[m[1;31m\[m[1;31m|[m 
+[1;36m|[m [32m|[m [1;32m|[m * [33mb9cf005[m Add new Company popup
+[1;36m|[m [32m|[m * [1;33m|[m [33m4eeafda[m added pannel class
+[1;36m|[m * [1;33m|[m [1;33m|[m [33m28a2add[m angular doc
+[1;36m|[m [1;33m|[m [1;33m|[m[1;33m/[m  
+[1;36m|[m [1;33m|[m[1;33m/[m[1;33m|[m   
+[1;36m|[m * [1;33m|[m [33mcbedac8[m Added Company section in Settings->Configuration menu
+[1;36m|[m [1;33m|[m[1;33m/[m  
+* [1;33m/[m [33mff2b70b[m page not found comp created
+[1;33m|[m[1;33m/[m  
+* [33m8ff2725[m fellowship component done
+*   [33m992fc3c[m outocomplete off
+[1;34m|[m[1;35m\[m  
+[1;34m|[m * [33m27174e3[m onboarding ui is completed
+[1;34m|[m *   [33m6aaf87a[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m [1;36m|[m[31m\[m  
+[1;34m|[m * [31m|[m [33m5466f42[m onboarding ui is completed
+* [31m|[m [31m|[m [33m0ad5dbf[m outocomplete off
+[31m|[m [31m|[m[31m/[m  
+[31m|[m[31m/[m[31m|[m   
+* [31m|[m   [33m256ce66[m convert some dropdowns into input
+[32m|[m[33m\[m [31m\[m  
+[32m|[m * [31m|[m [33mfdae5ee[m image upload changes
+[32m|[m * [31m|[m [33m949b29f[m page not found comp added
+[32m|[m * [31m|[m   [33m4be5acb[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[32m|[m [34m|[m[35m\[m [31m\[m  
+[32m|[m * [35m\[m [31m\[m   [33m384dbf1[m image cropper integrated
+[32m|[m [36m|[m[1;31m\[m [35m\[m [31m\[m  
+[32m|[m * [1;31m|[m [35m|[m [31m|[m [33mbbd5c8f[m profile pic comp added
+* [1;31m|[m [1;31m|[m [35m|[m [31m|[m [33mda0eb45[m convert some dropdowns into input
+[35m|[m [1;31m|[m[35m_[m[1;31m|[m[35m/[m [31m/[m  
+[35m|[m[35m/[m[1;31m|[m [1;31m|[m [31m|[m   
+* [1;31m|[m [1;31m|[m [31m|[m   [33m2c5bfed[m convert some dropdowns into input
+[1;32m|[m[1;33m\[m [1;31m\[m [1;31m\[m [31m\[m  
+[1;32m|[m * [1;31m|[m [1;31m|[m [31m|[m [33m52aca56[m Dialog boxes changes
+[1;32m|[m [1;31m|[m [1;31m|[m[1;31m/[m [31m/[m  
+[1;32m|[m [1;31m|[m[1;31m/[m[1;31m|[m [31m|[m   
+[1;32m|[m * [1;31m|[m [31m|[m [33m197b8cf[m Dialog boxes changes
+[1;32m|[m * [1;31m|[m [31m|[m [33m00e1acf[m Dialog boxes changes
+[1;32m|[m * [1;31m|[m [31m|[m   [33m1e611ab[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;32m|[m [1;34m|[m[1;35m\[m [1;31m\[m [31m\[m  
+[1;32m|[m [1;34m|[m * [1;31m|[m [31m|[m [33mf086350[m REFACTORED user roles
+[1;32m|[m [1;34m|[m * [1;31m|[m [31m|[m [33mf7d0f23[m INTEGRATED get all user in settings
+[1;32m|[m [1;34m|[m * [1;31m|[m [31m|[m [33m3ffb92c[m REFACTORED optimizing code
+[1;32m|[m [1;34m|[m * [1;31m|[m [31m|[m [33m94eab00[m REFACTORED add candidate optimized code
+[1;32m|[m * [1;35m|[m [1;31m|[m [31m|[m [33mc55bbca[m  Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;32m|[m [1;36m|[m[1;35m\[m[1;35m|[m [1;31m|[m [31m|[m 
+[1;32m|[m [1;36m|[m * [1;31m|[m [31m|[m [33m3f7eccd[m INTEGRATED techtype in settings
+[1;32m|[m [1;36m|[m * [1;31m|[m [31m|[m [33ma4830f5[m ADDED update and get userdetails
+[1;32m|[m * [31m|[m [1;31m|[m [31m|[m [33m3b5df0b[m Settings Component
+[1;32m|[m * [31m|[m [1;31m|[m [31m|[m [33m4c6f9b7[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;32m|[m [32m|[m[31m\[m[31m|[m [1;31m|[m [31m|[m 
+[1;32m|[m * [31m|[m [1;31m|[m [31m|[m [33mad4cbd5[m Settings
+* [33m|[m [31m|[m [1;31m|[m [31m|[m   [33mbceaf97[m convert some dropdowns into input
+[34m|[m[31m\[m [33m\[m [31m\[m [1;31m\[m [31m\[m  
+[34m|[m [31m|[m [33m|[m[31m/[m [1;31m/[m [31m/[m  
+[34m|[m [31m|[m[31m/[m[33m|[m [1;31m|[m [31m|[m   
+[34m|[m * [33m|[m [1;31m|[m [31m|[m   [33m5faec05[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[34m|[m [36m|[m[1;31m\[m [33m\[m [1;31m\[m [31m\[m  
+[34m|[m [36m|[m * [33m|[m [1;31m|[m [31m|[m [33m8da78bf[m Mat tool tip added inside table
+[34m|[m [36m|[m [33m|[m[33m/[m [1;31m/[m [31m/[m  
+[34m|[m * [33m|[m [1;31m|[m [31m|[m [33m41daabd[m REFACTORED disabled dashboard button in sidenav
+[34m|[m * [33m|[m [1;31m|[m [31m|[m [33m2d7853a[m ADDED reset password
+* [1;31m|[m [33m|[m [1;31m|[m [31m|[m [33m57f56c6[m Settings
+[33m|[m [1;31m|[m[33m/[m [1;31m/[m [31m/[m  
+[33m|[m[33m/[m[1;31m|[m [1;31m|[m [31m|[m   
+* [1;31m|[m [1;31m|[m [31m|[m [33m73015cc[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;32m|[m[1;31m\[m[1;31m|[m [1;31m|[m [31m|[m 
+[1;32m|[m * [1;31m|[m [31m|[m   [33m75a208b[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;32m|[m [1;34m|[m[1;35m\[m [1;31m\[m [31m\[m  
+[1;32m|[m [1;34m|[m * [1;31m|[m [31m|[m [33m6fc0531[m Some Changes with Design
+[1;32m|[m [1;34m|[m * [1;31m|[m [31m|[m   [33m8193982[m Some Changes in design of unassigned,assigned and Completed
+[1;32m|[m [1;34m|[m [1;36m|[m[31m\[m [1;31m\[m [31m\[m  
+[1;32m|[m [1;34m|[m * [31m|[m [1;31m|[m [31m|[m [33m5931c41[m Some Changes in Design
+[1;32m|[m * [31m|[m [31m|[m [1;31m|[m [31m|[m [33med03e15[m ADDED authgaurd for routes
+[1;32m|[m * [31m|[m [31m|[m [1;31m|[m [31m|[m [33m31711fb[m ADDED token base hiring service
+[1;32m|[m * [31m|[m [31m|[m [1;31m|[m [31m|[m [33m5f57e3b[m INTEGRATED login page
+[1;32m|[m * [31m|[m [31m|[m [1;31m|[m [31m|[m [33m71f5d1d[m ADDED admin service for api integration
+* [31m|[m [31m|[m [31m|[m [1;31m|[m [31m|[m [33m2222cc9[m Settings
+[31m|[m [31m|[m[31m_[m[31m|[m[31m/[m [1;31m/[m [31m/[m  
+[31m|[m[31m/[m[31m|[m [31m|[m [1;31m|[m [31m|[m   
+* [31m|[m [31m|[m [1;31m|[m [31m|[m [33mc77a079[m Settings
+* [31m|[m [31m|[m [1;31m|[m [31m|[m   [33mcded59e[m Settings
+[32m|[m[33m\[m [31m\[m [31m\[m [1;31m\[m [31m\[m  
+[32m|[m * [31m|[m [31m|[m [1;31m|[m [31m|[m [33m0fa8a26[m settings component
+* [33m|[m [31m|[m [31m|[m [1;31m|[m [31m|[m [33m4c3c2ea[m Settings
+[33m|[m[33m/[m [31m/[m [31m/[m [1;31m/[m [31m/[m  
+* [31m|[m [31m|[m [1;31m|[m [31m|[m [33m60509d8[m settings components
+* [31m|[m [31m|[m [1;31m|[m [31m|[m [33m5afcab2[m settings component
+* [31m|[m [31m|[m [1;31m|[m [31m|[m [33m42b9aeb[m Settings
+* [31m|[m [31m|[m [1;31m|[m [31m|[m [33m5e06de7[m media querry
+* [31m|[m [31m|[m [1;31m|[m [31m|[m [33m15b0f32[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[34m|[m[31m\[m[31m|[m [31m|[m [1;31m|[m [31m|[m 
+[34m|[m * [31m|[m [1;31m|[m [31m|[m [33m40197c3[m FIXED production build issues
+* [35m|[m [31m|[m [1;31m|[m [31m|[m [33m5dbba4c[m settings
+[35m|[m[35m/[m [31m/[m [1;31m/[m [31m/[m  
+* [31m|[m [1;31m|[m [31m|[m   [33m3cc4237[m requirement css
+[36m|[m[1;31m\[m [31m\[m [1;31m\[m [31m\[m  
+[36m|[m * [31m|[m [1;31m|[m [31m|[m [33m03d8090[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[36m|[m [1;32m|[m[31m\[m[31m|[m [1;31m|[m [31m|[m 
+[36m|[m * [31m|[m [1;31m|[m [31m|[m [33m7c3fa74[m Settings
+* [1;33m|[m [31m|[m [1;31m|[m [31m|[m [33mf70d344[m requirement css
+[31m|[m [1;33m|[m[31m/[m [1;31m/[m [31m/[m  
+[31m|[m[31m/[m[1;33m|[m [1;31m|[m [31m|[m   
+* [1;33m|[m [1;31m|[m [31m|[m [33m1b1aa65[m Some Changes
+[1;34m|[m[1;33m\[m[1;33m|[m [1;31m|[m [31m|[m 
+[1;34m|[m * [1;31m|[m [31m|[m   [33m53c7996[m Settings
+[1;34m|[m [1;36m|[m[31m\[m [1;31m\[m [31m\[m  
+[1;34m|[m [1;36m|[m [31m|[m [1;31m|[m[31m/[m  
+[1;34m|[m [1;36m|[m [31m|[m[31m/[m[1;31m|[m   
+[1;34m|[m [1;36m|[m * [1;31m|[m   [33m8ada396[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m [1;36m|[m [32m|[m[33m\[m [1;31m\[m  
+[1;34m|[m [1;36m|[m * [33m|[m [1;31m|[m [33mb8e189a[m adjusted count in onboarding
+[1;34m|[m * [33m|[m [33m|[m [1;31m|[m [33m54df7db[m Setting Component
+[1;34m|[m [33m|[m [33m|[m[33m/[m [1;31m/[m  
+[1;34m|[m [33m|[m[33m/[m[33m|[m [1;31m|[m   
+* [33m|[m [33m|[m [1;31m|[m [33mba5b192[m Some changes
+[34m|[m[33m\[m[33m|[m [33m|[m [1;31m|[m 
+[34m|[m * [33m|[m [1;31m|[m [33m9a33c6e[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[34m|[m [36m|[m[33m\[m[33m|[m [1;31m|[m 
+[34m|[m [36m|[m * [1;31m|[m   [33m62e52ee[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[34m|[m [36m|[m [1;32m|[m[1;33m\[m [1;31m\[m  
+[34m|[m [36m|[m [1;32m|[m * [1;31m\[m   [33mcea6329[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[34m|[m [36m|[m [1;32m|[m [1;34m|[m[1;35m\[m [1;31m\[m  
+[34m|[m [36m|[m [1;32m|[m [1;34m|[m * [1;31m|[m [33m2f8f29b[m FIXED production build errors
+[34m|[m [36m|[m [1;32m|[m * [1;35m|[m [1;31m|[m [33mad00d4a[m required component
+[34m|[m [36m|[m [1;32m|[m [1;36m|[m[1;35m\[m[1;35m|[m [1;31m|[m 
+[34m|[m [36m|[m [1;32m|[m * [1;35m|[m [1;31m|[m [33m34e5781[m required component
+[34m|[m [36m|[m * [31m|[m [1;35m|[m [1;31m|[m [33m1e56c31[m added scroll in  onboarding
+[34m|[m * [31m|[m [31m|[m [1;35m|[m [1;31m|[m [33m7e5c044[m Settings components
+[34m|[m [1;35m|[m [31m|[m[1;35m_[m[31m|[m[1;35m/[m [1;31m/[m  
+[34m|[m [1;35m|[m[1;35m/[m[31m|[m [31m|[m [1;31m|[m   
+[34m|[m * [31m|[m [31m|[m [1;31m|[m   [33md48e759[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[34m|[m [32m|[m[33m\[m [31m\[m [31m\[m [1;31m\[m  
+[34m|[m [32m|[m * [31m|[m [31m|[m [1;31m|[m [33mfc488fc[m FIXED count issue for large screen in recruitment
+[34m|[m [32m|[m * [31m|[m [31m|[m [1;31m|[m [33m7c36a37[m FIXED view candidate details
+[34m|[m [32m|[m [31m|[m[31m/[m [31m/[m [1;31m/[m  
+[34m|[m * [31m/[m [31m/[m [1;31m/[m [33m5ad9ad4[m Settings components
+[34m|[m [31m|[m[31m/[m [31m/[m [1;31m/[m  
+[34m|[m * [31m|[m [1;31m|[m   [33m61e4e06[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[34m|[m [34m|[m[35m\[m [31m\[m [1;31m\[m  
+[34m|[m * [35m|[m [31m|[m [1;31m|[m [33m5ceeef0[m Settings component
+[34m|[m * [35m|[m [31m|[m [1;31m|[m   [33mc5f86e4[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[34m|[m [36m|[m[1;31m\[m [35m\[m [31m\[m [1;31m\[m  
+[34m|[m * [1;31m|[m [35m|[m [31m|[m [1;31m|[m [33m9594fd8[m Settings component
+* [1;31m|[m [1;31m|[m [35m|[m [31m|[m [1;31m|[m [33mfede9a0[m Some Chnages
+[35m|[m [1;31m|[m[35m_[m[1;31m|[m[35m/[m [31m/[m [1;31m/[m  
+[35m|[m[35m/[m[1;31m|[m [1;31m|[m [31m|[m [1;31m|[m   
+* [1;31m|[m [1;31m|[m [31m|[m [1;31m|[m [33m98f759d[m Some more Changes in assignments
+[1;31m|[m [1;31m|[m[1;31m/[m [31m/[m [1;31m/[m  
+[1;31m|[m[1;31m/[m[1;31m|[m [31m|[m [1;31m|[m   
+* [1;31m|[m [31m|[m [1;31m|[m [33m9869996[m Some Changes with Responsive Design
+[1;32m|[m[1;31m\[m[1;31m|[m [31m|[m [1;31m|[m 
+[1;32m|[m * [31m|[m [1;31m|[m [33m8be12f7[m Settings component
+[1;32m|[m [1;31m|[m [31m|[m[1;31m/[m  
+[1;32m|[m [1;31m|[m[1;31m/[m[31m|[m   
+[1;32m|[m * [31m|[m   [33mb689d42[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;32m|[m [1;34m|[m[1;35m\[m [31m\[m  
+[1;32m|[m * [1;35m|[m [31m|[m [33m0d98e27[m Changes in settings component
+* [1;35m|[m [1;35m|[m [31m|[m [33m2880f2b[m Some Changes with Responsive Design
+* [1;35m|[m [1;35m|[m [31m|[m   [33mf7e68e9[m Some changes with responsive design
+[1;36m|[m[1;35m\[m [1;35m\[m [1;35m\[m [31m\[m  
+[1;36m|[m [1;35m|[m [1;35m|[m[1;35m/[m [31m/[m  
+[1;36m|[m [1;35m|[m[1;35m/[m[1;35m|[m [31m|[m   
+[1;36m|[m * [1;35m|[m [31m|[m   [33m4955fe2[m minor UI change
+[1;36m|[m [32m|[m[33m\[m [1;35m\[m [31m\[m  
+[1;36m|[m * [33m|[m [1;35m|[m [31m|[m [33m4eb649c[m minor UI changes
+* [33m|[m [33m|[m [1;35m|[m [31m|[m [33m50ca2d7[m changes with responsive design
+[33m|[m [33m|[m[33m/[m [1;35m/[m [31m/[m  
+[33m|[m[33m/[m[33m|[m [1;35m|[m [31m|[m   
+* [33m|[m [1;35m|[m [31m|[m   [33m9872480[m Counter fixed
+[34m|[m[1;35m\[m [33m\[m [1;35m\[m [31m\[m  
+[34m|[m [1;35m|[m [33m|[m[1;35m/[m [31m/[m  
+[34m|[m [1;35m|[m[1;35m/[m[33m|[m [31m|[m   
+[34m|[m * [33m|[m [31m|[m [33m7f0168f[m Changes in Setting Component
+[34m|[m * [33m|[m [31m|[m   [33md7435e6[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[34m|[m [36m|[m[31m\[m [33m\[m [31m\[m  
+[34m|[m [36m|[m [31m|[m [33m|[m[31m/[m  
+[34m|[m [36m|[m [31m|[m[31m/[m[33m|[m   
+[34m|[m [36m|[m * [33m|[m [33m995517c[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[34m|[m [36m|[m [1;32m|[m[33m\[m[33m|[m 
+[34m|[m [36m|[m * [33m|[m [33m727e41a[m set mat card height properly
+[34m|[m * [1;33m|[m [33m|[m [33m2b41900[m Changes in Setting Component
+[34m|[m * [1;33m|[m [33m|[m [33md030e9a[m Changes in Setting Component
+[34m|[m * [1;33m|[m [33m|[m   [33m3afed64[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[34m|[m [1;34m|[m[33m\[m [1;33m\[m [33m\[m  
+[34m|[m [1;34m|[m [33m|[m [1;33m|[m[33m/[m  
+[34m|[m [1;34m|[m [33m|[m[33m/[m[1;33m|[m   
+[34m|[m * [33m|[m [1;33m|[m [33ma33fde6[m Solving some design issues
+* [1;35m|[m [33m|[m [1;33m|[m   [33mf842a6b[m Some Changes
+[1;36m|[m[33m\[m [1;35m\[m [33m\[m [1;33m\[m  
+[1;36m|[m [33m|[m [1;35m|[m[33m/[m [1;33m/[m  
+[1;36m|[m [33m|[m[33m/[m[1;35m|[m [1;33m|[m   
+[1;36m|[m * [1;35m|[m [1;33m|[m   [33mfd96ce2[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m [32m|[m[1;33m\[m [1;35m\[m [1;33m\[m  
+[1;36m|[m [32m|[m [1;33m|[m [1;35m|[m[1;33m/[m  
+[1;36m|[m [32m|[m [1;33m|[m[1;33m/[m[1;35m|[m   
+[1;36m|[m [32m|[m * [1;35m|[m [33m39c8b05[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m [32m|[m [34m|[m[1;35m\[m[1;35m|[m 
+[1;36m|[m [32m|[m * [1;35m|[m [33m7008738[m validation and disabled button done
+[1;36m|[m * [35m|[m [1;35m|[m [33mb50fbe7[m Fixed high resolution support
+[1;36m|[m * [35m|[m [1;35m|[m   [33m5d24aa2[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m [36m|[m[1;35m\[m [35m\[m [1;35m\[m  
+[1;36m|[m [36m|[m [1;35m|[m [35m|[m[1;35m/[m  
+[1;36m|[m [36m|[m [1;35m|[m[1;35m/[m[35m|[m   
+[1;36m|[m [36m|[m * [35m|[m [33m3588407[m Minor Chnages to Setting Component
+[1;36m|[m * [1;31m|[m [35m|[m [33m6a32892[m Fixed few issues in assignmnet
+[1;36m|[m * [1;31m|[m [35m|[m [33m0e6f6ff[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m [1;32m|[m[1;31m\[m[1;31m|[m [35m|[m 
+[1;36m|[m [1;32m|[m * [35m|[m [33m134c265[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m [1;32m|[m [1;34m|[m[35m\[m[35m|[m 
+[1;36m|[m [1;32m|[m [1;34m|[m * [33m0fda666[m checkbox color change
+[1;36m|[m [1;32m|[m * [1;35m|[m [33m25ed45f[m Settings Component Done
+[1;36m|[m * [1;35m|[m [1;35m|[m   [33m89ab74c[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m [1;36m|[m[1;35m\[m [1;35m\[m [1;35m\[m  
+[1;36m|[m [1;36m|[m [1;35m|[m [1;35m|[m[1;35m/[m  
+[1;36m|[m [1;36m|[m [1;35m|[m[1;35m/[m[1;35m|[m   
+[1;36m|[m * [1;35m|[m [1;35m|[m   [33m1b378b0[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m [32m|[m[33m\[m [1;35m\[m [1;35m\[m  
+[1;36m|[m * [33m\[m [1;35m\[m [1;35m\[m   [33mc3e0ca7[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m [34m|[m[35m\[m [33m\[m [1;35m\[m [1;35m\[m  
+[1;36m|[m * [35m\[m [33m\[m [1;35m\[m [1;35m\[m   [33m7a3449c[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m [36m|[m[1;31m\[m [35m\[m [33m\[m [1;35m\[m [1;35m\[m  
+[1;36m|[m * [1;31m\[m [35m\[m [33m\[m [1;35m\[m [1;35m\[m   [33mfb184e4[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m [1;32m|[m[1;33m\[m [1;31m\[m [35m\[m [33m\[m [1;35m\[m [1;35m\[m  
+[1;36m|[m * [1;33m|[m [1;31m|[m [35m|[m [33m|[m [1;35m|[m [1;35m|[m [33mfa040ab[m Added moment lib
+* [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33m|[m [1;35m|[m [1;35m|[m [33m1d9f67f[m Some Changes
+[1;35m|[m [1;33m|[m[1;35m_[m[1;33m|[m[1;35m_[m[1;31m|[m[1;35m_[m[35m|[m[1;35m_[m[33m|[m[1;35m/[m [1;35m/[m  
+[1;35m|[m[1;35m/[m[1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33m|[m [1;35m|[m   
+* [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33m|[m [1;35m|[m   [33mb27f6f3[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m[1;35m\[m [1;33m\[m [1;33m\[m [1;31m\[m [35m\[m [33m\[m [1;35m\[m  
+[1;34m|[m * [1;33m\[m [1;33m\[m [1;31m\[m [35m\[m [33m\[m [1;35m\[m   [33m59df86e[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m [1;36m|[m[1;35m\[m [1;33m\[m [1;33m\[m [1;31m\[m [35m\[m [33m\[m [1;35m\[m  
+[1;34m|[m [1;36m|[m [1;35m|[m [1;33m|[m[1;35m_[m[1;33m|[m[1;35m_[m[1;31m|[m[1;35m_[m[35m|[m[1;35m_[m[33m|[m[1;35m/[m  
+[1;34m|[m [1;36m|[m [1;35m|[m[1;35m/[m[1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33m|[m   
+[1;34m|[m [1;36m|[m * [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33m|[m   [33mbf3ed2a[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m [1;36m|[m [32m|[m[33m\[m [1;33m\[m [1;33m\[m [1;31m\[m [35m\[m [33m\[m  
+[1;34m|[m [1;36m|[m * [33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33m|[m [33mdd7d275[m fellowship Completed
+[1;34m|[m [1;36m|[m [33m|[m [33m|[m[33m_[m[1;33m|[m[33m_[m[1;33m|[m[33m_[m[1;31m|[m[33m_[m[35m|[m[33m/[m  
+[1;34m|[m [1;36m|[m [33m|[m[33m/[m[33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m   
+[1;34m|[m * [33m|[m [33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m   [33m2e0a6a5[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m [34m|[m[33m\[m [33m\[m [33m\[m [1;33m\[m [1;33m\[m [1;31m\[m [35m\[m  
+[1;34m|[m [34m|[m [33m|[m [33m|[m[33m/[m [1;33m/[m [1;33m/[m [1;31m/[m [35m/[m  
+[1;34m|[m [34m|[m [33m|[m[33m/[m[33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m   
+[1;34m|[m [34m|[m * [33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33m0b5408b[m issues of browsers are resolved also some changes in design
+[1;34m|[m [34m|[m [36m|[m[33m\[m[33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m 
+[1;34m|[m [34m|[m [36m|[m * [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m   [33m98eb221[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m [34m|[m [36m|[m [1;32m|[m[1;33m\[m [1;33m\[m [1;33m\[m [1;31m\[m [35m\[m  
+[1;34m|[m [34m|[m [36m|[m * [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33md9e94b1[m some Changes
+[1;34m|[m [34m|[m * [1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33m523e821[m Issues of Browsers are solved
+[1;34m|[m * [1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33m78623d4[m added click function in onboarding
+* [1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33m99cc500[m design is done validations are pending
+[1;33m|[m [1;33m|[m[1;33m_[m[1;33m|[m[1;33m_[m[1;33m|[m[1;33m/[m [1;33m/[m [1;33m/[m [1;31m/[m [35m/[m  
+[1;33m|[m[1;33m/[m[1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m   
+* [1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33m1097f5d[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m[1;33m\[m[1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m 
+[1;34m|[m * [1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33m9f43ed2[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m [1;36m|[m[1;33m\[m[1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m 
+[1;34m|[m * [1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33me346340[m added tooltips in onboarding
+* [31m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m   [33mc6e8a98[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[32m|[m[1;33m\[m [31m\[m [1;33m\[m [1;33m\[m [1;33m\[m [1;33m\[m [1;31m\[m [35m\[m  
+[32m|[m [1;33m|[m [31m|[m[1;33m/[m [1;33m/[m [1;33m/[m [1;33m/[m [1;31m/[m [35m/[m  
+[32m|[m [1;33m|[m[1;33m/[m[31m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m   
+[32m|[m * [31m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m [33mb53a12f[m tootltip set to display details and some other changes
+[32m|[m * [31m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [35m|[m   [33meb9f3b2[m All scrolling bugs are fixed
+[32m|[m [34m|[m[35m\[m [31m\[m [1;33m\[m [1;33m\[m [1;33m\[m [1;31m\[m [35m\[m  
+[32m|[m [34m|[m [35m|[m [31m|[m[35m_[m[1;33m|[m[35m_[m[1;33m|[m[35m_[m[1;33m|[m[35m_[m[1;31m|[m[35m/[m  
+[32m|[m [34m|[m [35m|[m[35m/[m[31m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m   
+[32m|[m * [35m|[m [31m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33ma8bdf50[m all scrolling bugs are fixed
+* [35m|[m [35m|[m [31m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33m7b8379c[m done with most most of the changes but add more part is pending
+[35m|[m [35m|[m[35m/[m [31m/[m [1;33m/[m [1;33m/[m [1;33m/[m [1;31m/[m  
+[35m|[m[35m/[m[35m|[m [31m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m   
+* [35m|[m [31m|[m [1;33m|[m [1;33m|[m [1;33m|[m [1;31m|[m   [33m3548d21[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[36m|[m[1;33m\[m [35m\[m [31m\[m [1;33m\[m [1;33m\[m [1;33m\[m [1;31m\[m  
+[36m|[m [1;33m|[m [35m|[m[1;33m_[m[31m|[m[1;33m/[m [1;33m/[m [1;33m/[m [1;31m/[m  
+[36m|[m [1;33m|[m[1;33m/[m[35m|[m [31m|[m [1;33m|[m [1;33m|[m [1;31m|[m   
+[36m|[m * [35m|[m [31m|[m [1;33m|[m [1;33m|[m [1;31m|[m   [33m8b9f468[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[36m|[m [1;32m|[m[31m\[m [35m\[m [31m\[m [1;33m\[m [1;33m\[m [1;31m\[m  
+[36m|[m [1;32m|[m [31m|[m [35m|[m[31m/[m [1;33m/[m [1;33m/[m [1;31m/[m  
+[36m|[m [1;32m|[m [31m|[m[31m/[m[35m|[m [1;33m|[m [1;33m|[m [1;31m|[m   
+[36m|[m [1;32m|[m * [35m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33mf3b25a5[m changed upload button
+[36m|[m * [1;33m|[m [35m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33m28d10c0[m Dialog boxes
+[36m|[m [1;34m|[m[1;33m\[m[1;33m|[m [35m|[m [1;33m|[m [1;33m|[m [1;31m|[m 
+[36m|[m [1;34m|[m * [35m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33m1adea0a[m solved change password issue
+[36m|[m [1;34m|[m * [35m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33md59f34b[m solved search bar placeholderissue
+[36m|[m [1;34m|[m [1;36m|[m[35m\[m[35m|[m [1;33m|[m [1;33m|[m [1;31m|[m 
+[36m|[m [1;34m|[m * [35m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33m7a9d54a[m solved search bar placeholderissue
+[36m|[m * [31m|[m [35m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33meeec7be[m Dialog boxes
+* [31m|[m [31m|[m [35m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33m617906e[m done some css part
+[35m|[m [31m|[m[35m_[m[31m|[m[35m/[m [1;33m/[m [1;33m/[m [1;31m/[m  
+[35m|[m[35m/[m[31m|[m [31m|[m [1;33m|[m [1;33m|[m [1;31m|[m   
+* [31m|[m [31m|[m [1;33m|[m [1;33m|[m [1;31m|[m   [33mcf747d9[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[32m|[m[33m\[m [31m\[m [31m\[m [1;33m\[m [1;33m\[m [1;31m\[m  
+[32m|[m * [31m\[m [31m\[m [1;33m\[m [1;33m\[m [1;31m\[m   [33m32da499[m issues with scrolling are fixed
+[32m|[m [34m|[m[31m\[m [31m\[m [31m\[m [1;33m\[m [1;33m\[m [1;31m\[m  
+[32m|[m [34m|[m [31m|[m [31m|[m[31m/[m [1;33m/[m [1;33m/[m [1;31m/[m  
+[32m|[m [34m|[m [31m|[m[31m/[m[31m|[m [1;33m|[m [1;33m|[m [1;31m|[m   
+[32m|[m [34m|[m * [31m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33mcffd433[m solved search bar placeholderissue
+[32m|[m [34m|[m * [31m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33mc495c39[m solved issues in recuriment
+[32m|[m [34m|[m * [31m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33mea9a598[m working on onboarding component
+[32m|[m [34m|[m * [31m|[m [1;33m|[m [1;33m|[m [1;31m|[m   [33mf2d3022[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[32m|[m [34m|[m [36m|[m[1;31m\[m [31m\[m [1;33m\[m [1;33m\[m [1;31m\[m  
+[32m|[m [34m|[m * [1;31m|[m [31m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33m72132ad[m working on onboarding component
+[32m|[m [34m|[m * [1;31m|[m [31m|[m [1;33m|[m [1;33m|[m [1;31m|[m   [33mdd3e457[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[32m|[m [34m|[m [1;32m|[m[1;33m\[m [1;31m\[m [31m\[m [1;33m\[m [1;33m\[m [1;31m\[m  
+[32m|[m [34m|[m * [1;33m|[m [1;31m|[m [31m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33m8089d41[m working on onboarding component
+[32m|[m * [1;33m|[m [1;33m|[m [1;31m|[m [31m|[m [1;33m|[m [1;33m|[m [1;31m|[m [33m2613a2e[m scrolling isssues are fixed
+[32m|[m [1;31m|[m [1;33m|[m[1;31m_[m[1;33m|[m[1;31m_[m[1;31m|[m[1;31m_[m[31m|[m[1;31m_[m[1;33m|[m[1;31m_[m[1;33m|[m[1;31m/[m  
+[32m|[m [1;31m|[m[1;31m/[m[1;33m|[m [1;33m|[m [1;31m|[m [31m|[m [1;33m|[m [1;33m|[m   
+* [1;31m|[m [1;33m|[m [1;33m|[m [1;31m|[m [31m|[m [1;33m|[m [1;33m|[m [33m1580556[m done with requirement component small css part is remaining
+[1;31m|[m [1;31m|[m[1;31m_[m[1;33m|[m[1;31m_[m[1;33m|[m[1;31m/[m [31m/[m [1;33m/[m [1;33m/[m  
+[1;31m|[m[1;31m/[m[1;31m|[m [1;33m|[m [1;33m|[m [31m|[m [1;33m|[m [1;33m|[m   
+* [1;31m|[m [1;33m|[m [1;33m|[m [31m|[m [1;33m|[m [1;33m|[m [33m9bd608d[m assigned and unassigned dialog boxes are remaining
+[1;33m|[m [1;31m|[m[1;33m_[m[1;33m|[m[1;33m/[m [31m/[m [1;33m/[m [1;33m/[m  
+[1;33m|[m[1;33m/[m[1;31m|[m [1;33m|[m [31m|[m [1;33m|[m [1;33m|[m   
+* [1;31m|[m [1;33m|[m [31m|[m [1;33m|[m [1;33m|[m   [33m257ccdd[m one dialog box done
+[1;34m|[m[1;33m\[m [1;31m\[m [1;33m\[m [31m\[m [1;33m\[m [1;33m\[m  
+[1;34m|[m [1;33m|[m [1;31m|[m[1;33m/[m [31m/[m [1;33m/[m [1;33m/[m  
+[1;34m|[m [1;33m|[m[1;33m/[m[1;31m|[m [31m|[m [1;33m|[m [1;33m|[m   
+[1;34m|[m * [1;31m|[m [31m|[m [1;33m|[m [1;33m|[m [33m0759294[m solved issues in recuriment component
+[1;34m|[m * [1;31m|[m [31m|[m [1;33m|[m [1;33m|[m   [33m6acfc0d[m solved issues in recuriment component
+[1;34m|[m [1;36m|[m[31m\[m [1;31m\[m [31m\[m [1;33m\[m [1;33m\[m  
+[1;34m|[m [1;36m|[m [31m|[m [1;31m|[m[31m/[m [1;33m/[m [1;33m/[m  
+[1;34m|[m [1;36m|[m [31m|[m[31m/[m[1;31m|[m [1;33m|[m [1;33m|[m   
+[1;34m|[m [1;36m|[m * [1;31m|[m [1;33m|[m [1;33m|[m   [33m66a0c44[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m [1;36m|[m [32m|[m[33m\[m [1;31m\[m [1;33m\[m [1;33m\[m  
+[1;34m|[m [1;36m|[m * [33m|[m [1;31m|[m [1;33m|[m [1;33m|[m [33m75697e5[m dialog boxes added
+[1;34m|[m [1;36m|[m * [33m|[m [1;31m|[m [1;33m|[m [1;33m|[m   [33mf0fb9fe[m dialog boxes
+[1;34m|[m [1;36m|[m [34m|[m[35m\[m [33m\[m [1;31m\[m [1;33m\[m [1;33m\[m  
+[1;34m|[m [1;36m|[m * [35m|[m [33m|[m [1;31m|[m [1;33m|[m [1;33m|[m [33m095e843[m dialog boxes
+[1;34m|[m * [35m|[m [35m|[m [33m|[m [1;31m|[m [1;33m|[m [1;33m|[m [33md36ad01[m solved issues in recuriment component
+[1;34m|[m [33m|[m [35m|[m[33m_[m[35m|[m[33m/[m [1;31m/[m [1;33m/[m [1;33m/[m  
+[1;34m|[m [33m|[m[33m/[m[35m|[m [35m|[m [1;31m|[m [1;33m|[m [1;33m|[m   
+[1;34m|[m * [35m|[m [35m|[m [1;31m|[m [1;33m|[m [1;33m|[m   [33med0423e[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m [36m|[m[1;31m\[m [35m\[m [35m\[m [1;31m\[m [1;33m\[m [1;33m\[m  
+[1;34m|[m [36m|[m [1;31m|[m [35m|[m[1;31m_[m[35m|[m[1;31m/[m [1;33m/[m [1;33m/[m  
+[1;34m|[m [36m|[m [1;31m|[m[1;31m/[m[35m|[m [35m|[m [1;33m|[m [1;33m|[m   
+[1;34m|[m [36m|[m * [35m|[m [35m|[m [1;33m|[m [1;33m|[m   [33mdc049b4[m color of button fixed,anchor tag added for makers program and some other issues are dione
+[1;34m|[m [36m|[m [1;32m|[m[1;33m\[m [35m\[m [35m\[m [1;33m\[m [1;33m\[m  
+[1;34m|[m [36m|[m * [1;33m|[m [35m|[m [35m|[m [1;33m|[m [1;33m|[m [33mece517e[m color of save and complete button is changed,link added to makers program and some other issues solved
+[1;34m|[m * [1;33m|[m [1;33m|[m [35m|[m [35m|[m [1;33m|[m [1;33m|[m [33m21dc919[m working on onboarding component
+[1;34m|[m [1;33m|[m [1;33m|[m[1;33m/[m [35m/[m [35m/[m [1;33m/[m [1;33m/[m  
+[1;34m|[m [1;33m|[m[1;33m/[m[1;33m|[m [35m|[m [35m|[m [1;33m|[m [1;33m|[m   
+[1;34m|[m * [1;33m|[m [35m|[m [35m|[m [1;33m|[m [1;33m|[m [33m3c4601b[m working on onboarding component
+[1;34m|[m [35m|[m [1;33m|[m[35m_[m[35m|[m[35m/[m [1;33m/[m [1;33m/[m  
+[1;34m|[m [35m|[m[35m/[m[1;33m|[m [35m|[m [1;33m|[m [1;33m|[m   
+[1;34m|[m * [1;33m|[m [35m|[m [1;33m|[m [1;33m|[m [33mfaa41b3[m added new feilds in both excel components
+[1;34m|[m * [1;33m|[m [35m|[m [1;33m|[m [1;33m|[m [33m5cdf125[m added new feilds in both excel components
+[1;34m|[m [1;33m|[m [1;33m|[m[1;33m_[m[35m|[m[1;33m_[m[1;33m|[m[1;33m/[m  
+[1;34m|[m [1;33m|[m[1;33m/[m[1;33m|[m [35m|[m [1;33m|[m   
+[1;34m|[m * [1;33m|[m [35m|[m [1;33m|[m [33m6932d2a[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m [1;34m|[m[1;33m\[m[1;33m|[m [35m|[m [1;33m|[m 
+[1;34m|[m [1;34m|[m * [35m|[m [1;33m|[m [33m5342c0a[m Unassigned, Assigned and Completed of Assignment component  almost completed
+[1;34m|[m * [1;35m|[m [35m|[m [1;33m|[m [33mb42d085[m added new feilds in excel upload
+[1;34m|[m [1;35m|[m[1;35m/[m [35m/[m [1;33m/[m  
+[1;34m|[m * [35m|[m [1;33m|[m   [33mde05618[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m [1;36m|[m[31m\[m [35m\[m [1;33m\[m  
+[1;34m|[m * [31m|[m [35m|[m [1;33m|[m [33me71e854[m solved issues in home page
+* [31m|[m [31m|[m [35m|[m [1;33m|[m [33m11ee296[m one dialog box done
+[31m|[m [31m|[m[31m/[m [35m/[m [1;33m/[m  
+[31m|[m[31m/[m[31m|[m [35m|[m [1;33m|[m   
+* [31m|[m [35m|[m [1;33m|[m [33me3bc81b[m one dialogbox half done
+[32m|[m[31m\[m[31m|[m [35m|[m [1;33m|[m 
+[32m|[m * [35m|[m [1;33m|[m [33m3d819f6[m changed component name
+[32m|[m [34m|[m[35m\[m[35m|[m [1;33m|[m 
+[32m|[m [34m|[m * [1;33m|[m   [33m2b38170[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[32m|[m [34m|[m [36m|[m[1;31m\[m [1;33m\[m  
+[32m|[m [34m|[m * [1;31m|[m [1;33m|[m [33m91967f8[m Fellowship component changes
+[32m|[m * [1;31m|[m [1;31m|[m [1;33m|[m [33mc435a81[m changed component name
+* [1;31m|[m [1;31m|[m [1;31m|[m [1;33m|[m [33mbedbb57[m one dialogbox half done
+[1;31m|[m [1;31m|[m[1;31m_[m[1;31m|[m[1;31m/[m [1;33m/[m  
+[1;31m|[m[1;31m/[m[1;31m|[m [1;31m|[m [1;33m|[m   
+* [1;31m|[m [1;31m|[m [1;33m|[m   [33m982782d[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;32m|[m[1;33m\[m [1;31m\[m [1;31m\[m [1;33m\[m  
+[1;32m|[m * [1;31m\[m [1;31m\[m [1;33m\[m   [33m26d9d0a[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;32m|[m [1;34m|[m[1;33m\[m [1;31m\[m [1;31m\[m [1;33m\[m  
+[1;32m|[m [1;34m|[m [1;33m|[m [1;31m|[m[1;33m_[m[1;31m|[m[1;33m/[m  
+[1;32m|[m [1;34m|[m [1;33m|[m[1;33m/[m[1;31m|[m [1;31m|[m   
+[1;32m|[m [1;34m|[m * [1;31m|[m [1;31m|[m [33m3f5d5c4[m API integration completed for recruitment module
+[1;32m|[m * [1;35m|[m [1;31m|[m [1;31m|[m [33m83f6dd1[m Some changes in assignment
+[1;32m|[m [1;35m|[m[1;35m/[m [1;31m/[m [1;31m/[m  
+[1;32m|[m * [1;31m|[m [1;31m|[m [33mc6e9e1f[m Added assignment module
+[1;32m|[m * [1;31m|[m [1;31m|[m [33m30ed280[m Integrated resend mail
+[1;32m|[m * [1;31m|[m [1;31m|[m   [33m7bcfc58[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;32m|[m [1;36m|[m[1;31m\[m [1;31m\[m [1;31m\[m  
+[1;32m|[m [1;36m|[m [1;31m|[m [1;31m|[m[1;31m/[m  
+[1;32m|[m [1;36m|[m [1;31m|[m[1;31m/[m[1;31m|[m   
+[1;32m|[m * [1;31m|[m [1;31m|[m [33mca9c124[m Integrated update status API
+[1;32m|[m [1;31m|[m [1;31m|[m[1;31m/[m  
+[1;32m|[m [1;31m|[m[1;31m/[m[1;31m|[m   
+* [1;31m|[m [1;31m|[m [33m539c941[m requirement only cards design done
+* [1;31m|[m [1;31m|[m   [33m597bbc5[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[32m|[m[1;31m\[m [1;31m\[m [1;31m\[m  
+[32m|[m [1;31m|[m [1;31m|[m[1;31m/[m  
+[32m|[m [1;31m|[m[1;31m/[m[1;31m|[m   
+[32m|[m * [1;31m|[m [33mcfcd6ba[m [1;5BMerge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[32m|[m [34m|[m[1;31m\[m[1;31m|[m 
+[32m|[m * [1;31m|[m [33m854a477[m fellowship page Started
+* [35m|[m [1;31m|[m   [33mf4136ae[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[36m|[m[1;31m\[m [35m\[m [1;31m\[m  
+[36m|[m [1;31m|[m [35m|[m[1;31m/[m  
+[36m|[m [1;31m|[m[1;31m/[m[35m|[m   
+[36m|[m * [35m|[m   [33m7c133c8[m added validation on add canditate component
+[36m|[m [1;32m|[m[1;33m\[m [35m\[m  
+[36m|[m [1;32m|[m * [35m|[m [33m581fa3c[m WIP integration for candidate resend mail.
+[36m|[m [1;32m|[m * [35m|[m [33m7b37713[m Integrated view candidate details
+[36m|[m [1;32m|[m * [35m|[m [33mcafa2eb[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[36m|[m [1;32m|[m [1;34m|[m[35m\[m[35m|[m 
+[36m|[m [1;32m|[m [1;34m|[m *   [33m3a097b9[m ScrollBar added
+[36m|[m [1;32m|[m [1;34m|[m [1;36m|[m[31m\[m  
+[36m|[m [1;32m|[m [1;34m|[m * [31m|[m [33mee6f2df[m ScrollBar added
+[36m|[m [1;32m|[m [1;34m|[m * [31m|[m   [33m3c5a10d[m minor changes
+[36m|[m [1;32m|[m [1;34m|[m [32m|[m[33m\[m [31m\[m  
+[36m|[m [1;32m|[m [1;34m|[m * [33m\[m [31m\[m   [33m8092650[m minor changes
+[36m|[m [1;32m|[m [1;34m|[m [34m|[m[35m\[m [33m\[m [31m\[m  
+[36m|[m [1;32m|[m [1;34m|[m * [35m|[m [33m|[m [31m|[m [33md5adad2[m Minor Configuration changes
+[36m|[m [1;32m|[m * [35m|[m [35m|[m [33m|[m [31m|[m [33m686bd39[m Integration completed for get candidate list
+[36m|[m [1;32m|[m * [35m|[m [35m|[m [33m|[m [31m|[m [33m76047a3[m Integration completed for add candidates
+[36m|[m [1;32m|[m * [35m|[m [35m|[m [33m|[m [31m|[m   [33m0309951[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[36m|[m [1;32m|[m [36m|[m[31m\[m [35m\[m [35m\[m [33m\[m [31m\[m  
+[36m|[m [1;32m|[m [36m|[m [31m|[m [35m|[m[31m_[m[35m|[m[31m_[m[33m|[m[31m/[m  
+[36m|[m [1;32m|[m [36m|[m [31m|[m[31m/[m[35m|[m [35m|[m [33m|[m   
+[36m|[m [1;32m|[m [36m|[m * [35m|[m [35m|[m [33m|[m [33m115d670[m solve error dialog isuue
+[36m|[m [1;32m|[m [36m|[m * [35m|[m [35m|[m [33m|[m [33md167407[m solve error dialog isuue
+[36m|[m [1;32m|[m * [1;31m|[m [35m|[m [35m|[m [33m|[m [33mfcaa409[m WIP upload users
+[36m|[m [1;32m|[m * [1;31m|[m [35m|[m [35m|[m [33m|[m [33ma724560[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[36m|[m [1;32m|[m [1;32m|[m[1;31m\[m[1;31m|[m [35m|[m [35m|[m [33m|[m 
+[36m|[m [1;32m|[m [1;32m|[m * [35m|[m [35m|[m [33m|[m   [33m764859f[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[36m|[m [1;32m|[m [1;32m|[m [1;34m|[m[1;35m\[m [35m\[m [35m\[m [33m\[m  
+[36m|[m [1;32m|[m [1;32m|[m * [1;35m|[m [35m|[m [35m|[m [33m|[m [33md5f14ec[m excel error dialog done
+[36m|[m [1;32m|[m * [1;35m|[m [1;35m|[m [35m|[m [35m|[m [33m|[m [33m0cc2881[m WIP integration of recruitment
+[36m|[m [1;32m|[m [35m|[m [1;35m|[m[35m_[m[1;35m|[m[35m_[m[35m|[m[35m/[m [33m/[m  
+[36m|[m [1;32m|[m [35m|[m[35m/[m[1;35m|[m [1;35m|[m [35m|[m [33m|[m   
+[36m|[m * [35m|[m [1;35m|[m [1;35m|[m [35m|[m [33m|[m [33m98ad451[m added validation on add canditate component
+[36m|[m [1;35m|[m [35m|[m[1;35m_[m[1;35m|[m[1;35m/[m [35m/[m [33m/[m  
+[36m|[m [1;35m|[m[1;35m/[m[35m|[m [1;35m|[m [35m|[m [33m|[m   
+[36m|[m * [35m|[m [1;35m|[m [35m|[m [33m|[m [33mce6526a[m added scroll in recuriment
+[36m|[m [1;35m|[m [35m|[m[1;35m/[m [35m/[m [33m/[m  
+[36m|[m [1;35m|[m[1;35m/[m[35m|[m [35m|[m [33m|[m   
+[36m|[m * [35m|[m [35m|[m [33m|[m [33m5cb0243[m added scroll in recuriment
+[36m|[m * [35m|[m [35m|[m [33m|[m   [33ma00ae09[m added scroll in recuriment
+[36m|[m [1;36m|[m[31m\[m [35m\[m [35m\[m [33m\[m  
+[36m|[m [1;36m|[m * [35m|[m [35m|[m [33m|[m [33md97165e[m excel file upload validation
+[36m|[m [1;36m|[m * [35m|[m [35m|[m [33m|[m   [33mbd7c666[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[36m|[m [1;36m|[m [32m|[m[33m\[m [35m\[m [35m\[m [33m\[m  
+[36m|[m [1;36m|[m [32m|[m [33m|[m [35m|[m[33m_[m[35m|[m[33m/[m  
+[36m|[m [1;36m|[m [32m|[m [33m|[m[33m/[m[35m|[m [35m|[m   
+[36m|[m [1;36m|[m * [33m|[m [35m|[m [35m|[m [33m2534a6b[m excel error dialog
+[36m|[m * [33m|[m [33m|[m [35m|[m [35m|[m [33m96b685d[m added scroll in recuriment
+[36m|[m * [33m|[m [33m|[m [35m|[m [35m|[m [33me3776fe[m added scroll in recuriment
+[36m|[m [33m|[m [33m|[m[33m/[m [35m/[m [35m/[m  
+[36m|[m [33m|[m[33m/[m[33m|[m [35m|[m [35m|[m   
+[36m|[m * [33m|[m [35m|[m [35m|[m   [33m517cc92[m added scroll for recuriment
+[36m|[m [34m|[m[35m\[m [33m\[m [35m\[m [35m\[m  
+[36m|[m [34m|[m [35m|[m [33m|[m[35m/[m [35m/[m  
+[36m|[m [34m|[m [35m|[m[35m/[m[33m|[m [35m|[m   
+[36m|[m [34m|[m * [33m|[m [35m|[m   [33m2817c3d[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[36m|[m [34m|[m [36m|[m[35m\[m [33m\[m [35m\[m  
+[36m|[m [34m|[m [36m|[m [35m|[m [33m|[m[35m/[m  
+[36m|[m [34m|[m [36m|[m [35m|[m[35m/[m[33m|[m   
+[36m|[m [34m|[m * [35m|[m [33m|[m [33m10bdd2c[m Added loader and utility service
+[36m|[m * [1;31m|[m [35m|[m [33m|[m [33m45acb36[m added scroll to cards
+[36m|[m * [1;31m|[m [35m|[m [33m|[m [33md736621[m working on recuriment component
+[36m|[m * [1;31m|[m [35m|[m [33m|[m [33m13c7b55[m working on recuriment component
+* [1;31m|[m [1;31m|[m [35m|[m [33m|[m   [33m625f690[m Lms
+[1;32m|[m[35m\[m [1;31m\[m [1;31m\[m [35m\[m [33m\[m  
+[1;32m|[m [35m|[m [1;31m|[m[35m_[m[1;31m|[m[35m/[m [33m/[m  
+[1;32m|[m [35m|[m[35m/[m[1;31m|[m [1;31m|[m [33m|[m   
+[1;32m|[m * [1;31m|[m [1;31m|[m [33m|[m [33m0cc38ef[m Minor Configuration changes
+[1;32m|[m * [1;31m|[m [1;31m|[m [33m|[m   [33mf6041fd[m Minor Configuration changes
+[1;32m|[m [1;34m|[m[1;31m\[m [1;31m\[m [1;31m\[m [33m\[m  
+[1;32m|[m [1;34m|[m [1;31m|[m [1;31m|[m[1;31m/[m [33m/[m  
+[1;32m|[m [1;34m|[m [1;31m|[m[1;31m/[m[1;31m|[m [33m|[m   
+[1;32m|[m [1;34m|[m * [1;31m|[m [33m|[m [33m5eb87b0[m Fixed conflicts
+[1;32m|[m [1;34m|[m * [1;31m|[m [33m|[m [33m6797365[m Fixed conflicts
+[1;32m|[m [1;34m|[m [1;36m|[m[1;31m\[m[1;31m|[m [33m|[m 
+[1;32m|[m [1;34m|[m [1;36m|[m * [33m|[m   [33m41bfe01[m working on recuriment component
+[1;32m|[m [1;34m|[m [1;36m|[m [32m|[m[33m\[m [33m\[m  
+[1;32m|[m [1;34m|[m [1;36m|[m * [33m|[m [33m|[m [33mf884310[m working on recuriment component
+[1;32m|[m [1;34m|[m * [33m|[m [33m|[m [33m|[m [33m005ca04[m Fixed the text ellipsis
+[1;32m|[m [1;34m|[m [33m|[m [33m|[m[33m/[m [33m/[m  
+[1;32m|[m [1;34m|[m [33m|[m[33m/[m[33m|[m [33m|[m   
+[1;32m|[m [1;34m|[m * [33m|[m [33m|[m [33mb9a7c25[m Made changes in module import and style.css
+[1;32m|[m * [33m|[m [33m|[m [33m|[m [33m22109c4[m Minor to configuratin
+[1;32m|[m [33m|[m[33m/[m [33m/[m [33m/[m  
+* [33m/[m [33m/[m [33m/[m [33m541e14d[m minor changes in configuration
+[33m|[m[33m/[m [33m/[m [33m/[m  
+* [33m|[m [33m|[m   [33mc231475[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[34m|[m[33m\[m [33m\[m [33m\[m  
+[34m|[m [33m|[m [33m|[m[33m/[m  
+[34m|[m [33m|[m[33m/[m[33m|[m   
+[34m|[m * [33m|[m   [33m494214c[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[34m|[m [36m|[m[1;31m\[m [33m\[m  
+[34m|[m * [1;31m|[m [33m|[m [33m8fc4e3d[m excel uploade commit 2
+* [1;31m|[m [1;31m|[m [33m|[m [33ma874939[m third card done in dialog box some part is remaining
+[1;31m|[m [1;31m|[m[1;31m/[m [33m/[m  
+[1;31m|[m[1;31m/[m[1;31m|[m [33m|[m   
+* [1;31m|[m [33m|[m [33ma03b555[m conflicts solved
+[1;32m|[m[1;31m\[m[1;31m|[m [33m|[m 
+[1;32m|[m * [33m|[m [33ma3eaa41[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;32m|[m [1;34m|[m[33m\[m[33m|[m 
+[1;32m|[m * [33m|[m [33m9e0b619[m excel upload
+* [1;35m|[m [33m|[m   [33mbacce82[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;36m|[m[33m\[m [1;35m\[m [33m\[m  
+[1;36m|[m [33m|[m [1;35m|[m[33m/[m  
+[1;36m|[m [33m|[m[33m/[m[1;35m|[m   
+[1;36m|[m * [1;35m|[m [33mdb1bb44[m working on recuriment
+[1;36m|[m [1;35m|[m[1;35m/[m  
+* [1;35m/[m [33m657f11e[m configuration some css part is remaining
+[1;35m|[m[1;35m/[m  
+* [33mca21eec[m candidate dialog partially done1
+*   [33mba13ae3[m candidate dialoge conflicts solve
+[32m|[m[33m\[m  
+[32m|[m * [33mbfd6b0c[m configuration small card part half done
+[32m|[m * [33m777da22[m working on recuriment component
+[32m|[m *   [33mec02fa2[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[32m|[m [34m|[m[35m\[m  
+[32m|[m [34m|[m * [33m9717aa3[m Added hiring service and changed the environment file
+[32m|[m * [35m|[m [33md39f3e7[m working on recuriment component
+* [35m|[m [35m|[m [33m7a62b3f[m candidate dialoge conflicts solve
+* [35m|[m [35m|[m [33m65847a5[m candidate dialog partially done
+[35m|[m [35m|[m[35m/[m  
+[35m|[m[35m/[m[35m|[m   
+* [35m|[m [33m43b7fe8[m candidate dialoge conflicts solve
+[36m|[m[35m\[m[35m|[m 
+[36m|[m * [33mfa556b1[m working on recuriment component
+[36m|[m *   [33mbb07a51[m working on recuriment component
+[36m|[m [1;32m|[m[1;33m\[m  
+[36m|[m * [1;33m|[m [33ma21e90f[m working on recuriment component
+[36m|[m * [1;33m|[m [33me9834a9[m working on studentdetails component
+* [1;33m|[m [1;33m|[m [33m57dc122[m candidate dialog process
+[1;33m|[m [1;33m|[m[1;33m/[m  
+[1;33m|[m[1;33m/[m[1;33m|[m   
+* [1;33m|[m [33m2607e47[m Merge branch 'dev' of https://github.com/BridgeLabzSource/LMSAdmin into dev
+[1;34m|[m[1;33m\[m[1;33m|[m 
+[1;34m|[m * [33m140c86e[m solved home component issue
+[1;34m|[m *   [33m3a28b25[m solved home issue
+[1;34m|[m [1;36m|[m[31m\[m  
+[1;34m|[m * [31m|[m [33md6027c9[m solved dashboard issue
+* [31m|[m [31m|[m [33m027f8d0[m candidate dialog ui process
+[31m|[m [31m|[m[31m/[m  
+[31m|[m[31m/[m[31m|[m   
+* [31m|[m [33mb16a1a4[m onboarding dialogbox process
+[32m|[m[31m\[m[31m|[m 
+[32m|[m * [33mf70c63d[m working on requriment component
+[32m|[m *   [33mde4bc30[m working on requriment component
+[32m|[m [34m|[m[35m\[m  
+[32m|[m * [35m|[m [33m63c0cad[m working on requriment component
+* [35m|[m [35m|[m [33mfe53a14[m on boarding dialog box started
+[35m|[m [35m|[m[35m/[m  
+[35m|[m[35m/[m[35m|[m   
+* [35m|[m [33m612a162[m onboard update
+[36m|[m[35m\[m[35m|[m 
+[36m|[m * [33mf297251[m working on recuriment component
+[36m|[m * [33meb419b4[m working on recuriment component
+* [1;31m|[m [33mb01f930[m on boarding card design done
+* [1;31m|[m [33m5dbc3b3[m onBoarding process
+[1;31m|[m[1;31m/[m  
+* [33me5a648b[m working on recuriment component
+* [33m1958d43[m need to add flex to recuriment component
+* [33mab1170a[m working on recruitment component
+* [33m3375d1c[m add flex to search bar
+* [33m20b0b44[m working on search bar component
+* [33mfcd5bf4[m working with search bar component
+* [33mc4d803f[m working with editprofile component
+* [33mc4ded4a[m working with change password component
+* [33mfa24bc9[m working with change password component
+* [33mb7be851[m working with change password component
+* [33mdedcea9[m working with changepassword component
+* [33m9f36f3e[m fixed errors in login
+* [33mc4bf487[m working with home component

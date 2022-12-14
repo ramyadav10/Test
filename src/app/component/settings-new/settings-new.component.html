@@ -1,0 +1,146 @@
+<!-- <div> -->
+<div style="display: grid;" class="parent-div" id="setting-slider">
+  <div class="child-div1">
+    <mat-card class="card1">
+      <div class="upperdiv" fxLayout="row" fxLayoutAlign="space-between start">
+        <div class="headCount" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+          <div class="heading">Tech Stack</div>
+          <div class="num-div">
+            {{techStackCount}}
+          </div>
+        </div>
+        <mat-icon class="icon" matTooltip="Add Tech Stack" (click)="dialogtechstack()">add</mat-icon>
+      </div>
+
+      <div fxLayout="row wrap" class="supertechtype1">
+        <div *ngFor="let items of techstackData" class="techTypeDiv">
+
+          <div class="colabs-img-btn">
+            <div class="subdiv5">
+              <!-- <img class="imageDiv" src="../../../assets/images/java-seeklogo.com.svg"> -->
+              <img class="imageDiv" src={{s3BucketUrl+items?.imagePath}}>
+
+              
+              <div class="subdiv5" matTooltip="{{items?.techname}}">{{capitalizeSentenceWord(items?.techname)}}</div>
+            </div>
+            <button mat-icon-button [autofocus]="false" fxLayoutAlign="right" class="bbttnn"
+              [matMenuTriggerFor]="beforeMenu">
+              <mat-icon class="more-vert">more_vert</mat-icon>
+            </button>
+            <div [matMenuTriggerFor]="beforeMenu" class="bbttnn" style="height: fit-content; cursor: pointer;">
+              <!-- <img src="../../../assets/icons/ic_more_vert_24px.svg"> -->
+
+              <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item class="menu-button" (click)="updateTechStack(items)">
+                  <mat-icon class="edit">edit</mat-icon>
+                  Edit
+                </button>
+                <button mat-menu-item class="menu-button" (click)="openTechStackDeleteConfirmDialog(items.id)">
+                  <mat-icon class="edit">delete</mat-icon>
+                  Delete
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+          <!-- <div style="border-right:1px solid #C3C8CC;color: transparent;margin-right: 10px">l</div> -->
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="child-div2">
+    <mat-card class="card1">
+      <div class="upperdiv" fxLayout="row" fxLayoutAlign="space-between start">
+        <div class="headCount" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+          <div class="heading">Time Slots</div>
+          <div class="num-div">
+            {{timeSlotCount}}
+          </div>
+        </div>
+        <mat-icon class="icon" matTooltip="Add Tech Stack" (click)="openDialog()">add</mat-icon>
+      </div>
+
+      <div fxLayout="row wrap" fxLayoutGap="6px" class="supertechtype1">
+        <div fxLayout="row" fxLayoutAlign="space-evenly center" *ngFor="let slot of timeSlots" class="techTypeDivBottom">
+          <button mat-icon-button [autofocus]="false" fxLayoutAlign="end" class="bbttnn"
+            [matMenuTriggerFor]="beforeMenu">
+            <mat-icon class="more-vert">more_vert</mat-icon>
+          </button>
+          <div class="combineDivRight">
+            <div class="subdivSlot">
+              {{capitalizeFirstLetter(slot.slotName)}}
+            </div>
+            <div class="slotTimeDiv">{{capitalizeWords(slot.slotTime)}}</div>
+          </div>
+
+          <div [matMenuTriggerFor]="beforeMenu" class="bbttnn"
+            style="height: fit-content; cursor: pointer;align-self: flex-end;">
+            <!-- <img src="../../../assets/icons/ic_more_vert_24px.svg"> -->
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+              <button mat-menu-item class="menu-button" (click)="updateTimeSlot(slot)">
+                <mat-icon class="edit">edit</mat-icon>
+                Edit
+              </button>
+              <button mat-menu-item class="menu-button" (click)="openTimeSlotDeleteConfirmDialog(slot)">
+                <mat-icon class="edit">delete</mat-icon>
+                Delete
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="child-div3">
+    <mat-card class="card1">
+      <div class="upperdiv" fxLayout="row" fxLayoutAlign="space-between start">
+        <div class="headCount" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+          <div class="heading">Fellowship Program Types</div>
+          <div class="num-div">
+            {{programTypeCount}}
+          </div>
+        </div>
+        <mat-icon class="icon" matTooltip="Add Tech Stack" (click)="addProgramType()">add</mat-icon>
+      </div>
+
+      <div fxLayout="row wrap" fxLayoutGap="6px" class="supertechtype1">
+        <div fxLayout="row" fxLayoutAlign="space-evenly center" *ngFor="let programType of programTypes"
+          class="techTypeDivBottom">
+          <button mat-icon-button [autofocus]="false" fxLayoutAlign="end" class="bbttnn"
+            [matMenuTriggerFor]="beforeMenu">
+            <mat-icon class="more-vert">more_vert</mat-icon>
+          </button>
+          <div class="combineDiv">
+            <div class="shortNameDiv">{{programType.acronym}}</div>
+            <div class="descDiv" matTooltipPosition="below" matTooltip={{programType.description}}>
+              {{capitalizeSentenceWord(programType.name)}}
+            </div>
+          </div>
+
+          <div [matMenuTriggerFor]="beforeMenu" class="bbttnn"
+            style="height: fit-content; cursor: pointer;align-self: flex-end;">
+            <!-- <img src="../../../assets/icons/ic_more_vert_24px.svg"> -->
+
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+              <button mat-menu-item class="menu-button" (click)="updateProgramType(programType)">
+                <mat-icon class="edit">edit</mat-icon>
+                Edit
+              </button>
+              <button mat-menu-item class="menu-button" (click)="openProgramTypeDeleteConfirmDialog(programType.id)">
+                <mat-icon class="edit">delete</mat-icon>
+                Delete
+              </button>
+            </mat-menu>
+          </div>
+
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<!-- <div fxLayout="row" fxLayoutAlign="start" style="margin: 2% 2.9% 0px 2.9%">
+    
+  </div> -->
+<!-- </div> -->

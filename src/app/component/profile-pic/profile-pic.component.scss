@@ -1,0 +1,41 @@
+.header {
+    font-size: 22px;
+    margin-left: 4%;
+
+}
+
+:host ::ng-deep .mat-dialog-container {
+
+    height: fit-content;
+}
+
+.set-profile-button {
+    margin-right: 20px;
+    font-size: 11px;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 550;
+    background: #4D90FE;
+    border: 0ch;
+    color: #fff;
+}
+
+.cancel-button {
+    font-size: 11px;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 550;
+    border: 0ch;
+}
+
+.selectPicButton {
+    font-size: 12px;
+    font-weight: 600;
+
+}
+
+.footer-btns {
+    margin: 2%;
+}
+
+.image-cropper-main-div {
+    margin-bottom: 6%;
+}

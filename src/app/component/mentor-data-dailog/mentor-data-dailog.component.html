@@ -1,0 +1,79 @@
+<div class="maindiv">
+    <div class="topdiv" fxLayoutAlign="center center">New Mentor</div>
+   
+        <div  style="margin-top: 7px" fxLayout="column" fxLayoutAlign=" center" fxLayoutGap="1%">
+        <div class="imageContent" fxLayout="column" fxLayoutAlign="center center">
+          <div *ngIf="imageSource == null" class="ImageIcon"><img (click)="editProfilePic()" src='../../../assets/images/user-silhouette.svg'></div>
+          <div  *ngIf="imageSource !== null"  ><img class="profile-pic" (click)="editProfilePic()" src= {{imageSource}}></div>
+        <div class="imagetext">Image type not exceeding 3MB</div>
+</div>
+        <div> 
+    <mat-form-field appearance="outline" class="firstfield">
+        <mat-label>Mentor Name</mat-label>
+        <input matInput  [formControl] ="mentorName" >
+        <mat-error *ngIf="mentorName.invalid" style="margin-top: -2px;">Enter Mentor Name</mat-error>
+      </mat-form-field>
+    </div>
+    <div  fxLayout="row" fxLayoutAlign=" center"  >
+
+      <mat-button-toggle-group class="button">
+        <mat-button-toggle  [ngClass]=" (buttontoggle === 'Lead') ? 'unselected':'selected'"
+        style="font-size: 16px; font-weight: normal"  fxLayoutAlign="center center" (click)="mentor('Lead')">Lead
+  
+    
+        </mat-button-toggle>
+        <mat-button-toggle  [ngClass]=" (buttontoggle === 'Mentor') ? 'unselected':'selected'"
+        style="font-size: 16px; font-weight: normal" (click)="mentor('Mentor')" fxLayoutAlign="center center">Engineer
+
+        </mat-button-toggle>
+        <mat-button-toggle  [ngClass]=" (buttontoggle === 'Buddy') ? 'unselected':'selected'"
+        style="font-size: 16px; font-weight: normal" (click)="mentor('Buddy')" fxLayoutAlign="center center">Buddy
+
+        </mat-button-toggle>
+        </mat-button-toggle-group>
+      
+         </div>
+         <div>
+           <div *ngIf="buttontoggle==='Lead'"></div>
+           <div *ngIf="buttontoggle==='Mentor' || buttontoggle==='Buddy' ">
+            <mat-form-field appearance="outline" class="secondfield">
+              <mat-label>Mentor</mat-label>
+      
+                <mat-select [formControl] ="mentorPost" required>
+                  <div class="select">
+                    <mat-option *ngFor="let mentorPost of mentors" [value]="mentorPost.value">{{mentorPost.viewValue}}</mat-option>
+                  </div>
+                </mat-select>
+                <mat-error *ngIf="mentorPost.invalid" style="margin-top: -2px;">Please Select</mat-error>
+            </mat-form-field>
+           </div>
+         </div>
+
+
+
+         <div class="techstackName">Tech Stack</div>
+         <div>
+            <mat-form-field class="demo-chip-list">
+                <mat-chip-list #chipList>
+                  <mat-chip *ngFor="let keyword of keywords" [selectable]="selectable"
+                           [removable]="removable" (remove)="remove(keyword)">
+                    {{keyword}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                  </mat-chip>
+                  <input 
+                         [matChipInputFor]="chipList"
+                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                         [matChipInputAddOnBlur]="addOnBlur"
+                         (matChipInputTokenEnd)="add($event)" />
+                </mat-chip-list>
+              </mat-form-field>
+              
+         </div>
+    
+        <div class="buttonClass"   fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px">
+          <button mat-button class="cancel" (click)="closeMentordata()" >Cancel</button>
+          <button mat-button color="primary" [disabled]="mentorName.invalid || mentorPost.invalid"  (click)="  createMentor()" >Create</button>
+        </div>
+        </div>
+  </div>
+  

@@ -1,0 +1,215 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <!-- <h1 class="example-app-name">Responsive App</h1> -->
+  <div>
+
+    <!-- <input placeholder="Search" class="search" [(ngModel)]="searchText" (input)="searchCandidate($event.target.value)"> -->
+    <mat-toolbar class="toolbar" fxLayout="row" style="justify-content: space-between">
+      <div class="logo-div" (click)="onToolbarMenuToogle()">
+        <img class="logo" src="../../../assets/images/BridgeLabzVirtual@2x.png" />
+      </div>
+      <!-- <app-search-bar *ngIf="showsearchbarinlearnercomponents" (output)="applyFilter($any($event))"></app-search-bar> -->
+      <!-- <div  style="margin-right: 50vw"> -->
+      <div class="form-group col-md-4">
+        <!-- <i class="material-icons" id="material-icons-1">search</i>
+          <input
+            type="text" (click)="applyFilter($any($event))" (keyup)="applyFilter($any($event))"
+            id="form-control-new"
+            class="form-control"
+            class="serchbarDiv"
+            placeholder="Search"
+            id="state"
+            name="state"
+          />
+          <mat-icon class="profile-img">clear</mat-icon> -->
+
+        <div class="nosubmit" *ngIf="showsearchbarinlearnercomponents">
+          <form>
+            <input class="nosubmit" type="search" (click)="applyFilter($any($event))"
+              (keyup)="applyFilter($any($event))" placeholder="Search..." />
+          </form>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <img src="../../../assets/images/index.jpeg" alt="image" matTooltip="Profile Picture" class="profile-img"
+          (click)="openProfileCard()" />
+      </div>
+    </mat-toolbar>
+    <mat-card *ngIf="openCard" class="logout-card" fxLayout="row" fxLayoutAlign="center center">
+      <div fxLayout="row" class="profile-con" fxLayoutAlign="center center">
+        <div class="div-logout">
+          <img src="../../../assets/images/index.jpeg" alt="profile" height="50px" width="50px"
+            class="profile-img-in-card" fxLayoutAlign="center center" />
+          <div id="name-dev">
+            <div class="dev-con-1">
+              <div class="name">
+                <p class="name-text">Venkat Reddy</p>
+              </div>
+              <div class="email" fxLayoutAlign="center center">
+                <p class="name-text">HRUser@bridgelabz.com</p>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div>
+              <div>
+                <button mat-button class="change-pwdbutton" (click)="openChangePasswordDialog()">
+                  Change Password
+                </button>
+                <button mat-button class="logout-button" (click)="logout()">
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="start center" class="edit-div">
+          <button mat-icon-button class="edit-button" (click)="openEditProfileDialog()" matTooltip="Edit Profile">
+            <mat-icon class="edit-icon">edit</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <mat-divider></mat-divider>
+  <div fxLayout="row">
+    <mat-sidenav-container class="mat-container" class="example-sidenav-container"
+      [style.marginTop.px]="mobileQuery.matches ? 56 : 0" style="height: calc(100vh - 78px)" fxFlex="100" autosize>
+      <mat-sidenav (click)="openCard = false" #snav id="snav" [mode]="mobileQuery.matches ? 'over' : 'side'"
+        [fixedInViewport]="mobileQuery.matches" fxFlex="100" fixedTopGap="56" opened [class.menu-close]="!isMenuOpen"
+        [class.menu-open]="isMenuOpen" class="sidenav sidenav-div" fxLayout="row" fxLayoutAlign="space-around center"
+        autosize>
+        <!-- <div (click)="sidenav.toggle()">
+        acbd
+      </div> -->
+        <div>
+          <!-- <div class="logo-div">
+              <img (click) = "toBatches()" class="logo" src="../../../assets/images/BridgeLabzVirtual@2x.png" >
+            </div>
+            <mat-divider></mat-divider> -->
+          <mat-nav-list [ngClass]="isMenuOpen ? 'open-menu-toogle' : 'close-menu-toogle'">
+            <a mat-list-item role="listitem" (click)="buttonSelected('Dashboard')" (click)="toDashboard()"
+              [ngClass]="applyColour == 'Dashboard' ? 'list-div' : 'list-div1'">
+              <div class="iconLabel">
+                <mat-icon class="icon" routerLinkActive="mat-accent">home
+                </mat-icon>
+                <p *ngIf="isMenuOpen" class="sidelist">Dashboard</p>
+              </div>
+            </a>
+
+            <a mat-list-item role="listitem" (click)="buttonSelected('Learners')" (click)="onLearnerShowsearchBar()"
+              (click)="toLearners()" [ngClass]="applyColour == 'Learners' ? 'list-div' : 'list-div1'">
+              <div class="iconLabel" (click)="onLearnerShowsearchBar()">
+                <mat-icon class="icon" (click)="onLearnerShowsearchBar()" routerLinkActive="mat-accent">school
+                </mat-icon>
+                <p *ngIf="isMenuOpen" class="sidelist" routerLink="/learners" (click)="onLearnerShowsearchBar()">
+                  Learners
+                </p>
+              </div>
+            </a>
+
+            <a mat-list-item role="listitem" (click)="buttonSelected('Home')" (click)="toBatches()"
+              [ngClass]="applyColour == 'Home' ? 'list-div' : 'list-div1'">
+              <div class="iconLabel">
+                <mat-icon class="icon" routerLinkActive="mat-accent">laptop
+                </mat-icon>
+
+                <p *ngIf="isMenuOpen" class="sidelist" routerLink="/batch/Trial">
+                  TFP
+                </p>
+              </div>
+            </a>
+
+            <a mat-list-item role="listitem" (click)="buttonSelected('RFP')" (click)="toRFPBatch()"
+              [ngClass]="applyColour == 'RFP' ? 'list-div' : 'list-div1'">
+              <div class="iconLabel">
+                <mat-icon class="icon" routerLinkActive="mat-accent">laptop
+                </mat-icon>
+                <p *ngIf="isMenuOpen" class="sidelist" routerLink="/batch/RFP">
+                  RFP
+                </p>
+              </div>
+            </a>
+
+            <a mat-list-item role="listitem" (click)="buttonSelected('LFP')" (click)="toLFPBatch()"
+              [ngClass]="applyColour == 'LFP' ? 'list-div' : 'list-div1'">
+              <div class="iconLabel">
+                <mat-icon class="icon" routerLinkActive="mat-accent">laptop
+                </mat-icon>
+                <p *ngIf="isMenuOpen" class="sidelist" routerLink="/batch/LFP">
+                  LFP
+                </p>
+              </div>
+            </a>
+
+            <a mat-list-item role="listitem" (click)="buttonSelected('CFP')" (click)="toCFPBatch()"
+              [ngClass]="applyColour == 'CFP' ? 'list-div' : 'list-div1'">
+              <div class="iconLabel">
+                <mat-icon class="icon" routerLinkActive="mat-accent">laptop
+                </mat-icon>
+                <p *ngIf="isMenuOpen" class="sidelist" routerLink="/batch/CFP">
+                  CFP
+                </p>
+              </div>
+            </a>
+
+            <a mat-list-item role="listitem" (click)="buttonSelected('CQA')" (click)="toCQABatch()"
+            [ngClass]="applyColour == 'CQA' ? 'list-div' : 'list-div1'">
+            <div class="iconLabel">
+              <mat-icon class="icon" routerLinkActive="mat-accent">laptop
+              </mat-icon>
+              <p *ngIf="isMenuOpen" class="sidelist" routerLink="/batch/CQA">
+                CQA
+              </p>
+            </div>
+          </a>
+
+            <a mat-list-item role="listitem" (click)="buttonSelected('Mentor')" (click)="toMentor()"
+              [ngClass]="applyColour == 'Mentor' ? 'list-div' : 'list-div1'">
+              <div class="iconLabel">
+                <img class="icon" src="../../../assets/images/worker.png" />
+
+                <p *ngIf="isMenuOpen" class="sidelist" routerLink="/mentor">
+                  Mentors
+                </p>
+              </div>
+            </a>
+            <a mat-list-item role="listitem" (click)="buttonSelected('Cooradinator')" (click)="toCoordinator()"
+              [ngClass]="
+                applyColour == 'Cooradinator' ? 'list-div' : 'list-div1'
+              ">
+              <div class="iconLabel">
+                <mat-icon class="icon" routerLinkActive="mat-accent">track_changes
+                </mat-icon>
+                <p *ngIf="isMenuOpen" class="sidelist">Coordinators</p>
+              </div>
+            </a>
+            <!-- <a mat-list-item role="listitem" (click)="buttonSelected('Companies')" (click)="toCompanies()"
+              [ngClass]="applyColour == 'Companies' ? 'list-div' : 'list-div1'">
+              <div class="iconLabel">
+                <mat-icon class="icon" routerLinkActive="mat-accent">apartment
+                </mat-icon>
+                <p *ngIf="isMenuOpen" class="sidelist">Companies</p>
+              </div>
+            </a> -->
+
+            <a mat-list-item role="listitem" (click)="buttonSelected('Settings')" (click)="toSettings()"
+              [ngClass]="applyColour == 'Settings' ? 'list-div' : 'list-div1'">
+              <div class="iconLabel">
+                <mat-icon class="icon" routerLinkActive="mat-accent">settings
+                </mat-icon>
+                <p *ngIf="isMenuOpen" class="sidelist">Settings</p>
+              </div>
+            </a>
+          </mat-nav-list>
+        </div>
+      </mat-sidenav>
+
+      <mat-sidenav-content [ngStyle]="{ 'margin-left.px': contentMargin }" class="sidenav-content sidenav-div"
+        fxFlex="100" fxLayout="column">
+        <div class="routerdiv" (click)="openCard = false">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>

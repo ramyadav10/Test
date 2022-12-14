@@ -1,0 +1,973 @@
+<!-- [abcd]='abcd' -->
+<app-display-batches [BatchArray]="listOfbatches"></app-display-batches>
+
+<div class="maind" fxLayout="column" fxFlex="100">
+  <div class="maindiv">
+    <div class="buttons">Batch Details</div>
+    <div
+      class="button-div"
+      fxFlex="60"
+      fxLayout="row"
+      fxLayoutAlign="space-between center">
+      <div floatLabel="never" class="search-div" fxLayout="row" fxFlex="72">
+        <div fxLayoutAlign="center center" class="search-icon-div">
+          <mat-icon matPrefix class="search-icon">search</mat-icon>
+        </div>
+
+        <input placeholder="Search"
+          class="search" [(ngModel)]="searchedWord"
+           />
+        <mat-icon
+          [matMenuTriggerFor]="beforeSearchMenu"
+          style="font-size: 16px; height: 16px; margin-top: 2%; color: #707070; cursor: pointer">
+          view_headline</mat-icon>
+        <mat-menu #beforeSearchMenu="matMenu" xPosition="before">
+          <button
+            mat-menu-item
+            [ngStyle]="{
+              color: searchBy === 'NAME' ? 'blue' : 'rgba(0,0,0,.54)'
+            }"
+            (click)="applyFilterBatch('NAME')" (click)="searchByKeyword('NAME')"
+          >
+            Batch Name
+          </button>
+          <button
+            mat-menu-item
+            [ngStyle]="{
+              color: searchBy === 'TECHSTACK' ? 'blue' : 'rgba(0,0,0,.54)'
+            }"
+            (click)="applyFilterBatch('TECHSTACK')" (click)="searchByKeyword('TECHSTACK')"
+          >
+            Tech Stack
+          </button>
+          <button
+            mat-menu-item
+            [ngStyle]="{
+              color: searchBy === 'STARTDATE' ? 'blue' : 'rgba(0,0,0,.54)'
+            }"
+            (click)="applyFilterBatch('STARTDATE')" (click)="searchByKeyword('STARTDATE')"
+          >
+            Start Date
+          </button>
+          <button
+            mat-menu-item
+            [ngStyle]="{
+              color: searchBy === 'ENDDATE' ? 'blue' : 'rgba(0,0,0,.54)'
+            }"
+            (click)="applyFilterBatch('ENDDATE')" (click)="searchByKeyword('ENDDATE')"
+          >
+            End Date
+          </button>
+          <button
+            mat-menu-item
+            [ngStyle]="{
+              color: searchBy === 'PRACTICEHEAD' ? 'blue' : 'rgba(0,0,0,.54)'
+            }"
+            (click)="applyFilterBatch('PRACTICEHEAD')" (click)="searchByKeyword('PRACTICEHEAD')"
+          >
+            Practic Head
+          </button>
+          <button
+            mat-menu-item
+            [ngStyle]="{
+              color: searchBy === 'COORDINATOR' ? 'blue' : 'rgba(0,0,0,.54)'
+            }"
+            (click)="applyFilterBatch('COORDINATOR')" (click)="searchByKeyword('COORDINATOR')"
+          >
+            Co-ordinator
+          </button>
+          <button
+            mat-menu-item
+            [ngStyle]="{
+              color: searchBy === 'SESSIONTIME' ? 'blue' : 'rgba(0,0,0,.54)'
+            }"
+            (click)="applyFilterBatch('SESSIONTIME')" (click)="searchByKeyword('SESSIONTIME')"
+          >
+            Session TIme
+          </button>
+        </mat-menu>
+      </div>
+      
+        <button mat-raised-button class="bbtton s" (click)="openDialog()" style="margin-left: 35px; padding: 02px 12px;">
+          <mat-icon  class="icon leftmar" routerLinkActive="mat-accent"
+            >add</mat-icon>
+          New Batch
+        </button>
+     
+      <div (click)="changeView()" *ngIf="isGrid" style="cursor: pointer;margin-left: 28px;">
+        <img
+          src="../../../assets/icons/calendar_view_month_black_24dp.svg"
+          alt="" style="margin-top:6px;"
+        />
+      </div>
+      <div (click)="changeView()" *ngIf="!isGrid" style="cursor: pointer;margin-top:6px;margin-left: 28px;">
+        <img src="../../../assets/icons/view_list_black_24dp.svg" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <mat-tab-group
+    class="remove-border-bottom"
+    fxLayoutGap="15"
+    (selectedTabChange)="tabClick($event)"
+    [selectedIndex]="selectedIndex"
+  >
+    <mat-tab class="tab1" label="In Progress" class="tablebox">
+      <div style="width: fit-content">
+        <app-display-batches
+          style="max-height: 100%"
+          *ngIf="listOfbatches"
+          [BatchArray]="listOfbatches"
+          (refreshEvent)="getUpdateBatches()"
+          (scroollingEvent)="onScrollingGetBatch($event)"
+        ></app-display-batches>
+      </div>
+      <div
+      class="bdetails"
+      fxLayout="row"
+      fxFlex="100"
+      fxLayoutAlign="start center"
+      infiniteScroll
+      [infiniteScrollDistance]="1"
+      [scrollWindow]="false"
+      [alwaysCallback]="true"
+      (scrolled)="onScrollingGetBatch(false)"
+      cdkScrollable
+    >
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div
+          *ngIf="!isGrid"
+          fxLayout="row wrap"
+          fxFlex="100"
+          fxLayoutAlign="start center"
+        >
+          <div
+            class="card"
+            fxFlex.xs="95"
+            *ngFor="let trialBatch of trialBatchArray | filterAllBatch:searchedWord;"
+          >
+            <div id="block_container">
+              <div id="bloc1"
+                class="txt1"
+                (click)="goToDetails(trialBatch.id)"
+              >
+                <span class="batch-name">{{trialBatch.batchName }}</span>
+                <!-- batch.batchCandidateCountDTO.totalEnrolledCount -->
+              </div>
+              <div id="bloc2" class="span number1">
+                <!-- <mat-chip class="span number"> -->
+                  {{trialBatch.hiredCandidates.length}}
+                <!-- </mat-chip> -->
+
+              </div>
+              <div id="bloc3"class="more1">
+                <button
+                  mat-mini-fab
+                  [autofocus]="false"
+                  class="bbttnn1"
+                  [matMenuTriggerFor]="beforeMenu"
+                  (click)="setCandidateId(trialBatch)"
+                >
+                   <img
+                    class="white-icon"
+                    src="../../../assets//icons/ic_more_vert_24px.svg"
+                  /> 
+                
+                </button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                  <button
+                    mat-menu-item
+                    class="menu-button"
+                    (click)="updateBatch()"
+                  >
+                    <mat-icon class="edit">edit</mat-icon>
+                    Edit
+                  </button>
+                  <button
+                    mat-menu-item
+                    class="menu-button"
+                    (click)="openDeleteConfirmDialog()"
+                  >
+                    <mat-icon class="edit">delete</mat-icon>
+                    Delete
+                  </button>
+                </mat-menu>
+              </div>
+            </div>
+            <div class="listDetails" (click)="goToDetails(trialBatch.id)">
+              <div class="list-wrapper">
+                <div class="red-line"></div>
+                <div class="list-item-wrapper">
+                  <div class="list-bullet"></div>
+                  <div id="data-time-1">
+                    <div class="list-text">{{ trialBatch.startDate }}</div>
+                    <div class="day">(Start)</div>
+                  </div>
+                </div>
+
+                <div class="list-item-wrapper">
+                  <div class="list-bullet2"></div>
+                  <div
+                  id="data-time-1"
+                  >
+                    <div class="list-text">
+                      {{ trialBatch.computedFinishDate }}
+                    </div>
+                    <div class="day">(End)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div fxLayoutAlign="flex-end flex-end">
+              <!-- <img
+                class="imge"
+                src="../../../assets/images/java-seeklogo.com.svg"
+                src="{{ s3BucketUrl + batch.batch.techStackImageUrl }}"
+                
+              /> -->
+              <img
+                class="imge"
+                src="../../../assets/icons/java.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        *ngIf="isGrid"
+        fxLayout="column"
+        fxFlex="100"
+        style="margin-top: 15px"
+      >
+        <div
+          class="tablebox"
+          infiniteScroll
+          [infiniteScrollDistance]="1"
+          [scrollWindow]="false"
+          [alwaysCallback]="true"
+          (scrolled)="onScrollingGetBatch(false)"
+          cdkScrollable
+        >
+          <div class="table-div">
+            <table class="display" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr class="sub-heading">
+                  <th class="mentorName-head background-head">Batch Name</th>
+
+                  <th class="email-haed background-head">Tech Stack</th>
+                  <th class="phnNum-head background-head">Start Date</th>
+                  <th class="mentorType-head background-head">
+                    Computed Finish Date
+                  </th>
+
+                  <th class="categiry-head background-head">Practice Head</th>
+                  <th class="techStack-head background-head">Main Mentor</th>
+                  <th class="techStack-head background-head">
+                    Support Mentor
+                  </th>
+
+                  <th class="techStack-head background-head">
+                    Backup Mentor
+                  </th>
+
+                  <th class="techStack-head background-head">Co-ordinator</th>
+                  <th class="email-haed background-head">
+                    Maker Program Link
+                  </th>
+
+                  <th class="phnNum-head background-head">Session Time</th>
+                  <th class="email-haed background-head">Batch Status</th>
+                  <th class="enrollment background-head">Total Enrolled</th>
+                  <th class="enrollment background-head">Final Size</th>
+
+                  <th class="email-haed background-head">Batch Sheet URL</th>
+
+                  <th class="background-head"></th>
+                </tr>
+
+                <tr *ngFor="let trialBatch of trialBatchArray | filterAllBatch:searchedWord;"
+                  class="mentor-data"
+                  >
+                  <td
+                  (click)="goToDetails(trialBatch.id)"
+                    class="mentorName-data"
+                  >
+                  {{trialBatch.batchName}}
+                  </td>
+
+                  <td class="email-data">{{trialBatch.techStack}}</td>
+
+                  <td class="phnNum-data">{{trialBatch.startDate}}</td>
+                  <td class="mentorType-data">
+                    {{trialBatch.computedFinishDate}}
+                  </td>
+<!-- *ngfor="let batch in trialBatchArray" -->
+                  <td
+                    class="categiry-data"
+                  >
+                  {{trialBatch.praticeHead}}
+                  </td>
+                  <!-- -->
+                  <td class="techStack-data">
+                    {{trialBatch.mainMentor}} /
+                    {{trialBatch.mainMentorType}}
+                  </td>
+                  <!--  slice:0:3 | -->
+                  <td
+                    class="techStack-data"
+                  >
+                  {{trialBatch.support}}/{{trialBatch.supportMentorType}}
+                  </td>
+
+                  <td class="techStack-data">
+                    {{trialBatch.backupMentor}}
+                  </td>
+
+                  <td class="techStack-data">
+                    {{trialBatch.coordinator}}
+                  </td>
+                  <td class="email-data">
+                    <a
+                    (click)="openSite(trialBatch.batchSheetUrl)"
+                      class="livelink"
+                      >{{trialBatch.makerProgramLink}}</a
+                    >
+                  </td>
+                  <td class="techStack-data">
+                    {{trialBatch.sessionTime}}
+                  </td>
+                  <td class="email-data">{{trialBatch.status}}</td>
+                  <td class="count">
+                    2
+                  </td>
+
+                  <td class="count">
+                    4
+                  </td>
+
+                  <td class="email-data">
+                    <a
+                    (click)="openSite(trialBatch.batchSheetUrl)"
+                      class="livelink"
+                    >
+                      {{trialBatch.batchSheetUrl}}</a
+                    >
+                  </td>
+
+                  <td
+                    class="unassign-more"
+                    [matMenuTriggerFor]="beforeMenu"
+                    (click)="setCandidateId(trialBatch)"
+                  >
+                    <img src="../../../assets/icons/ic_more_vert_24px.svg" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+              <button
+                mat-menu-item
+                class="menu-button"
+                (click)="updateBatch()"
+              >
+                <mat-icon class="edit">edit</mat-icon>
+                Edit
+              </button>
+              <button
+                mat-menu-item
+                class="menu-button"
+                (click)="openDeleteConfirmDialog()"
+              >
+                <mat-icon class="edit">delete</mat-icon>
+                Delete
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+    </div>
+    </mat-tab>
+
+    <mat-tab class="tab1 active leftside" label="Completed" class="tablebox">
+      <app-display-batches
+        style="max-height: 100%"
+        *ngIf="listOfbatches"
+        [BatchArray]="listOfbatches"
+        (refreshEvent)="getUpdateBatches()"
+      ></app-display-batches>
+      <div style="width: fit-content">
+        <app-display-batches
+          style="max-height: 100%"
+          *ngIf="listOfbatches"
+          [BatchArray]="listOfbatches"
+          (refreshEvent)="getUpdateBatches()"
+          (scroollingEvent)="onScrollingGetBatch($event)"
+        ></app-display-batches>
+      </div>
+      <div
+      class="bdetails"
+      fxLayout="row"
+      fxFlex="100"
+      fxLayoutAlign="start center"
+      infiniteScroll
+      [infiniteScrollDistance]="1"
+      [scrollWindow]="false"
+      [alwaysCallback]="true"
+      (scrolled)="onScrollingGetBatch(false)"
+      cdkScrollable
+    >
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div
+          *ngIf="!isGrid"
+          fxLayout="row wrap"
+          fxFlex="100"
+          fxLayoutAlign="start center"
+        >
+          <div
+            class="card"
+            fxFlex.xs="95"
+            *ngFor="let trialBatch of trialBatchArray"
+          >
+          <div id="block_container">
+            <div id="bloc1"
+              class="txt1"
+              (click)="goToDetails(trialBatch.id)"
+            >
+              <span class="batch-name">{{trialBatch.batchName }}</span>
+              <!-- batch.batchCandidateCountDTO.totalEnrolledCount -->
+            </div>
+            <div id="bloc2" class="span number1">
+              <!-- <mat-chip class="span number"> -->
+                {{trialBatch.hiredCandidates.length}}
+              <!-- </mat-chip> -->
+
+            </div>
+            <div id="bloc3"class="more1">
+              <button
+                mat-mini-fab
+                [autofocus]="false"
+                class="bbttnn1"
+                [matMenuTriggerFor]="beforeMenu"
+                (click)="setCandidateId(trialBatch)"
+              >
+                 <img
+                  class="white-icon"
+                  src="../../../assets//icons/ic_more_vert_24px.svg"
+                /> 
+              
+              </button>
+              <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button
+                  mat-menu-item
+                  class="menu-button"
+                  (click)="updateBatch()"
+                >
+                  <mat-icon class="edit">edit</mat-icon>
+                  Edit
+                </button>
+                <button
+                  mat-menu-item
+                  class="menu-button"
+                  (click)="openDeleteConfirmDialog()"
+                >
+                  <mat-icon class="edit">delete</mat-icon>
+                  Delete
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+            <div class="listDetails" (click)="goToDetails(trialBatch.id)">
+              <div class="list-wrapper1">
+                <div class="red-line1"></div>
+                <div class="list-item-wrapper">
+                  <div class="list-bullet"></div>
+                  <div
+                    class="list-item"
+                    fxLayout="row"
+                    fxLayoutAlign="none center"
+                  >
+                    <div class="list-text">{{ trialBatch.startDate }}</div>
+                    <div class="day">(Start)</div>
+                  </div>
+                </div>
+
+                <div class="list-item-wrapper">
+                  <div class="list-bullet2"></div>
+                  <div
+                    class="list-item"
+                    fxLayout="row"
+                    fxLayoutAlign="none center"
+                  >
+                    <div class="list-text">
+                      {{ trialBatch.computedFinishDate }}
+                    </div>
+                    <div class="day">(End)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div fxLayoutAlign="flex-end flex-end">
+              <!-- <img
+                class="imge"
+                src="../../../assets/images/java-seeklogo.com.svg"
+                src="{{ s3BucketUrl + batch.batch.techStackImageUrl }}"
+                
+              /> -->
+              <img
+                class="imge"
+                src="../../../assets/icons/java.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        *ngIf="isGrid"
+        fxLayout="column"
+        fxFlex="100"
+        style="margin-top: 15px"
+      >
+        <div
+          class="tablebox"
+          infiniteScroll
+          [infiniteScrollDistance]="1"
+          [scrollWindow]="false"
+          [alwaysCallback]="true"
+          (scrolled)="onScrollingGetBatch(false)"
+          cdkScrollable
+        >
+          <div class="table-div">
+            <table class="display" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr class="sub-heading">
+                  <th class="mentorName-head background-head">Batch Name</th>
+
+                  <th class="email-haed background-head">Tech Stack</th>
+                  <th class="phnNum-head background-head">Start Date</th>
+                  <th class="mentorType-head background-head">
+                    Computed Finish Date
+                  </th>
+
+                  <th class="categiry-head background-head">Practice Head</th>
+                  <th class="techStack-head background-head">Main Mentor</th>
+                  <th class="techStack-head background-head">
+                    Support Mentor
+                  </th>
+
+                  <th class="techStack-head background-head">
+                    Backup Mentor
+                  </th>
+
+                  <th class="techStack-head background-head">Co-ordinator</th>
+                  <th class="email-haed background-head">
+                    Maker Program Link
+                  </th>
+
+                  <th class="phnNum-head background-head">Session Time</th>
+                  <th class="email-haed background-head">Batch Status</th>
+                  <th class="enrollment background-head">Total Enrolled</th>
+                  <th class="enrollment background-head">Final Size</th>
+
+                  <th class="email-haed background-head">Batch Sheet URL</th>
+
+                  <th class="background-head"></th>
+                </tr>
+
+                <tr *ngFor="let trialBatch of trialBatchArray"
+                  class="mentor-data"
+                  >
+                  <td
+                  (click)="goToDetails(trialBatch.id)"
+                    class="mentorName-data"
+                  >
+                  {{trialBatch.batchName}}
+                  </td>
+
+                  <td class="email-data">{{trialBatch.techStack}}</td>
+
+                  <td class="phnNum-data">{{trialBatch.startDate}}</td>
+                  <td class="mentorType-data">
+                    {{trialBatch.computedFinishDate}}
+                  </td>
+<!-- *ngfor="let batch in trialBatchArray" -->
+                  <td
+                    class="categiry-data"
+                  >
+                  {{trialBatch.praticeHead}}
+                  </td>
+                  <!-- -->
+                  <td class="techStack-data">
+                    {{trialBatch.mainMentor}} /
+                    {{trialBatch.mainMentorType}}
+                  </td>
+                  <!--  slice:0:3 | -->
+                  <td
+                    class="techStack-data"
+                  >
+                  {{trialBatch.support}}/{{trialBatch.supportMentorType}}
+                  </td>
+
+                  <td class="techStack-data">
+                    {{trialBatch.backupMentor}}
+                  </td>
+
+                  <td class="techStack-data">
+                    {{trialBatch.coordinator}}
+                  </td>
+                  <td class="email-data">
+                    <a
+                    (click)="openSite(trialBatch.batchSheetUrl)"
+                      class="livelink"
+                      >{{trialBatch.makerProgramLink}}</a
+                    >
+                  </td>
+                  <td class="techStack-data">
+                    {{trialBatch.sessionTime}}
+                  </td>
+                  <td class="email-data">{{trialBatch.status}}</td>
+                  <td class="count">
+                    2
+                  </td>
+
+                  <td class="count">
+                    4
+                  </td>
+
+                  <td class="email-data">
+                    <a
+                    (click)="openSite(trialBatch.batchSheetUrl)"
+                      class="livelink"
+                    >
+                      {{trialBatch.batchSheetUrl}}</a
+                    >
+                  </td>
+
+                  <td
+                    class="unassign-more"
+                    [matMenuTriggerFor]="beforeMenu"
+                    (click)="setCandidateId(trialBatch)"
+                  >
+                    <img src="../../../assets/icons/ic_more_vert_24px.svg" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+              <button
+                mat-menu-item
+                class="menu-button"
+                (click)="updateBatch()"
+              >
+                <mat-icon class="edit">edit</mat-icon>
+                Edit
+              </button>
+              <button
+                mat-menu-item
+                class="menu-button"
+                (click)="openDeleteConfirmDialog()"
+              >
+                <mat-icon class="edit">delete</mat-icon>
+                Delete
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    </mat-tab>
+
+    <mat-tab class="tab1 active leftside" label="Terminated" class="tablebox">
+      <app-display-batches
+        style="max-height: 100%"
+        *ngIf="listOfbatches"
+        [BatchArray]="listOfbatches"
+        (refreshEvent)="getUpdateBatches()"
+      ></app-display-batches>
+      <div style="width: fit-content">
+        <app-display-batches
+          style="max-height: 100%"
+          *ngIf="listOfbatches"
+          [BatchArray]="listOfbatches"
+          (refreshEvent)="getUpdateBatches()"
+          (scroollingEvent)="onScrollingGetBatch($event)"
+        ></app-display-batches>
+      </div>
+      <div
+      class="bdetails"
+      fxLayout="row"
+      fxFlex="100"
+      fxLayoutAlign="start center"
+      infiniteScroll
+      [infiniteScrollDistance]="1"
+      [scrollWindow]="false"
+      [alwaysCallback]="true"
+      (scrolled)="onScrollingGetBatch(false)"
+      cdkScrollable
+    >
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div
+          *ngIf="!isGrid"
+          fxLayout="row wrap"
+          fxFlex="100"
+          fxLayoutAlign="start center"
+        >
+          <div
+            class="card"
+            fxFlex.xs="95"
+            *ngFor="let trialBatch of trialBatchArray"
+          >
+          <div id="block_container">
+            <div id="bloc1"
+              class="txt1"
+              (click)="goToDetails(trialBatch.id)"
+            >
+              <span class="batch-name">{{trialBatch.batchName }}</span>
+              <!-- batch.batchCandidateCountDTO.totalEnrolledCount -->
+            </div>
+            <div id="bloc2" class="span number1">
+              <!-- <mat-chip class="span number"> -->
+                {{trialBatch.hiredCandidates.length}}
+              <!-- </mat-chip> -->
+
+            </div>
+            <div id="bloc3"class="more1">
+              <button
+                mat-mini-fab
+                [autofocus]="false"
+                class="bbttnn1"
+                [matMenuTriggerFor]="beforeMenu"
+                (click)="setCandidateId(trialBatch)"
+              >
+                 <img
+                  class="white-icon"
+                  src="../../../assets//icons/ic_more_vert_24px.svg"
+                /> 
+              
+              </button>
+              <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button
+                  mat-menu-item
+                  class="menu-button"
+                  (click)="updateBatch()"
+                >
+                  <mat-icon class="edit">edit</mat-icon>
+                  Edit
+                </button>
+                <button
+                  mat-menu-item
+                  class="menu-button"
+                  (click)="openDeleteConfirmDialog()"
+                >
+                  <mat-icon class="edit">delete</mat-icon>
+                  Delete
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+            <div class="listDetails" (click)="goToDetails(trialBatch.id)">
+              <div class="list-wrapper1">
+                <div class="red-line1"></div>
+                <div class="list-item-wrapper">
+                  <div class="list-bullet"></div>
+                  <div
+                    class="list-item"
+                    fxLayout="row"
+                    fxLayoutAlign="none center"
+                  >
+                    <div class="list-text">{{ trialBatch.startDate }}</div>
+                    <div class="day">(Start)</div>
+                  </div>
+                </div>
+
+                <div class="list-item-wrapper">
+                  <div class="list-bullet2"></div>
+                  <div
+                    class="list-item"
+                    fxLayout="row"
+                    fxLayoutAlign="none center"
+                  >
+                    <div class="list-text">
+                      {{ trialBatch.computedFinishDate }}
+                    </div>
+                    <div class="day">(End)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div fxLayoutAlign="flex-end flex-end">
+              <!-- <img
+                class="imge"
+                src="../../../assets/images/java-seeklogo.com.svg"
+                src="{{ s3BucketUrl + batch.batch.techStackImageUrl }}"
+                
+              /> -->
+              <img
+                class="imge"
+                src="../../../assets/icons/java.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        *ngIf="isGrid"
+        fxLayout="column"
+        fxFlex="100"
+        style="margin-top: 15px"
+      >
+        <div
+          class="tablebox"
+          infiniteScroll
+          [infiniteScrollDistance]="1"
+          [scrollWindow]="false"
+          [alwaysCallback]="true"
+          (scrolled)="onScrollingGetBatch(false)"
+          cdkScrollable
+        >
+          <div class="table-div">
+            <table class="display" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr class="sub-heading">
+                  <th class="mentorName-head background-head">Batch Name</th>
+
+                  <th class="email-haed background-head">Tech Stack</th>
+                  <th class="phnNum-head background-head">Start Date</th>
+                  <th class="mentorType-head background-head">
+                    Computed Finish Date
+                  </th>
+
+                  <th class="categiry-head background-head">Practice Head</th>
+                  <th class="techStack-head background-head">Main Mentor</th>
+                  <th class="techStack-head background-head">
+                    Support Mentor
+                  </th>
+
+                  <th class="techStack-head background-head">
+                    Backup Mentor
+                  </th>
+
+                  <th class="techStack-head background-head">Co-ordinator</th>
+                  <th class="email-haed background-head">
+                    Maker Program Link
+                  </th>
+
+                  <th class="phnNum-head background-head">Session Time</th>
+                  <th class="email-haed background-head">Batch Status</th>
+                  <th class="enrollment background-head">Total Enrolled</th>
+                  <th class="enrollment background-head">Final Size</th>
+
+                  <th class="email-haed background-head">Batch Sheet URL</th>
+
+                  <th class="background-head"></th>
+                </tr>
+
+                <tr *ngFor="let trialBatch of trialBatchArray"
+                  class="mentor-data"
+                  >
+                  <td
+                  (click)="goToDetails(trialBatch.id)"
+                    class="mentorName-data"
+                  >
+                  {{trialBatch.batchName}}
+                  </td>
+
+                  <td class="email-data">{{trialBatch.techStack}}</td>
+
+                  <td class="phnNum-data">{{trialBatch.startDate}}</td>
+                  <td class="mentorType-data">
+                    {{trialBatch.computedFinishDate}}
+                  </td>
+<!-- *ngfor="let batch in trialBatchArray" -->
+                  <td
+                    class="categiry-data"
+                  >
+                  {{trialBatch.praticeHead}}
+                  </td>
+                  <!-- -->
+                  <td class="techStack-data">
+                    {{trialBatch.mainMentor}} /
+                    {{trialBatch.mainMentorType}}
+                  </td>
+                  <!--  slice:0:3 | -->
+                  <td
+                    class="techStack-data"
+                  >
+                  {{trialBatch.support}}/{{trialBatch.supportMentorType}}
+                  </td>
+
+                  <td class="techStack-data">
+                    {{trialBatch.backupMentor}}
+                  </td>
+
+                  <td class="techStack-data">
+                    {{trialBatch.coordinator}}
+                  </td>
+                  <td class="email-data">
+                    <a
+                    (click)="openSite(trialBatch.batchSheetUrl)"
+                      class="livelink"
+                      >{{trialBatch.makerProgramLink}}</a
+                    >
+                  </td>
+                  <td class="techStack-data">
+                    {{trialBatch.sessionTime}}
+                  </td>
+                  <td class="email-data">{{trialBatch.status}}</td>
+                  <td class="count">
+                    2
+                  </td>
+
+                  <td class="count">
+                    4
+                  </td>
+
+                  <td class="email-data">
+                    <a
+                    (click)="openSite(trialBatch.batchSheetUrl)"
+                      class="livelink"
+                    >
+                      {{trialBatch.batchSheetUrl}}</a
+                    >
+                  </td>
+
+                  <td
+                    class="unassign-more"
+                    [matMenuTriggerFor]="beforeMenu"
+                    (click)="setCandidateId(trialBatch)"
+                  >
+                    <img src="../../../assets/icons/ic_more_vert_24px.svg" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+              <button
+                mat-menu-item
+                class="menu-button"
+                (click)="updateBatch()"
+              >
+                <mat-icon class="edit">edit</mat-icon>
+                Edit
+              </button>
+              <button
+                mat-menu-item
+                class="menu-button"
+                (click)="openDeleteConfirmDialog()"
+              >
+                <mat-icon class="edit">delete</mat-icon>
+                Delete
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+    </div>
+    </mat-tab>
+  </mat-tab-group>
+
+  <div *ngIf="lengthOfArray" class="noData">No Information Available</div>
+</div>

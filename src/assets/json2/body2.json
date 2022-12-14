@@ -1,0 +1,212 @@
+{
+    "data": [
+        {
+            "labname": "Lab1",
+            "learner": "128"
+        },
+        {
+            "labname": "Lead",
+            "learner": "30"
+        },
+        {
+            "labname": "Engineer",
+            "learner": "12"
+        },
+        {
+            "labname": "lab1",
+            "learner": "128"
+        },
+        {
+            "labname": "lab1",
+            "learner": "128"
+        }
+        ,
+        {
+            "labname": "lab1",
+            "learner": "128"
+        },
+        {
+            "labname": "lab1",
+            "learner": "128"
+        }
+    ],
+    "data2": [
+        {
+            "lab": "Lab1",
+            "location": "Mumbai(Malhotra chembers)"
+        },
+        {
+            "lab": "Lab2",
+            "location": "Mumbai(vashi)"
+        },
+        {
+            "lab": "Lab3",
+            "location": "Banglore"
+        },
+        {
+            "lab": "Lab4",
+            "location": "Delhi"
+        },
+        {
+            "lab": "Lab3",
+            "location": "Pune"
+        },
+        {
+            "lab": "Lab3",
+            "location": "Chennai"
+        },
+        {
+            "lab": "Lab5",
+            "location": "Dubai"
+        }
+    ],
+    "data3": [
+        {
+            "name": "Shashank Mokal",
+            "mobileno": "9857485632",
+            "email": "Shashank.mokal@bridgelabz.com",
+            "other": [
+                
+                     "Assignment",
+                     "Join date",
+                     "Doc verify",
+                     "Maker program approver"
+                
+            ]
+        },
+        {
+            "name": "Veejay Basottia",
+            "mobileno": "9857485632",
+            "email": "Veejay.Basottia@bridgelabz.com",
+            "other":[
+                    "Assignment"
+                
+                
+            ]
+        },
+        {
+            "name": "Gunjan Sharma",
+            "mobileno": "9857485632",
+            "email": "gunjan.sharma@bridgelabz.com",
+            "other": [
+                
+                "Remark"
+                
+            ]
+        },
+        {
+            "name": "Dilip More",
+            "mobileno": "9857485632",
+            "email": "Deelip.more@bridgelabz.com",
+            "other": [
+               
+                    "Remark"
+               
+            ]
+        },
+        {
+            "name": "Pushpagandha Wagh",
+            "mobileno": "9857485632",
+            "email": "pushpagandha.wagh1234567676@bridgelabz.com",
+            "other": [
+                "Doc verify",
+                    "Join date"
+                
+            ]
+        },
+        {
+            "name": "Varsha Tayade",
+            "mobileno": "9857485632",
+            "email": "Varsha.tayade@bridgelabz.com",
+            "other": [
+                "Doc verify",
+                  "Join date"
+               
+            ]
+        },
+        {
+            "name": "Veejay Basottia",
+            "mobileno": "9857485632",
+            "email": "Veejay.Basottia@bridgelabz.com",
+            "other":[
+                    "Assignment",
+                 "Join date",
+                    "Doc verify",
+                  "Maker program approver",
+                  "Assignment",
+                  "Join date",
+                     "Doc verify",
+                   "Maker program approver"
+            ]
+        },
+        {
+            "name": "Veejay Basottia",
+            "mobileno": "9857485632",
+            "email": "Veejay.Basottiasadfsfszf@bridgelabz.com",
+            "other":[
+                    "Assignment",
+                 "Join date",
+                    "Doc verify",
+                  "Maker program approver"
+                
+            ]
+        }
+        ,
+        {
+            "name": "Veejay Basottia",
+            "mobileno": "9857485632",
+            "email": "Veejay.Basottiasadfsfszf@bridgelabz.com",
+            "other":[
+                    "Assignment",
+                 "Join date",
+                    "Doc verify",
+                  "Maker program approver"
+                
+            ]
+        }
+        ,
+        {
+            "name": "Veejay Basottia",
+            "mobileno": "9857485632",
+            "email": "Veejay.Basottiasadfsfszf@bridgelabz.com",
+            "other":[
+                    "Assignment",
+                 "Join date",
+                    "Doc verify",
+                  "Maker program approver"
+                
+            ]
+        }
+        
+    ],
+    
+        "data4": [
+            "Assignment",
+            "Doc Verify",
+            "Join Date",
+            "Remark",
+            "Maker Program Aprover"
+        ],
+        "data5": [
+            {
+                "company": "Bridgelabz",
+                "location": "Mumbai(Malhotra chembers)"
+            },
+            {
+                "company": "Thoughtworks",
+                "location": "Banglore"
+            },
+            {
+                "company": "Impleysis",
+                "location": "Banglore"
+            },
+            {
+                "company": "Thoughtworks",
+                "location": "Banglore"
+            },
+            {
+                "company": "Thoughtworks",
+                "location": "Banglore"
+            }
+        ]
+}

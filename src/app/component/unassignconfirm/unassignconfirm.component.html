@@ -1,0 +1,12 @@
+<div>
+  <h4>{{data.message}}</h4>
+  <h4>{{data.message2}}</h4>
+  <div  fxLayout="row"  class = "buttons-div" >
+      <button mat-button class = "yes-button" (click) = "Yes()" *ngIf='!data.status'>Yes</button>
+      <button mat-button class = "yes-button" (click) = "Yes()" *ngIf='data.status'>Close</button>
+
+    
+      <button mat-button class = "no-button"(click) = "No()" *ngIf='!data.status' >No</button>
+  
+  </div>
+</div>

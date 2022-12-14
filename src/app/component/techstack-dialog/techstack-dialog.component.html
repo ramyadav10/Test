@@ -1,0 +1,32 @@
+<div class="maindiv">
+  <div class="topdiv" fxLayoutAlign="center center" *ngIf="operation === 'add'">New Tech Stack</div>
+  <div class="topdiv" fxLayoutAlign="center center" *ngIf="operation === 'update'">Update Tech Stack</div>
+
+  <div class="TechStackPopUp" fxLayout="column" fxLayoutAlign=" center" fxLayoutGap="1%">
+    <form [formGroup]="techStackForm">
+      <mat-form-field appearance="outline" class="firstfield">
+        <mat-label>Tech Type Name</mat-label>
+        <input matInput autocomplete="off" formControlName="techTypeName" minlength="1" maxlength="12">
+        <!-- <mat-error *ngIf="TechTypeName.invalid" style="margin-top: 0px;">Enter Tech Stack Name</mat-error>  -->
+        <mat-error *ngIf="techStackForm.get('techTypeName')?.invalid &&
+        (techStackForm.get('techTypeName')?.dirty || techStackForm.get('techTypeName')?.touched)">
+          {{getErrorForTechTypeName()}}</mat-error>
+      </mat-form-field>
+    </form>
+    <mat-form-field appearance="outline" class="secondfield">
+      <mat-label>Image Name</mat-label>
+      <input matInput [(ngModel)]="image" readonly>
+      <mat-icon (click)="editProfilePic()" matSuffix>attach_file</mat-icon>
+    </mat-form-field>
+    <div class="buttonClass" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px">
+      <button mat-button class="cancel" (click)="closetechstack()">Cancel</button>
+      <!-- <button mat-button color="primary"  (click)="createTechStack()">Create</button>  -->
+      <button mat-button *ngIf="data === null" class="create" color="primary"
+        (click)="createTechStack()">Create</button>
+      <button mat-button *ngIf="data !== null" class="create" color="primary"
+        (click)="updateTechStack()">Update</button>
+    </div>
+  </div>
+
+  <!-- [disabled]="TechTypeName.invalid || techstack.invalid " -->
+</div>

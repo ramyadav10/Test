@@ -1,0 +1,27 @@
+<div class="image-cropper-main-div" fxLayout="column">
+
+  <div class="header">Select profile photo</div>
+
+  <label *ngIf="path === ''" fxLayout="column" >
+  <div fxFlexOffset="7%"  class="tooltip"  matTooltip = "Click to select new profile pic" fxLayoutAlign="center start">
+    <img fxFlex="25"   src="../../../assets/images/addProfilePicture.png" style="cursor: pointer;">
+    <input #fileInput accept=".jpg, .png, .JPEG, .gif" type="file" (change)="fileChangeEvent($event)"
+      style="display: none;" />
+  </div>
+</label>
+
+  <div *ngIf="path === ''" fxFlexOffset="1%" fxLayoutAlign="center start">
+    <span class="selectPicButton">Select a photo from your computer</span>
+  </div>
+  <div *ngIf="path" style="height: 25px"></div>
+  <image-cropper  *ngIf="path" [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+  [aspectRatio]="1 / 1" [resizeToWidth]="1024" format="png" (imageCropped)="imageCropped($event)"
+(loadImageFailed)="loadImageFailed()" [imageQuality]="100"  style="height:400px">
+</image-cropper>
+</div>
+<mat-divider ></mat-divider>
+<div fxLayoutGap="2%" fxLayout="row" fxLayoutAlign="start end" class="footer-btns">
+    <button [disabled]="!this.path" fxLayoutAlign="start end"   [mat-dialog-close]="{'image':img , 'cropedImg':croppedImageEvent}" mat-button class="set-profile-button" >Set as profile
+      photo</button>
+    <button mat-dialog-close mat-button class="cancel-button">Cancel</button>
+  </div>

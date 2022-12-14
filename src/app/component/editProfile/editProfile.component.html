@@ -1,0 +1,46 @@
+<div>
+<div class="editprofileDiv">
+  <mat-card fxLayout="row" fxLayoutAlign="center center" class="editprofile-card">Edit Profile</mat-card>
+</div>
+
+<!-- <div class="changePasswordDiv">
+  <mat-card fxLayout="row" fxLayoutAlign="center center" class="changpassword-card">Change Password</mat-card>
+</div> -->
+
+<!-- <div  class="ImageIcon" fxLayout="row" fxLayoutAlign="center center" (click)="editProfilePic()">
+    <img  matTooltip= "Upload Profile Picture" *ngIf="imageSource == null" src='../../../assets/images/user-silhouette.svg'>
+    <img *ngIf="imageSource !== null" src="{{imageSource}}" class="profile-icon1">
+  </div> -->
+  <div>
+<div fxLayout="column" fxLayoutAlign="space-between center" style="padding: 0 10%;">
+  <img *ngIf="imageSource == null" src="../../../assets/images/index.jpeg" alt="profile" class="profile-img-in-card"
+    fxLayoutAlign="center center" />
+    <img *ngIf="imageSource !== null" src="assets/images/{{imageSource}}" alt="profile" class="profile-img-in-card"
+    fxLayoutAlign="center center" />    
+    <div fxLayout="column" fxLayoutAlign="start center" class="edit-div">
+      <button (click)="editProfilePic()" mat-icon-button class="edit-button" matTooltip = "Change Profile Picture">
+        <mat-icon class="edit-icon">edit</mat-icon>
+      </button>
+    </div>
+  <div fxLayout="column" fxLayoutAlign="space-around center" style="width:100%;padding-top: 7%" >
+    <div class="inputs">
+      <mat-form-field appearance="outline" class="form-fields">
+        <mat-label>Username</mat-label>
+        <input matInput autocomplete="off" [formControl]="username">
+      </mat-form-field>
+    </div>
+    <div class="inputs">
+      <mat-form-field appearance="outline" class="form-fields">
+        <mat-label>Email Id</mat-label>
+        <input matInput autocomplete="off" [formControl]="emailid">
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" class="buttons-div">
+      <button mat-button class="cancel-button" (click)=close()>Cancel</button>
+      <button class="submit-button" mat-flat-button [disabled]="username.invalid || emailid.invalid ">Submit</button>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>

@@ -1,0 +1,306 @@
+{
+    "assignedData": [
+        {
+            "company": "Intellect design",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "meru",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "meru",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru323",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru4545",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru4545",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru232234",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru1",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru111",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },{
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru323",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru4545",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru4545",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru232234",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru1",
+            "month": "27-sep-18",
+            "engineer":"3"
+        },
+        {
+            "company": "Meru111",
+            "month": "27-sep-18",
+            "engineer":"3"
+        }
+    ],
+    "unassignedData": [
+        {
+            "company": "Intellect design",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes" 
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru343",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru545",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru4523452345",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru6775767",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes" 
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru343",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru545",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru4523452345",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        },
+        {
+            "company": "Meru6775767",
+            "month": "27-sep-18",
+            "engineer":"3",
+            "action":"yes"
+        }
+    ],
+    "cityData": [
+        {
+            "month": "27-sep-18",
+            "city": "Mumbai"
+           
+        }
+    ],
+    "requirementData": [
+        {
+            "tech": "Node Js",
+            "program": "Spark+Scala+S3",
+            "engineer": "2",
+            "lead": "Sunil Patil",
+            "remark": "LAMP Fullstack+Larawel+ReactJS"
+           
+        },
+        {
+            "tech": "Python",
+            "program": "Spark+Scala+S3",
+            "engineer": "1",
+            "lead": "Dilip More",
+            "remark": "LAMP Fullstack+Larawel"
+           
+        }
+    ]
+}

@@ -1,0 +1,178 @@
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf='!ReadOnly'>
+  <mat-card fxLayout="row" fxLayoutAlign="center center" class="editprofile-card"> Batch Status</mat-card>
+</div>
+
+
+
+<div fxLayout="column" style="padding-bottom: 10px;" *ngIf='!ReadOnly'>
+
+  <div fxLayout='row' class="box" fxLayoutAlign="space-between">
+    <div>
+      <label class="lb">Batch Name: </label>
+
+      <span class="sname"> {{batchName}}</span>
+    </div>
+    <!-- <div>
+      <label class="lb">CIC-ID:</label> <span class="sname"> {{CIC_ID}}</span>
+
+    </div> -->
+
+  </div>
+  <form [formGroup]='StatusForm' autocomplete="off" novalidate>
+
+    <div fxLayoutAlign="center center" fxLayout='column'>
+      <mat-form-field appearance="outline" [style.fontSize.px]="12" autocomplete="off" class="option1 wid">
+        <mat-label class="dropdown">Batch Status</mat-label>
+        <mat-select (selectionChange)="selectOption($event.value)" formControlName="BatchStatus" required>
+          <div class="select">
+            <mat-option *ngFor="let btype of BatchStatusParams"
+              [ngStyle]="{ display : PreviousBatchStatus === btype.keyText ? 'none' : 'block' }" [value]="btype">
+              {{btype.keyText}}
+            </mat-option>
+          </div>
+        </mat-select>
+        <mat-error *ngIf="hasError('BatchStatus', 'required')">Batch Status is required</mat-error>
+      </mat-form-field>
+
+      <div>
+        <mat-form-field appearance="outline" [style.fontSize.px]="12" autocomplete="off" class="option1 wid">
+          <mat-label class="dropdown">Change Status Date</mat-label>
+          <input matInput (dateChange)="selectDate($event)" [matDatepicker]="picker" formControlName="ChangeStatusDate"
+            required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="hasError('ChangeStatusDate', 'required')">Change Status Date is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" [style.fontSize.px]="12" class="option1 wid" autocomplete="off">
+        <mat-label class="dropdown">Change Status Reason</mat-label>
+        <textarea matInput placeholder="Comment" cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"
+          formControlName='ChangeStatusReason' required></textarea>
+        <mat-error *ngIf="hasError('ChangeStatusReason', 'required')">Batch Status is required</mat-error>
+
+      </mat-form-field>
+    </div>
+    <!-- <div fxLayout="row" fxLayoutAlign="end center">
+      <button mat-raised-button class="cancel-button" (click)="onSubmit()">
+        Cancel
+      </button>
+      <button mat-raised-button class="create-button" (click)="changeBatchStatus()">
+        Submit
+      </button>
+
+
+
+    </div> -->
+
+    <div class="buttonClass" fxLayout="row" fxLayoutAlign="end center" style="width: 44%; margin-left: 58%;">
+      <button mat-raised-button class="cancel-button" (click)="onSubmit()">
+        Cancel
+      </button>
+
+      <!-- Add Button  -->
+      <button mat-raised-button class="submit-button" (click)="changeBatchStatus()">
+        submit
+      </button>
+    </div> 
+  </form>
+</div>
+
+
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf='ReadOnly'>
+  <mat-card fxLayout="row" fxLayoutAlign="center center" class="editprofile-card1"> Candidate Status History</mat-card>
+</div>
+
+
+
+<div fxLayout="column" style="padding-bottom: 10px;" *ngIf='ReadOnly'>
+
+  <div fxLayout='column' class="box" fxLayoutAlign="space-between">
+
+  </div>
+
+  <div fxLayout='column'>
+
+    <div class="labginf" fxLayout='row' fxFlex=100  style="display: flex;">
+      <div class="lb2" fxFlex=33>
+        <div class="keys">
+          <span class="key">
+            Candidate Name
+          </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="keys">
+          <span class="key">
+            CIC-ID </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="keys">
+          <span class="key">
+            Current Batch Name </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="keys">
+          <span class="key">
+            Date </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="keys">
+          <span class="key">
+            Comment </span>
+
+        </div>
+
+
+      </div>
+      <div class="vl2">
+        <div class="values">
+          <span class="valuu"> {{CandidateName | titlecase}}</span>
+
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="values">
+          <span class="valuu"> {{CICID}} </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div    class="values">
+          <span class="valuu" (click)="gotoBatch()"> {{CurrentBatchName}}  </span> 
+         <img  (click)="gotoBatch()"  class="search-icon valuu" style=" margin-left: 10px;" src="../../../assets//icons/login_black_18dp.svg" alt="">
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="values">
+          <span class="valuu">{{RemapDate| date: 'dd/MM/yyyy'}} </span>
+
+        </div>
+
+        <mat-divider></mat-divider>
+        <div class="comment">
+          <span class="valuu">{{RemapReason}} </span>
+
+        </div>
+        <!-- <mat-divider></mat-divider> -->
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div fxLayout="row" fxLayoutAlign="end center">
+
+    <button mat-raised-button class="create-button" (click)="onSubmit()">
+      Close
+    </button>
+
+
+
+  </div>
+</div>

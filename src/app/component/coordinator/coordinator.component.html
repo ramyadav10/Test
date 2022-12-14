@@ -1,0 +1,110 @@
+<div class="maind" fxLayout="column" fxFlex="100">
+
+  <div class="maindiv">
+    <div class="buttons">Coordinator</div>
+    <div matTooltip="Coordinators Count" class="count">{{coordinatorCount}}</div>
+    <div class="button-div" fxFlex="60" fxLayout="row" fxLayoutAlign="space-between center">
+      <div floatLabel="never" class="search-div" fxLayout="row" fxFlex="72">
+        <div fxLayoutAlign="center center" class="search-icon-div">
+          <mat-icon matPrefix class="search-icon">search</mat-icon>
+        </div>
+        <input [(ngModel)]="searchedWordCoordinator" placeholder="Search" class="search" />
+        <mat-icon [matMenuTriggerFor]="beforeSearchMenu"
+          style="font-size: 16px; height: 16px; margin-top: 2%; color: #707070; cursor: pointer">
+          view_headline</mat-icon>
+        <mat-menu #beforeSearchMenu="matMenu" xPosition="before">
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='firstName' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="applyFilterCoordinator('firstName')" (click)="searchByKeyword('firstName')">First Name</button>
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='lastName' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="applyFilterCoordinator('lastName')" (click)="searchByKeyword('lastName')">Last Name</button>
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='emailId' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="applyFilterCoordinator('emailId')" (click)="searchByKeyword('emailId')">Email Id</button>
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='mobileNo' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="applyFilterCoordinator('mobileNo')" (click)="searchByKeyword('mobileNo')">Phone1</button>
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='secondaryMobileNo' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="applyFilterCoordinator('secondaryMobileNo')"
+            (click)="searchByKeyword('secondaryMobileNo')">Phone2</button>
+        </mat-menu>
+      </div>
+      <button matTooltip="Add New Coordinator" mat-raised-button class="new-coord-button"
+        (click)="openCoordinatorDialog()">
+        <mat-icon class="icon">add</mat-icon>
+        New Coordinator
+      </button>
+
+    </div>
+  </div>
+</div>
+<div></div>
+<div class="table-div">
+  <table class="display" cellspacing="0" cellpadding="0">
+    <tbody>
+
+      <tr>
+        <th style="padding-right: 48px; visibility: collapse;">profile</th>
+        <th style="width: 240px; font-size: 12px;">Name</th>
+        <th style="width: 310px; font-size: 12px;">Email</th>
+        <th style="font-size: 12px;text-align: center;">Phone1</th>
+        <th style="font-size: 12px;text-align: center;">Phone2</th>
+        <th style="font-size: 12px;text-align: center;">Status</th>
+      </tr>
+
+      <tr *ngFor="let  cooridinator of cooridinatorDetails | filterCoordinator:searchedWordCoordinator; let i = index;">
+        <td>
+          <div>
+            <img className="profile" src="../../../assets/images/user-silhouette.svg" alt="profile image"
+              class="profile-img">
+            <!-- <img *ngIf="cooridinator.profileImg !== null" className="profile" src="{{cooridinator.profileImg}}"
+                  alt="profile image" class="profile-img"> -->
+          </div>
+        </td>
+
+        <td>{{capitalizeFirstLetter(cooridinator.firstName)}} {{capitalizeFirstLetter(cooridinator.lastName)}}</td>
+        <td>{{cooridinator.emailId}}</td>
+        <td class="container" style="text-align: center;">{{cooridinator.mobileNo}}</td>
+        <td class="container1" style="text-align: center;">{{cooridinator.secondaryMobileNo}}</td>
+        <td class="container1" style="text-align: center;">{{cooridinator.status}}</td>
+        <td style="width: 28%;text-align: right;">
+          <img [matMenuTriggerFor]="beforeMenu" (click)="setCoordinator(cooridinator)"
+            src="../../../assets/icons/ic_more_vert_24px.svg" style="cursor: pointer;">
+        </td>
+
+      </tr>
+
+      <!-- <tr *ngFor="let cooridinator of (cooridinatorDetails | filter : searchBy) as result;">
+            <td>
+              <div>
+                <img *ngIf="cooridinator.profileImg === null" className="profile" src="../../../assets/images/user-silhouette.svg" 
+                alt="profile image" class="profile-img">
+                <img *ngIf="cooridinator.profileImg !== null" className="profile" src="{{cooridinator.profileImg}}"
+                  alt="profile image" class="profile-img">
+              </div>
+            </td>
+  
+            <td>{{capitalizeFirstLetter(cooridinator.firstName)}} {{capitalizeFirstLetter(cooridinator.lastName)}}</td>
+            <td>{{cooridinator.emailId}}</td>
+            <td class="container" style="text-align: center;">{{cooridinator.mobile}}</td>
+            <td class="container1" style="text-align: center;">{{cooridinator.secondaryMobileNo || '-'}}</td>
+            <td class="container1" style="text-align: center;">{{capitalizeFirstLetter(cooridinator.status)}}</td>
+            <td style="width: 28%;text-align: right;">
+              <img [matMenuTriggerFor]="beforeMenu" src="../../../assets/icons/ic_more_vert_24px.svg"
+                style="cursor: pointer;" (click)="setCoordinator(cooridinator)">
+            </td>
+            <div></div>
+          </tr> -->
+    </tbody>
+  </table>
+</div>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item class="menu-button" (click)="openUpdateCoordinatorDialog()">
+    <mat-icon class="edit-button">edit</mat-icon>
+    Edit
+  </button>
+  <button mat-menu-item class="menu-button" (click)="openDeleteConfirmDialog()">
+    <mat-icon class="edit-button">delete</mat-icon>
+    Delete
+  </button>
+</mat-menu>
+<!-- <div *ngIf="noOfData == 0" class="noData">
+      No information available
+    </div> -->

@@ -1,0 +1,117 @@
+// @import "../../config/LMS-theme.scss";
+.submitBtn {
+	height: 35px;
+	background-color: #00cd54;
+	border-radius: 5px;
+	width: 120px;
+	font-weight: 550;
+	font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+}
+.cancelBtn {
+	background-color: #ed573b;
+	height: 35px;
+	border-radius: 5px;
+	width: 110px;
+	font-weight: 550;
+	font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+}
+.textStyle {
+	font-size: 18px;
+	color: #ffffff;
+	text-align: center;
+}
+.title {
+	font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+	font-weight: 500;
+	color: #707070;
+	font-size: 18px;
+	margin-bottom: 14px;
+}
+.addRetail {
+	font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+.percentage {
+	overflow: overlay;
+	width: 5%;
+}
+.pincode {
+	overflow: overlay;
+	width: 6%;
+}
+table {
+	color: #3d3d3d;
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 12px;
+}
+
+td {
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 0%;
+	font-size: 12px;
+	font-family: Lato, Regular;
+	height: 3em;
+}
+th {
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 8px;
+	background-color: #e2e2e2;
+	font-family: Lato, Bold;
+}
+.attitude {
+	width: 30%;
+	border-right: 1px solid #dddddd;
+	text-align: center;
+	padding: 3%;
+	padding-right: 0%;
+}
+.communication {
+	width: 47%;
+	border-right: 1px solid #dddddd;
+	text-align: center;
+	padding: 3%;
+}
+.knowledge {
+	width: 32%;
+	padding: 3%;
+	text-align: center;
+}
+.addrow-button {
+	// background-color: $primary_color;
+	color: white;
+	margin-top: 1.5%;
+}
+input.ng-invalid {
+	background-color: red;
+}
+input.ng-valid {
+	background-color: white;
+	border: none;
+	height: 2em;
+	text-align: center;
+}
+.input:focus {
+	outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type="date"] {
+	-moz-appearance: textfield;
+}

@@ -1,0 +1,114 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-card fxLayout="row" fxLayoutAlign="center center" class="editprofile-card" 
+    *ngIf="operation === 'add'">New Coordinator
+  </mat-card>
+  <mat-card fxLayout="row" fxLayoutAlign="center center" class="editprofile-card"
+    *ngIf="operation === 'update'">Update Coordinator 
+  </mat-card>
+</div>
+
+<div fxLayout="column" fxLayoutAlign="center center" style="padding-top: 30px;">
+
+  <!-- To upload the profile image  -->
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div class="img-div" fxLayout="row" fxLayoutAlign="center center" (click)="editProfilePic()">
+      <img matTooltip="Upload Profile Picture" *ngIf="imageSource == null"
+        src="../../../assets/images/user-silhouette.svg" class="profile-icon">
+      <img *ngIf="imageSource !== null" src="{{imageSource}}" class="profile-icon1">
+    </div>
+    <p [ngClass]=" disable ? 'profile-text1':'profile-text'  " class="profile-text" style="margin-left: 27%;">Image size not exceeding 3MB</p>
+  </div>
+  
+
+  <!-- To add new coordinator  -->
+  <div [formGroup]="coordinatorDetails" fxLayout="column" fxLayoutAlign="center center" style="width: 100%; padding-top: 10px;">
+
+    <!-- First Name  -->
+    <div class="formfield-div" fxLayout="row" fxLayoutAlign="center center">
+      <mat-form-field appearance="outline" style="width: 90%;">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" required autocomplete="off" placeholder="First Name">
+        <mat-error fxFlex
+          *ngIf="!coordinatorDetails.controls['firstName'].valid && coordinatorDetails.controls['firstName'].touched">
+          {{ getErrorMessage(coordinatorDetails.controls['firstName'], 'First Name') }} </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Last Name  -->
+    <div class="formfield-div" fxLayout="row" fxLayoutAlign="center center">
+      <mat-form-field appearance="outline" style="width: 90%;">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" required autocomplete="off" placeholder="Last Name">
+        <mat-error fxFlex
+          *ngIf="!coordinatorDetails.controls['lastName'].valid && coordinatorDetails.controls['lastName'].touched">
+          {{ getErrorMessage(coordinatorDetails.controls['lastName'], 'Last Name') }} </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Email  -->
+    <div class="formfield-div" fxLayout="row" fxLayoutAlign="center center">
+      <mat-form-field appearance="outline" style="width: 90%;">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="emailId" matInput required autocomplete="off" placeholder="Email">
+        <mat-error fxFlex
+          *ngIf="!coordinatorDetails.controls['emailId'].valid && coordinatorDetails.controls['emailId'].touched">
+          {{ getErrorMessage(coordinatorDetails.controls['emailId'], 'Email') }} </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Phone No  -->
+    <div class="formfield-div" fxLayout="row" fxLayoutAlign="center center">
+      <mat-form-field appearance="outline" style="width: 90%;">
+        <mat-label>Phone1</mat-label>
+        <input type="text" maxlength="10" matInput formControlName="mobileNo" required autocomplete="off"
+          placeholder="Phone1">
+        <mat-error fxFlex
+          *ngIf="!coordinatorDetails.controls['mobileNo'].valid && coordinatorDetails.controls['mobileNo'].touched">
+          {{ getErrorMessage(coordinatorDetails.controls['mobileNo'], 'Phone1') }} </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Phone No 2  -->
+    <div class="formfield-div" fxLayout="row" fxLayoutAlign="center center">
+      <mat-form-field appearance="outline" style="width: 90%;">
+        <mat-label>Phone2</mat-label>
+        <input type="text" maxlength="10" matInput formControlName="secondaryMobileNo" autocomplete="off" placeholder="Phone2">
+        <mat-error fxFlex
+          *ngIf="!coordinatorDetails.controls['secondaryMobileNo'].valid && coordinatorDetails.controls['secondaryMobileNo'].touched">
+          {{ getErrorMessage(coordinatorDetails.controls['secondaryMobileNo'], 'Phone2') }} </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Status  -->
+    <!-- <div class="formfield-div" fxLayout="row" fxLayoutAlign="center center">
+       <mat-form-field appearance="outline" style="width: 90%;">
+        <mat-label>Status</mat-label>
+        <input type="text" maxlength="10" matInput formControlName="status" autocomplete="off"
+          placeholder="Status">
+        <mat-select formControlName="status">
+          <mat-option value="ACTIVE">Active</mat-option>
+          <mat-option value="INACTIVE">Inactive</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div> -->
+    
+    <!-- Cancel Button  -->
+    <div class="buttonClass" fxLayout="row" fxLayoutAlign="end center" style="width: 90%;">
+      <button mat-raised-button class="cancel-button" (click)="closeDialog()">
+        Cancel
+      </button>
+
+      <!-- Add Button  -->
+      <button *ngIf="data === null" (click)="addCoordinator()" mat-raised-button [disabled]="disable" class="create-button">
+        Create
+      </button>
+
+      <!-- Update Button  -->
+      <button *ngIf="data !== null" mat-raised-button [disabled]="disable" class="create-button"
+        (click)="updateCoordinator()">
+        Update
+      </button>
+      
+    </div>
+  </div>
+</div>

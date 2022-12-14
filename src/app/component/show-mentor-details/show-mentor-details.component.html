@@ -1,0 +1,211 @@
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf='cordinator !== "co"'>
+  <mat-card fxLayout="row" fxLayoutAlign="center center" class="editprofile-card"> Mentor Details </mat-card>
+</div>
+
+<div *ngIf='cordinator !== "co"' fxLayout="column" style="padding-bottom: 10px;">
+
+  <div fxLayout='column' class="box" fxLayoutAlign="space-between">
+  </div>
+  <div fxLayout='column'>
+
+    <div class="labginf" fxLayout='row' fxFlex=100>
+      <div class="lb2" fxFlex=33>
+        <div class="keys">
+          <span class="key">
+            Mentor Name
+          </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="keys">
+          <span class="key">
+            Mobile</span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="keys">
+          <span class="key">
+            Email </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="keys">
+          <span class="key">
+            Mentor Role </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="keys">
+          <span class="key">
+            Mentor Type </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="keys">
+          <span class="key">
+            Description </span>
+
+        </div>
+      </div>
+      <div class="vl2">
+        <div class="values">
+          <span class="valuu"> {{name}}</span>
+
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="values">
+          <span class="valuu"> {{mobileNumber}} </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="values">
+          <span class="valuu"> {{email}} </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="values">
+          <span class="valuu">{{mentorRole}}</span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="values">
+          <span class="valuu">{{mentorType}} </span>
+
+        </div>
+
+        <mat-divider></mat-divider>
+        <div class="comment">
+          <span class="valuu">{{mentorDescription}} </span>
+
+        </div>
+        <!-- <mat-divider></mat-divider>
+
+        <tr *ngFor="let mentor of mentorDetails">
+          <td class="valuu">{{mentor.name}}</td>
+
+          <td class="valuu">{{mentor.mobileNumber}}</td>
+
+          <td class="valuu">{{mentor.email}}</td>
+          <td class="valuu">{{mentor.mentorRole}}</td>
+          <td class="valuu">{{mentor.mentorType}}</td>
+          <td class="valuu">{{mentor.mentorDescription}}</td>
+
+        </tr> -->
+
+      </div>
+
+
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="end center">
+    <!-- <button style="margin-right: 15px;" mat-button ngxClipboard [cbContent]=" copiedData" class="cancel-button">
+      Copy
+    </button> -->
+    <button style="margin-right: 15px;" mat-button ngxClipboard class="cancel-button">
+      Copy
+    </button>
+
+    <button mat-raised-button class="create-button" (click)="onSubmit()">
+      Close
+    </button>
+  </div>
+</div>
+
+
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf='cordinator === "co"'>
+  <mat-card fxLayout="row" fxLayoutAlign="center center" class="editprofile-card"> Coordinator Details </mat-card>
+</div>
+
+<div *ngIf='cordinator === "co"' fxLayout="column" style="padding-bottom: 10px;">
+
+  <div fxLayout='column' class="box" fxLayoutAlign="space-between">
+  </div>
+  <div fxLayout='column'>
+
+    <div class="labginf" fxLayout='row' fxFlex=100>
+      <div class="lb2" fxFlex=33>
+        <div class="keys">
+          <span class="key">
+            Mentor Name
+          </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="keys">
+          <span class="key">
+            Mobile</span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="keys">
+          <span class="key">
+            Email </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <!-- <div class="keys">
+          <span class="key">
+            Secondary</span>
+
+        </div> -->
+        <div class="keys">
+          <span class="key">
+           Secondary Mobile
+          </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="keys">
+          <span class="key">
+            Description </span>
+
+        </div>
+      </div>
+      <div class="vl2">
+        <div class="values">
+          <span class="valuu"> {{name | titlecase}}</span>
+
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="values">
+          <span class="valuu"> {{mobileNumber}} </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="values">
+          <span class="valuu"> {{email}} </span>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="values">
+          <span class="valuu">{{categiry}} </span>
+
+        </div>
+
+        <mat-divider></mat-divider>
+        <div class="comment">
+          <span class="valuu">{{mentorType}} </span>
+
+        </div>
+        <!-- <mat-divider></mat-divider> -->
+
+
+      </div>
+
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="end center" style="margin-left: 42%;">
+    <!-- <button style="margin-right: 15px;" mat-button ngxClipboard [cbContent]=" copiedData" class="cancel-button">
+      Copy
+    </button> -->
+    <button style="margin-right: 15px;" mat-button ngxClipboard class="cancel-button">
+      Copy
+    </button>
+
+    <button mat-raised-button class="create-button" (click)="onSubmit()">
+      Close
+    </button>
+  </div>
+</div>

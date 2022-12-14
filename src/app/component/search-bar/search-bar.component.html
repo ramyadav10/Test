@@ -1,0 +1,28 @@
+<!-- <div style="margin-right: 50vw">
+  <div class="form-group col-md-4">
+    <i class="material-icons" id="material-icons-1">search</i>
+    <input
+      type="text" (keyup)="applyFilter($any($event))"
+      id="form-control-new"
+      class="form-control"
+      class="serchbarDiv"
+      placeholder="Search"
+      id="state"
+      name="state"
+    />
+    <mat-icon class="profile-img">clear</mat-icon>
+  </div> -->
+  <!-- <form class="nosubmit">
+    <input class="nosubmit" type="search" placeholder="search...">
+  </form> -->
+
+  <div class="nosubmit">
+    <form>
+      <input class="nosubmit" type="search" (click)="applyFilter($any($event))" (keyup)="applyFilter($any($event))" placeholder="Search...">
+    </form>
+  </div>
+  
+
+  <!-- <div class="close-icon">
+    <mat-icon>clear</mat-icon>
+  </div>  -->

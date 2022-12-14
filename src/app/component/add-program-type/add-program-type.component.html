@@ -1,0 +1,37 @@
+<div class="maindiv">
+  <!-- <div class="topdiv" fxLayoutAlign="center center" *ngIf="operation === 'add'">New Program Type</div> -->
+  <div _ngcontent-jut-c30="" class="topdiv ng-star-inserted" fxlayoutalign="center center" ng-reflect-fx-layout-align="center center" style="place-content: center; align-items: center; flex-direction: row; box-sizing: border-box; display: flex;">New Program Type</div>
+  <div class="topdiv" fxLayoutAlign="center center" *ngIf="operation === 'update'">Update Program Type</div>
+
+  <form [formGroup]="programTypeForm" fxLayout="column" fxLayoutAlign=" center" fxLayoutGap="1%">
+    <mat-form-field appearance="outline" class="firstfield">
+      <mat-label>Program Name</mat-label>
+      <input matInput autocomplete="off" formControlName="name" minlength="1" maxlength="45">
+      <!-- <mat-error *ngIf="programTypeForm.get('name').invalid &&
+      (programTypeForm.get('name').dirty || programTypeForm.get('name').touched)">
+        {{getErrorForName()}}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="secondfield">
+      <mat-label>Acronym</mat-label>
+      <input matInput minlength="1" maxlength="10" autocomplete="off" formControlName="acronym">
+      <!-- <mat-error *ngIf="programTypeForm.get('acronym').invalid &&
+        (programTypeForm.get('acronym').dirty || programTypeForm.get('acronym').touched)">
+        {{getErrorForAcronym()}}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="secondfield">
+      <mat-label>Description</mat-label>
+      <textarea matInput autocomplete="off" formControlName="description" cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="6"></textarea>
+      <!-- <mat-error *ngIf="programTypeForm.get('description').invalid &&
+        (programTypeForm.get('description').dirty || programTypeForm.get('description').touched)">
+        {{getErrorForDescription()}}</mat-error> -->
+    </mat-form-field>
+    <div class="buttonClass" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px">
+      <button mat-button class="cancel" mat-button mat-dialog-close>Cancel</button>
+
+      <button mat-button *ngIf="data === null" color="primary" (click)="addProgramType()">Create</button>
+      <button mat-button *ngIf="data !== null" color="primary" (click)="updateProgramType()">Update</button>
+
+    </div>
+  </form>
+</div>

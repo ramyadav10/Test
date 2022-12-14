@@ -1,0 +1,151 @@
+ <div fxLayout="row" fxLayoutAlign="center center" *ngIf="!status">
+  <mat-card fxLayout="row" fxLayoutAlign="center center" class="editprofile-card"> Remap</mat-card>
+</div> 
+ <div fxLayout="column" style="padding-bottom: 10px;" *ngIf="!status"> 
+  <div fxLayout='row' class="box" fxLayoutAlign="space-between">
+    <div>
+      <label class="lb">Candidate Name: </label>
+      <span class="sname"> {{name}}</span>
+    </div>
+    <div>
+      <label class="lb">CIC-ID:</label> <span class="sname"> {{CIC_ID}}</span>
+    </div>
+
+  </div>
+  
+  <form [formGroup]='RempForm' autocomplete="off" novalidate>
+    <div fxLayoutAlign="center center" fxLayout='column'>
+      <mat-form-field appearance="outline" [style.fontSize.px]="12" autocomplete="off" class="option1 wid">
+        <mat-label class="dropdown">Batch</mat-label>
+        <mat-select (selectionChange)="selectOption($event.value)" (click)="getAllBatches('Trial')" formControlName="Batch" [(ngModel)]="batchname" required>
+          <div class="select">
+            <mat-option *ngFor="let btype of batches.dataList"
+              [ngStyle]="{ display : currentBatchId === btype.batch.id ? 'none' : 'block' }" [value]="btype.batch">
+              {{btype.batch.batchName}} </mat-option>
+          </div>
+        </mat-select>
+        <mat-error *ngIf="hasError('Batch', 'required')">Batch is required</mat-error>
+      </mat-form-field>
+
+      <div>
+        <mat-form-field appearance="outline" [style.fontSize.px]="12" autocomplete="off" class="option1 wid">
+          <mat-label class="dropdown">Remap Date</mat-label>
+          <input matInput (dateChange)="selectDate($event)" [matDatepicker]="picker" formControlName="StartDate"
+            required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="hasError('StartDate', 'required')">Remap Date is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" [style.fontSize.px]="12" class="option1 wid" autocomplete="off">
+        <mat-label class="dropdown">Remap Reason</mat-label>
+
+        <textarea matInput placeholder="Remap Reason" cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"
+          formControlName='Reason'></textarea>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center">
+      <button mat-raised-button class="cancel-button" (click)="onSubmit()">
+        Cancel
+      </button>
+      <button mat-raised-button class="create-button" (click)="RemapToNewBatch()">
+        Submit
+      </button>
+    </div>
+  </form>  
+
+</div> 
+
+
+
+  <div fxLayout="row" fxLayoutAlign="center center" *ngIf="status">  
+  <mat-card fxLayout="row" fxLayoutAlign="center center" class="editprofile-card"> Change Status</mat-card>
+</div>
+<div fxLayout="column" style="padding-bottom: 10px;" *ngIf="status">
+  <div fxLayout='row' class="box" fxLayoutAlign="space-between" style="flex-direction: row;box-sizing: border-box;display: flex;
+  place-content: stretch space-between;
+  align-items: stretch;">
+    <div>
+      <label class="lb">Candidate Name: </label>
+      <span class="sname"> {{name | titlecase}}</span>
+    </div>
+    <div>
+      <label class="lb">CIC-ID:</label> <span class="sname"> {{CIC_ID}}</span>
+    </div>
+  </div>
+
+
+  <form [formGroup]='RempForm' autocomplete="off" novalidate>
+    <div fxLayoutAlign="center center" fxLayout='column'>
+      <mat-form-field appearance="outline" [style.fontSize.px]="12" autocomplete="off" class="option1 wid">
+        <mat-label class="dropdown">Status</mat-label>
+        <!-- [(ngModel)]="cStatus" -->
+        <mat-select (selectionChange)="selectStatus($event.value)" formControlName="cStatus" 
+          required>
+          <div class="select">
+            <mat-option *ngFor="let sta of StatusArray" [value]="sta" 
+             [ngStyle]="{ display : PreviousStatus === sta.keyText  ? 'none' : 'block' }"
+              >{{sta.keyText}}
+            </mat-option>
+          </div>
+        </mat-select>
+        <mat-error *ngIf="hasError('cStatus', 'required')">Status is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" *ngIf="show" [style.fontSize.px]="12" autocomplete="off" class="option1 wid">
+        <mat-label class="dropdown">Batch</mat-label>
+        <!-- [(ngModel)]="Batch" -->
+        <mat-select (selectionChange)="selectBatch($event.value)" formControlName="Batch"  required>
+          <div class="select">
+            <mat-option *ngFor="let btype of BatchArray"
+              [ngStyle]="{ display : currentBatchId === btype.id ? 'none' : 'block' }" [value]="btype">
+              {{btype.batchName}}
+            </mat-option>
+          </div>
+        </mat-select>
+        <mat-error *ngIf="hasError('Batch', 'required')">Batch is required</mat-error>
+      </mat-form-field>
+
+      <div>
+        <mat-form-field appearance="outline" [style.fontSize.px]="12" autocomplete="off" class="option1 wid">
+          <mat-label class="dropdown">Change Status Date</mat-label>
+          <input matInput (dateChange)="selectDate($event.value)" [matDatepicker]="picker" formControlName="StartDate"
+            required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="hasError('StartDate', 'required')">Change Status Date is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" *ngIf="showReson" [style.fontSize.px]="12" autocomplete="off" class="option1 wid">
+        <mat-label class="dropdown">Exit Reason</mat-label>
+        <!-- [(ngModel)]="ExitReason" -->
+        <mat-select (selectionChange)="selectExitReason($event.value)" formControlName="ExitReason" required>
+          <div class="select">
+            <mat-option *ngFor="let reason of ExitReasonArray"
+            [ngStyle]="{ display : PreviousStatus === reason.keyText  ? 'none' : 'block' }"[value]="reason">
+              {{reason.keyText}}
+            </mat-option>
+          </div>
+        </mat-select>
+        <mat-error *ngIf="hasError('Batch', 'required')">Exit Reason is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" [style.fontSize.px]="12" class="option1 wid" autocomplete="off">
+        <mat-label class="dropdown"> Comment</mat-label>
+        <textarea matInput placeholder="Comment" cdkTextareaAutosize cdkAutosizeMinRows="4"
+          cdkAutosizeMaxRows="5" [(ngModel)]="Reason" formControlName='Reason'></textarea>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="end center">
+      <button mat-raised-button class="cancel-button" (click)="onSubmit()">
+        Cancel
+      </button>
+      <button mat-raised-button class="create-button" (click)="changeCandidateStatus()">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

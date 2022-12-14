@@ -1,0 +1,333 @@
+{
+    "Tech Type": [
+        {
+            "techType": "DevOPs"
+        },
+        {
+            "techType": "FrontEnd"
+        },
+        {
+            "techType": "Backened"
+        },
+        {
+            "techType": "Mobility"
+        },
+        {
+            "techType": "MeanStack"
+        },
+        {
+            "techType": "MEARStack"
+        },
+        {
+            "techType": "Testing"
+        },
+        {
+            "techType": "FullStack"
+        }
+    ],
+    "Mentor": [
+        {
+            "Technology": "java",
+            "Lead": "2",
+            "Enginer": "1",
+            "Buddy": "8"
+        },
+        {
+            "Technology": "java",
+            "Lead": "2",
+            "Enginer": "1",
+            "Buddy": "8"
+        },
+        {
+            "Technology": "NodeJS",
+            "Lead": "3",
+            "Enginer": "10",
+            "Buddy": "9"
+        },
+        {
+            "Technology": "DevOPs",
+            "Lead": "1",
+            "Enginer": "1",
+            "Buddy": "4"
+        },
+        {
+            "Technology": "Data Enginner",
+            "Lead": "1",
+            "Enginer": "2",
+            "Buddy": "10"
+        },
+        {
+            "Technology": "Machine Learning",
+            "Lead": "1",
+            "Enginer": "2",
+            "Buddy": "8"
+        },
+        {
+            "Technology": "Php",
+            "Lead": "2",
+            "Enginer": "1",
+            "Buddy": "8"
+        },
+        {
+            "Technology": "Angular",
+            "Lead": "2",
+            "Enginer": "1",
+            "Buddy": "8"
+        },
+        {
+            "Technology": "Spring",
+            "Lead": "2",
+            "Enginer": "1",
+            "Buddy": "8"
+        },
+        {
+            "Technology": "ios",
+            "Lead": "2",
+            "Enginer": "1",
+            "Buddy": "8"
+        },
+        {
+            "Technology": "Reactjs",
+            "Lead": "2",
+            "Enginer": "1",
+            "Buddy": "8"
+        },
+        {
+            "Technology": "AI",
+            "Lead": "2",
+            "Enginer": "1",
+            "Buddy": "8"
+        },
+        {
+            "Technology": "Swift",
+            "Lead": "2",
+            "Enginer": "1",
+            "Buddy": "8"
+        },
+        {
+            "Technology": "Ruby on Rails",
+            "Lead": "2",
+            "Enginer": "1",
+            "Buddy": "8"
+        },
+        {
+            "Technology": "Python",
+            "Lead": "2",
+            "Enginer": "1",
+            "Buddy": "8"
+        }
+    ],
+    "TechStack": [
+        {
+            "TechIcon": "../../../assets/icons/java.png",
+            "TechName": "JAVA"
+        },
+        {
+            "TechIcon": "../../../assets/icons/php.png",
+            "TechName": "PHP"
+        },
+        {
+            "TechIcon": "../../../assets/icons/js.png",
+            "TechName": "NodeJs"
+        },
+        {
+            "TechIcon": "../../../assets/icons/java.png",
+            "TechName": "JAVA"
+        },
+        {
+            "TechIcon": "../../../assets/icons/java.png",
+            "TechName": "JAVA"
+        },
+        {
+            "TechIcon": "../../../assets/icons/java.png",
+            "TechName": "JAVA"
+        },
+        {
+            "TechIcon": "../../../assets/icons/php.png",
+            "TechName": "PHP"
+        },
+        {
+            "TechIcon": "../../../assets/icons/js.png",
+            "TechName": "NodeJsaaaaaaaaaaaaaaaaaaaa"
+        },
+        {
+            "TechIcon": "../../../assets/icons/java.png",
+            "TechName": "JAVA"
+        },
+        {
+            "TechIcon": "../../../assets/icons/php.png",
+            "TechName": "PHP"
+        },
+        {
+            "TechIcon": "../../../assets/icons/js.png",
+            "TechName": "NodeJs"
+        },
+        {
+            "TechIcon": "../../../assets/icons/java.png",
+            "TechName": "JAVA"
+        }
+    ],
+    "Maker Program": [
+        {
+            "image": "../../../assets/icons/js.png",
+             "status":"approved",
+            "TechName": "MEAN + CI/CD",
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "status":"approved",
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "status":"approved",
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "status":"rejected",
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "domain":"Fullstack",
+            "status":"onhold",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        },
+        {
+            "image": "../../../assets/icons/js.png",
+            "TechName": "MEAN + CI/CD",
+            
+            "domain":"Fullstack",
+            "TechDescription": "Mongo, Express, Node Js, Angular6, CI/CD, AWS, EC2"
+        }
+    ],
+    "Mentor Sheet":[
+        {
+            "Lead":"Ashish sir",
+            "Engineer":[
+                "shweta"
+            ],
+            "Buddy":[
+                "Mohit",
+                "Rohini",
+                "Jotiram" 
+            ]
+        },
+        {
+            "Lead":"Sunil Patil",
+            "Engineer":[
+                "Aniket",
+                "Jaspreet"
+            ],
+            "Buddy":[
+                "Venkat Reddy",
+                "Athet",
+                "Nisha",
+                "Rohini" 
+            ]
+        },
+        {
+            "Lead":"Ashish ",
+            "Engineer":[
+                "shweta"
+            ],
+            "Buddy":[
+                "Mohit",
+                "Rohini",
+                "Jotiram" 
+            ]
+        },
+        {
+            "Lead":"Ashish sir",
+            "Engineer":[
+                "shweta"
+            ],
+            "Buddy":[
+                "Mohit",
+                "Rohini",
+                "Jotiram" 
+            ]
+        },
+        {
+            "Lead":"Ashish sir",
+            "Engineer":[
+                "shweta"
+            ],
+            "Buddy":[
+                "Mohit",
+                "Rohini",
+                "Jotiram" 
+            ]
+        }
+        
+    ]
+}

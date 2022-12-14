@@ -1,0 +1,166 @@
+<div class="main-div" fxLayout="column">
+  <div class="heading-buton" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" style="flex-direction: row; box-sizing: border-box; display: flex;">
+      <div class="heading">Mentor</div>
+      <div class="count" *ngIf="this.mentorCount">{{mentorCount}}</div>
+    </div>
+    <div fxLayout="row" fxFlex="36" fxLayoutGap="20px"
+      style="flex-direction: row; box-sizing: border-box; display: flex; flex: 1 1 100%; max-width: 36%;">
+
+      <div floatLabel="never" class="search-div" fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+        <div fxLayoutAlign="center center" class="search-icon-div">
+          <mat-icon matPrefix class="search-icon">search</mat-icon>
+        </div>
+
+        <input class="search" matInput placeholder="Search" [(ngModel)]="searchedWordMentor" #searchbar
+          autocomplete="off">
+        <mat-icon [matMenuTriggerFor]="beforeSearchMenu"
+          style="font-size: 16px; height: 16px; color: #707070; cursor: pointer;">
+          view_headline</mat-icon>
+
+        <mat-menu #beforeSearchMenu="matMenu" xPosition="before">
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='firstName' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="applyFilterMentor('firstName')" (click)="searchByKeyword('firstName')">First name</button>
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='lastName' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="applyFilterMentor('lastName')" (click)="searchByKeyword('lastName')">Last name</button>
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='email' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="applyFilterMentor('email')" (click)="searchByKeyword('email')">Email Id</button>
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='mobileNumber' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="applyFilterMentor('mobileNumber')" (click)="searchByKeyword('mobileNumber')">Phone</button>
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='mentorType' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="searchByKeyword('mentorType')">Type</button>
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='mentorRole' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="applyFilterMentor('mentorRole')" (click)="searchByKeyword('mentorRole')">Category</button>
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='employeeId' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="applyFilterMentor('employeeId')" (click)="searchByKeyword('employeeId')">EmployeeID</button>
+
+          <!-- <button mat-menu-item [ngStyle]="{'color' : searchBy==='techName' ? 'blue' : 'rgba(0,0,0,.54)'}" (click)="searchByKeyword('techName')">Tech Stack</button> -->
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='experienceYears' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="applyFilterMentor('experienceYears')" (click)="searchByKeyword('experienceYears')">Experience
+            year</button>
+          <button mat-menu-item [ngStyle]="{'color' : searchBy==='status' ? 'blue' : 'rgba(0,0,0,.54)'}"
+            (click)="applyFilterMentor('status')" (click)="searchByKeyword('status')">Status</button>
+
+        </mat-menu>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center" class="dialog-buton" (click)="mentorDialog()">
+        <mat-icon class="icon">add</mat-icon>
+        <div style="margin-bottom: 1px;">New Mentor</div>
+      </div>
+    </div>
+  </div>
+
+
+  <mat-tab-group class="remove-border-bottom" fxLayoutGap="15" (selectedTabChange)="tabClick($event)"
+    [selectedIndex]="selectedIndex">
+    <mat-tab class="tab1" label="Internal" class="tablebox">
+      <ng-template mat-tab-label style="width: 100%;">
+        <label style="cursor: pointer;">Internal</label>
+        <div [ngClass]=" selectedIndex =='0' ? 'tabCount-div':'tabCount-div1' ">
+          {{this.internalmentorcount}}
+        </div>
+      </ng-template>
+    </mat-tab>
+
+    <mat-tab class="tab1 active leftside" label="External" class="tablebox">
+      <ng-template mat-tab-label style="width: 100%;">
+        <label style="cursor: pointer;">External</label>
+        <div [ngClass]=" selectedIndex =='1' ? 'tabCount-div':'tabCount-div1' ">
+          {{this.externalmentorcount}}
+        </div>
+      </ng-template>
+    </mat-tab>
+
+  </mat-tab-group>
+
+  <div class="tablebox">
+    <div class="table-div">
+
+
+      <table class="display" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr class="sub-heading">
+            <th class="img-head" style="padding-right: 48px;"></th>
+            <th class="mentorName-head">Name</th>
+            <th class="email-haed" *ngIf="this.selectedIndex=='0'">Employee ID</th>
+            <th class="email-haed">Email</th>
+            <th class="phnNum-head" style="text-align: center;">Phone</th>
+            <th class="mentorType-head" style="text-align: center;">Start Date</th>
+            <th class="categiry-head" style="text-align: center;">Category</th>
+            <th class="techStack-head" style="text-align: center;">Tech Stack</th>
+            <th class="ExYr-head" style="text-align: center;">Experience year</th>
+            <th class="ExYr-head" style="text-align: center;">Practice Head</th>
+
+            <th class="workEx-head">Work Experience</th>
+            <th class="workEx-head">Status</th>
+
+            <th class="more-head"></th>
+          </tr>
+
+          <tr class="mentor-data" *ngFor="let mentors of mentorDetails | filterMentor:searchedWordMentor;">
+            <td class="img-data">
+              <img *ngIf="mentors.profileImageURL === null" className="profile"
+                src="../../../assets/images/user-silhouette.svg" alt="profile image" class="profile-img">
+              <img *ngIf="mentors.profileImageURL !== null" className="profile"
+                src="{{s3BucketUrl+mentors.profileImageURL}}" alt="profile image" class="profile-img">
+            </td>
+            <td class="mentorName-data">{{mentors.firstName}} {{mentors.lastName}}</td>
+
+            <td class="email-data" *ngIf="this.selectedIndex=='0'">{{mentors.employeeId}}</td>
+            <td class="email-data">{{mentors.email}}</td>
+
+            <td class="phnNum-data" style="text-align: center;">{{mentors.mobileNumber}}</td>
+            <td class="mentorType-data" style="text-align: center;" *ngIf="mentors.startDate">
+              {{mentors.startDate.dayOfMonth}} {{capitalizeFirstLetter(mentors.startDate)}} {{mentors.startDate.year}}
+            </td>
+            <td class="mentorType-data" style="text-align: center;" *ngIf="!mentors.startDate">
+
+            </td>
+            <td class="mentorType-data" style="text-align: center;" *ngIf="mentors.mentorRole=='Buddy'">Backup</td>
+
+            <td class="categiry-data" style="text-align: center;"
+              *ngIf="mentors.mentorRole!=='Supervisor' && mentors.mentorRole!=='Buddy' ">{{mentors.mentorRole}}</td>
+            <td class="categiry-data" style="text-align: center;" *ngIf="mentors.mentorRole==='Supervisor'">Practice
+              Head</td>
+            <td class="techStack-data" style="text-align: center;">
+              <span *ngFor="let tech of mentors.techStack;let i=index;">
+                {{tech.techName}}<span *ngIf="i<mentors.techStack.length-1">,</span><span
+                  *ngIf="i==mentors.techStack.length-1">.</span>
+              </span>
+            </td>
+            <td class="ExYr-data" style="text-align: center;">{{mentors.experienceYears}}</td>
+            <td class="ExYr-data" style="text-align: center;">
+              <span *ngFor="let mentorsdata of mentorDetails">
+                <span *ngIf="mentorsdata.id==mentors.supervisorId">
+                  {{mentorsdata.firstName}} {{mentorsdata.lastName}}
+                </span>
+              </span>
+            </td>
+
+            <td class="workEx-data">{{mentors.mentorDescription}}</td>
+            <td class="ExYr-data">{{mentors.status}}</td>
+
+            <td class="unassign-more" [matMenuTriggerFor]="beforeMenu" (click)="setMentorId(mentors)">
+              <img src="../../../assets/icons/ic_more_vert_24px.svg">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <button mat-menu-item class="menu-button" (click)="updateMentor()">
+      <mat-icon class="edit">edit</mat-icon>
+      Edit
+    </button>
+    <button mat-menu-item class="menu-button" (click)="openDeleteConfirmDialog()"
+      *ngIf="this.mentorData && this.mentorData.status!='Inactive'">
+      <mat-icon class="edit">delete</mat-icon>
+      Delete
+    </button>
+  </mat-menu>
+</div>
+<div class="infodiv" *ngIf="!this.noinfodiv">
+  No Information available
+</div>

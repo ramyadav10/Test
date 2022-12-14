@@ -1,0 +1,51 @@
+<div class="maindiv">
+<div class="topdiv" fxLayoutAlign="center center">New User Setting</div>
+<div  style="margin-top: 8px" fxLayout="column" fxLayoutAlign=" center" fxLayoutGap="1%">
+    
+  <mat-form-field appearance="outline" class="firstfield">
+  <mat-label>First Name</mat-label>
+  <input matInput [formControl]="FirstName">
+  <mat-error *ngIf="FirstName.invalid" >Enter  First Name</mat-error>
+  </mat-form-field>
+  
+  <mat-form-field appearance="outline" class="secondfield">
+    <mat-label>Last Name</mat-label>
+    <input matInput [formControl]="LastName">
+    <mat-error *ngIf="LastName.invalid" >Enter Last Name</mat-error>
+    </mat-form-field>
+    
+  <mat-form-field appearance="outline" class="secondfield">
+  <mat-label>Phone Number</mat-label>
+  <input matInput [formControl]="PhoneNumber">
+  <mat-error *ngIf="PhoneNumber.invalid"  >Enter PhoneNumber</mat-error>
+  </mat-form-field>
+   
+  <mat-form-field appearance="outline" class="secondfield">
+  <mat-label>Email</mat-label>
+  <input matInput [formControl]="Email">
+  <mat-error *ngIf="Email.invalid">Enter Valid Email</mat-error>
+  </mat-form-field>
+   
+      
+          <div class="action">Select Actions</div>
+      <div class="actions" style="margin-left: 51px">
+        <!-- <div class="all">{{items}}</div> -->
+        <mat-chip-list >
+ <!-- sdsdsd -->
+         <mat-chip-list [(ngModel)]="selectedOffers" multiple>
+          <mat-chip *ngFor="let offer of data4" selectable="true"
+                   [selected]="isSelected(offer)"
+                   (click)="toggleOffer(offer)">
+            {{offer}}&nbsp;
+            <mat-icon>{{isSelected(offer) ? "cancel" : ""}}</mat-icon>
+          </mat-chip>
+      
+        </mat-chip-list>
+        </mat-chip-list>
+      </div >
+        <div  class="buttonClass"  fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px">
+        <button mat-button class="cancel" (click)="closeSettings()">Cancel</button>
+        <button mat-button color="primary" [disabled]="FirstName.invalid ||LastName.invalid|| PhoneNumber.invalid || Email.invalid">Create</button>
+      </div>
+      </div>
+  </div>

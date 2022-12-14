@@ -1,0 +1,85 @@
+@import '../../config/LMS-theme.scss';
+
+.heading{
+    margin: 0%;
+    text-align: -webkit-center;
+    font-family: Lato;
+    color: #78827A;
+    font-weight: 400;
+}
+.heading-div{
+    height: 28%;
+}
+.close-div{
+direction: rtl;
+height: 6%;
+}
+.input-div{
+    height: 35%;
+    margin-left: 3em;
+
+}
+
+.close-icon{
+    cursor: pointer;
+    color: #999999;
+
+}
+.upload-button{
+    background-color: $primary_color;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-family: Lato;
+    font-weight: 600;
+    width: 115px;
+    height: 35px;
+    margin-top: 7px;
+
+
+}
+.upload-icon{
+    font-size: large;
+
+}
+.file{
+color: #78827A;
+
+}
+.fileformat{
+    font-size: 13px;
+    color: #BEBEBE;
+    font-family: Lato;
+}
+
+:host::ng-deep.mat-flat-button[disabled][disabled]{
+    @include disable_button;
+    background-color: $primary_color;
+    margin-top: 5%;
+}
+
+.click-span{
+    cursor: pointer;
+    color: blue;
+}
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: #4A584D;
+}
+.filename{
+    margin: 0%;
+    width: fit-content;
+    margin-top: 2%;
+    font-size: 14px;
+    color: #78827A;
+    margin-left: 3%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: fit-content;
+    width: 70%;
+}

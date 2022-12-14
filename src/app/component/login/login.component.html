@@ -1,0 +1,48 @@
+<div style="height:100%; width: 100%;" (keydown.enter)="onKeydown($event)">
+    <div fxFlex=100 fxLayout="row" fxLayoutAlign="center center" class="main-div">
+        <form [formGroup]="loginForm" (submit)="login()">
+            <mat-card class="login-mat-card">
+                <!-- fxLayout="column" fxLayoutAlign="center center" -->
+                <div fxLayout="column" fxLayoutAlign="center center">
+                    <div class="cicleLogo">
+                        <div class="circle-div">
+                            <img class="logo" src="../../../assets/images/Group 3694.png">
+                        </div>
+                    </div>
+                    <div class="inputs">
+                        <mat-form-field appearance="outline" class="form-field">
+                            <mat-label>Email Id</mat-label>
+                            <input matInput autocomplete="off" formControlName="email" maxlength="254">
+                            <mat-error fxFlex
+                                *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched">
+                                {{ 'Invalid Email' }} </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="password-div">
+                        <mat-form-field appearance="outline" class="form-field1">
+                            <mat-label>Password</mat-label>
+                            <input matInput [type]="hide ? 'text' : 'password'" autocomplete="off"
+                                formControlName="password" maxlength="100">
+                            <mat-error fxFlex
+                                *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">
+                                {{ 'Invalid Password' }} </mat-error>
+                            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
+                            </mat-icon>
+                        </mat-form-field>
+
+                        <!-- <div>
+                        <div class="forgot-div">
+                             <a class="home" routerLink="/home">Home</a>
+                            <a class="forgot" href="https://www.google.com/">?Forgot Password</a>
+                        </div>
+                    </div> -->
+                    </div>
+                    <div class="button-div">
+                        <button color="primary" type="submit" mat-button class="login-button">Login</button>
+                    </div>
+                </div>
+            </mat-card>
+
+        </form>
+    </div>
+</div>

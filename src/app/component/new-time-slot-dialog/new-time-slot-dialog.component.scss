@@ -1,0 +1,117 @@
+// @import "../../config/LMS-theme.scss";
+.maindiv {
+	background-color: #ffffff;
+	// margin-top: -60px;
+	text-align: center;
+	height: 80%;
+	place-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+}
+
+.topdiv {
+	width: 238px;
+	height: 43px;
+	background-color: #7f961e;
+	border-radius: 10px;
+	font-weight: 600;
+	font-size: 18px;
+	color: #ffffff;
+	position: absolute;
+	margin-top: -14%;
+	margin-left: 1%;
+	place-content: center;
+	align-items: center;
+	display: flex;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+	overflow: visible;
+	padding: 0.6em 0 0.6em 0;
+	// width: 251%;
+}
+
+:host ::ng-deep .mat-form-field-infix {
+	border-top-width: 0.35375em;
+	//width: 251%;
+}
+
+:host::ng-deep.mat-form-field-appearance-outline .mat-form-field-wrapper {
+	margin: -5px;
+}
+
+.cancel {
+	color: #658292;
+	width: 7em;
+	margin-right: 2%;
+}
+
+:host::ng-deep.mat-button.mat-primary,
+.mat-icon-button.mat-primary,
+.mat-stroked-button.mat-primary {
+	color: #ffffff;
+	background-color: #7f961e;
+	width: 7em;
+	height: 3em;
+}
+
+// /deep/
+.mat-input-element {
+	caret-color: #7f961e;
+}
+
+.firstfield {
+	margin-top: 15%;
+	width: 330px;
+}
+
+.slotTime {
+	display: flex;
+	justify-content: center;
+	padding-left: 5%;
+	margin-top: 4%;
+	padding-right: 5%;
+}
+
+.secondfield {
+	margin-top: 20px;
+	// width: 330px;
+	width: 32%;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+	color: #7f961e !important;
+}
+
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+	color: #7f961e !important;
+}
+
+.buttonClass {
+	margin-top: 12%;
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	margin-right: 7%;
+}
+
+.subdiv {
+	height: 11em;
+	margin: 0em;
+}
+
+:host ::ng-deep .mat-button[disabled][disabled] {
+	opacity: 0.4;
+	background-color: #7f961e;
+	color: #ffffff;
+}
+
+.median {
+	align-self: center;
+	width: 35px;
+	text-align: center;
+}

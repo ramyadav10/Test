@@ -1,0 +1,53 @@
+<div class="maindiv">
+  <div class="topdiv" fxLayoutAlign="center center" *ngIf="operation === 'add'">New Time Slot</div>
+  <div class="topdiv" fxLayoutAlign="center center" *ngIf="operation === 'update'">Update Time Slot</div>
+
+  <form [formGroup]="timeSlotForm" style="margin-top: 20px;" fxLayout="column" fxLayoutAlign=" center" fxLayoutGap="1%">
+    <mat-form-field appearance="outline" class="firstfield">
+      <mat-label>Slot Name</mat-label>
+      <input matInput autocomplete="off" formControlName="slotName" minlength="1" maxlength="20">
+      <!-- <mat-error *ngIf="SlotName.invalid" style="margin-top: 0px;">Enter Slot Name</mat-error>  -->
+      <mat-error *ngIf="" style="margin-top: 2.75em;">Enter Slot Name</mat-error>
+
+      <mat-error *ngIf="timeSlotForm.get('slotName')?.invalid &&
+        (timeSlotForm.get('slotName')?.dirty || timeSlotForm.get('slotName')?.touched)">
+        {{getErrorForSlotName()}}</mat-error>
+    </mat-form-field>
+    <div class="slotTime">
+      <mat-form-field appearance="outline" class="secondfield">
+        <mat-label>From Slot Time</mat-label>
+         <input type="time" matInput autocomplete="off" formControlName="slotFromTime" (change)="onTimeChange($event,'from')"> 
+        <!-- <input type="time" matInput autocomplete="off" formControlName="slotFromTime"> -->
+
+        <!-- <mat-error *ngIf="SlotTime.invalid" style="margin-top: 0px;">Enter slot time</mat-error> -->
+        <mat-error *ngIf="" style="margin-top: 30px;">Enter slot time</mat-error>
+
+        <mat-error *ngIf="timeSlotForm.get('slotFromTime')?.invalid &&
+          (timeSlotForm.get('slotFromTime')?.dirty || timeSlotForm.get('slotFromTime')?.touched)">
+          {{getErrorForSlotFromTime()}}</mat-error>
+      </mat-form-field>
+      <span class="median">{{fromMeridian || "-"}}</span>
+      <mat-form-field appearance="outline" class="secondfield">
+        <mat-label>To Slot Time</mat-label>
+        <input type="time" matInput autocomplete="off" formControlName="slotToTime" (change)="onTimeChange($event,'to')">
+        <!-- <input type="time" matInput autocomplete="off" formControlName="slotToTime"> -->
+
+        <!-- <mat-error *ngIf="SlotTime.invalid" style="margin-top: 0px;">Enter slot time</mat-error>  -->
+        <mat-error *ngIf="" style="margin-top: 0px;">Enter slot time</mat-error>
+
+        <mat-error *ngIf="timeSlotForm.get('slotToTime')?.invalid &&
+          (timeSlotForm.get('slotToTime')?.dirty || timeSlotForm.get('slotToTime')?.touched)">
+          {{getErrorForSlotToTime()}}</mat-error>
+      </mat-form-field>
+      <span class="median">{{toMeridian || "-"}}</span>
+    </div>
+    <div class="buttonClass" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px">
+      <button mat-button class="cancel" mat-button mat-dialog-close>Cancel</button>
+
+      <button mat-button *ngIf="data === null" color="primary" (click)="addTimeSlot()">Create</button>
+      <button mat-button *ngIf="data !== null" color="primary" (click)="updateTimeSlot()">Update</button>
+
+    </div>
+  </form>
+</div>
+<!-- [disabled]="SlotName.invalid || SlotTime.invalid"  -->

@@ -1,0 +1,256 @@
+<div class="maindiv">
+
+  <div class="topdiv" fxLayoutAlign="center center" *ngIf="data===null">New Mentor</div>
+  <div class="topdiv" fxLayoutAlign="center center" *ngIf="data!==null">Update Mentor</div>
+
+  <div fxLayout="column" style="font-size: small;" fxLayoutAlign=" center" fxLayoutGap="18px">
+    <form [formGroup]="mentorForm" fxLayout="column" fxLayoutAlign=" center" fxLayoutGap="20px"
+      style="width: 100%; padding-top: 10px;">
+      <div class="imageContent" fxLayout="column" fxLayoutAlign="center center">
+        <div class="ImageIcon" fxLayout="row" fxLayoutAlign="center center" (click)="editProfilePic()">
+          <img style="margin-left:20%; padding-top:0.6em" matTooltip="Upload Profile Picture"
+            *ngIf="imageSource == null" src='../../../assets/images/user-silhouette.svg'>
+          <img *ngIf="data == null && imageSource !== null" src="{{imageSource}}" class="profile-icon1">
+          <img *ngIf="imageSource !== null && data !== null" src="{{mentorImage}}" class="profile-icon1">
+        </div>
+        <div class="imagetext">Not exceeding 3MB</div>
+      </div>
+      <div fxLayout="row" class="names-mentors" fxLayoutAlign="starts center" style="margin-left: 3%;" fxLayoutGap="20px">
+        <div class="firstName-1">
+        <mat-form-field appearance="outline" class="firstfield">
+          <mat-label class="firstName">First Name</mat-label>
+          <input matInput autocomplete="off" formControlName="mentorName">
+          <!-- <mat-error *ngIf="mentorName.invalid" style="margin-top: -2px;">Enter valid Mentor Name</mat-error> -->
+          <mat-error *ngIf="mentorForm.get('mentorName')?.invalid &&
+            (mentorForm.get('mentorName')?.dirty || mentorForm.get('mentorName')?.touched)">
+            {{getErrorForFname()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="firstName-2">
+        <mat-form-field appearance="outline" class="firstfield" style="margin-left: -10%;">
+          <mat-label>Last Name</mat-label>
+          <input matInput autocomplete="off" formControlName="lastName">
+          <!-- <mat-error *ngIf="mentorName.invalid" style="margin-top: -2px;">Enter valid Mentor Name</mat-error> -->
+          <mat-error *ngIf="mentorForm.get('lastName')?.invalid &&
+            (mentorForm.get('lastName')?.dirty || mentorForm.get('lastName')?.touched)">
+            {{getErrorForLname()}}</mat-error>
+        </mat-form-field>
+      </div>
+      </div>
+
+      <div class="menton-button-tog" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+        <div class="mentorType">Mentor Type :</div>
+        <!-- <div> -->
+        <mat-radio-group class="mentorType" formControlName="mentorType" aria-label="Select an option"
+          fxLayoutGap="35px">
+          <mat-radio-button  style="margin-right: 20px;" *ngIf="data === null" (change)="changeGender($event)" [checked]="mentort == 'Internal'"
+            value="Internal">Internal</mat-radio-button>
+          <mat-radio-button *ngIf="data !== null" (change)="changeGender($event)" value="Internal">Internal
+          </mat-radio-button>
+
+          <mat-radio-button *ngIf="data === null" (change)="changeGender($event)" [checked]="mentort == 'External'"
+            value="External">External</mat-radio-button>
+
+          <mat-radio-button style="margin-left: 7%;" *ngIf="data !== null" (change)="changeGender($event)" value="External">External
+          </mat-radio-button>
+        </mat-radio-group>
+        <!-- </div> -->
+      </div>
+      <div style="width: 100%">
+        <div class="external" fxLayout="row" fxLayoutAlign=" center" *ngIf="mentort === 'External'">
+          <mat-button-toggle-group class="buttonExternal">
+
+            <mat-button-toggle [ngClass]=" (buttontoggle === 'Support') ? 'unselected':'selected'"
+              style="font-size: 12px; font-weight: normal; width: 50%" fxLayoutAlign="center center"
+              (click)="mentor('Support')">
+              SUPPORT
+            </mat-button-toggle>
+            <mat-button-toggle [ngClass]=" (buttontoggle === 'Lead') ? 'unselected':'selected'"
+              style="font-size: 12px; font-weight: normal; width: 50%" (click)="mentor('Lead')"
+              fxLayoutAlign="center center">LEAD
+            </mat-button-toggle>
+
+          </mat-button-toggle-group>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign=" center" *ngIf="mentort === 'Internal'">
+          <mat-button-toggle-group class="button">
+            <mat-button-toggle
+              [ngClass]=" (internalButtontoggle === 'Supervisor' || internalButtontoggle === 'Practice Head') ? 'unselected':'selected'"
+              style="font-size: 11.5px; font-weight: normal;" (click)="internalMentor('Practice Head')"
+              fxLayoutAlign="center center">
+              PRACTICE HEAD
+            </mat-button-toggle>
+            <mat-button-toggle [ngClass]=" (internalButtontoggle === 'Lead') ? 'unselected':'selected'"
+              style="font-size: 11.5px; font-weight: normal; width: 25%" (click)="internalMentor('Lead')"
+              fxLayoutAlign="center center">LEAD
+            </mat-button-toggle>
+            <mat-button-toggle [ngClass]=" (internalButtontoggle === 'Support') ? 'unselected':'selected'"
+              style="font-size: 11.5px; font-weight: normal; width: 25%" fxLayoutAlign="center center"
+              (click)="internalMentor('Support')">
+              SUPPORT
+            </mat-button-toggle>
+
+            <mat-button-toggle
+              [ngClass]=" (internalButtontoggle === 'Buddy' || internalButtontoggle === 'Backup') ? 'unselected':'selected'"
+              style="font-size: 11.5px; font-weight: normal; width: 25%" (click)="internalMentor('Backup')"
+              fxLayoutAlign="center center">BACKUP
+            </mat-button-toggle>
+
+          </mat-button-toggle-group>
+        </div>
+      </div>
+
+      <div  class="practiceHead" *ngIf="(mentort=='Internal' && internalButtontoggle!='Practice Head') || (mentort=='External')">
+        <!-- <div class="mentorType">Practice Head :</div> -->
+        <mat-form-field  class="practicehead" appearance="outline"
+          *ngIf="(mentort=='Internal' && internalButtontoggle!='Practice Head') || (mentort=='External')">
+          <mat-label autocomplete="off">Practice Head</mat-label>
+          <mat-select formControlName="mentorid">
+            <div>
+              <mat-option *ngFor="let tech of this.mentorDetails " [value]="tech.id">
+                {{capitalizeFirstLetter(tech.name)}}</mat-option>
+            </div>
+            <!-- <div *ngIf = "data !== null">
+                <mat-option *ngFor="let tec of techstackData" value={{tec.techName}}>{{capitalizeFirstLetter(tec.techName)}}</mat-option>
+              </div> -->
+            <!--           
+            <div >
+                <mat-option *ngFor="let tech of techstackData" [value]="tech.id">{{tech.techName}}</mat-option>
+              </div> -->
+          </mat-select>
+          <mat-error *ngIf="mentorForm.get('mentorid')?.invalid &&
+          (mentorForm.get('mentorid')?.dirty || mentorForm.get('mentorid')?.touched)">
+            {{getErrorForPracticeHead()}}</mat-error>
+          <!-- <mat-error *ngIf="tech.invalid" >Select one option</mat-error>  -->
+        </mat-form-field>
+      </div>
+
+      <div class="names-mentors" fxLayout="row" fxLayoutAlign="starts center" fxLayoutGap="20px">
+
+        <mat-form-field class="phoneNum" appearance="outline">
+          <mat-label>Phone Number</mat-label>
+          <input matInput autocomplete="off" maxlength="10" formControlName="phnNumber">
+          <mat-error *ngIf="mentorForm.get('phnNumber')?.invalid &&
+          (mentorForm.get('phnNumber')?.dirty || mentorForm.get('phnNumber')?.touched)">
+            {{getErrorForPhnNum()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="email" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput autocomplete="off" formControlName="email">
+          <mat-error *ngIf="mentorForm.get('email')?.invalid &&
+          (mentorForm.get('email')?.dirty || mentorForm.get('email')?.touched)">
+            {{getErrorForEmail()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="names-mentors" fxLayout="row" fxLayoutAlign="starts center" fxLayoutGap="20px">
+        <mat-form-field class="phoneNum" appearance="outline">
+          <mat-label autocomplete="off">Tech Stack</mat-label>
+          <mat-select formControlName="tech" required multiple [(ngModel)]="myModelProperty">
+            <div *ngIf="data === null">
+              <mat-option *ngFor="let tech of techstackData" [value]="tech.id">{{tech.techname}}
+              </mat-option>
+            </div>
+            <div *ngIf="data !== null">
+              <mat-option *ngFor="let tec of techstackData" [value]="tec.id">
+                {{tec.techname}}</mat-option>
+            </div>
+            <!--           
+            <div >
+                <mat-option *ngFor="let tech of techstackData" [value]="tech.id">{{tech.techName}}</mat-option>
+              </div> -->
+          </mat-select>
+          <mat-error *ngIf="mentorForm.get('tech')?.invalid &&
+          (mentorForm.get('tech')?.dirty || mentorForm.get('tech')?.touched)">
+            {{getErrorForTechStack()}}</mat-error>
+          <!-- <mat-error *ngIf="tech.invalid" >Select one option</mat-error>  -->
+        </mat-form-field>
+        <!-- {{data.mentor.tech}} -->
+        <mat-form-field class="email" appearance="outline">
+          <mat-label>Experience Years</mat-label>
+          <input matInput autocomplete="off" formControlName="exYears">
+          <mat-error *ngIf="mentorForm.get('exYears')?.invalid &&
+          (mentorForm.get('exYears')?.dirty || mentorForm.get('exYears')?.touched)">
+            {{getErrorForExYears()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="names-mentors" fxLayout="row" fxLayoutAlign="starts center" fxLayoutGap="20px">
+        <mat-form-field class="phoneNum" appearance="outline">
+          <mat-label autocomplete="off">Mentor Status</mat-label>
+          <mat-select formControlName="mentorStatus" required [(ngModel)]="mystatus">
+            <div *ngIf="data === null">
+              <mat-option *ngFor="let status of mentorStatus" [value]="status.keyText">
+                {{capitalizeFirstLetter(status.keyText)}}</mat-option>
+            </div>
+            <div *ngIf="data !== null">
+              <mat-option *ngFor="let status of mentorStatus" [value]="status.keyText">
+                {{capitalizeFirstLetter(status.keyText)}}</mat-option>
+
+            </div>
+            <!--           
+            <div >
+                <mat-option *ngFor="let tech of techstackData" [value]="tech.id">{{tech.techName}}</mat-option>
+              </div> -->
+          </mat-select>
+          <mat-error *ngIf="hasError('mentorStatus', 'required')">Mentor Status is required</mat-error>
+          <!-- <mat-error *ngIf="tech.invalid" >Select one option</mat-error>  -->
+        </mat-form-field>
+        <!-- {{data.mentor.tech}} -->
+        <mat-form-field class="prefferdTime" appearance="outline">
+          <mat-label>Preferred Time</mat-label>
+          <mat-select required formControlName="time">
+            <div>
+              <mat-option *ngFor="let time of PreTimeList" [value]="time.slotTime">{{time.slotTime}}</mat-option>
+            </div>
+          </mat-select>
+          <mat-error *ngIf="mentorForm.get('time')?.invalid &&
+          (mentorForm.get('time')?.dirty || mentorForm.get('time')?.touched)">
+            {{getErrorForTimeSlot()}}</mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <div class="names-mentors" fxLayout="row" fxLayoutAlign="starts center" fxLayoutGap="20px">
+        <mat-form-field appearance="outline" [style.fontSize.px]="12.5" autocomplete="off" class="option1">
+          <mat-label class="dropdown">Start Date</mat-label>
+          <input matInput [ngModel]="datepicker" (dateChange)="selectDate($event)" [matDatepicker]="picker"
+            formControlName="StartDate" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="hasError('StartDate', 'required')">Start Date is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="prefferdTime" appearance="outline">
+          <mat-label>Employee ID</mat-label>
+          <input matInput autocomplete="off" formControlName="employeeID">
+          <mat-error *ngIf="mentorForm.get('employeeID')?.invalid &&
+          (mentorForm.get('employeeID')?.dirty || mentorForm.get('employeeID')?.touched)">
+            {{getErrorForemployeeID()}}</mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <div class="names-mentors">
+        <textarea formControlName="description" class="remark" matInput placeholder="Special Remark">
+        </textarea>
+      </div>
+
+
+      <div class="buttonClass" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px">
+        <button mat-button class="cancel" (click)="closeMentordata()">Cancel</button>
+        <!-- <button mat-button
+          [disabled]="(!mentorForm.valid || !disable || ( internalButtontoggle != 'Practice Head' && !this.mentorForm.value.mentorid && mentort!='External') || (mentort!='External' && !this.mentorForm.value.employeeID)) "
+          *ngIf="data === null" class="create" color="primary" (click)="createMentor()">Create</button> -->
+
+        <button mat-button *ngIf="data === null" class="create" color="primary" (click)="createMentor()">Create</button>
+
+
+        <button mat-button *ngIf="data !== null" class="create" color="primary" (click)="updateMentor()">Update</button>
+        <!-- <button *ngIf="data !== null" mat-raised-button [disabled]="disable" class="create-button" (click)="updateCoordinator()" >
+          Update
+        </button> -->
+      </div>
+    </form>
+  </div>
+</div>
+<!-- [disabled]="mentorName.invalid || phnNumber.invalid || email.invalid" -->

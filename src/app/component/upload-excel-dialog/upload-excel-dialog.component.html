@@ -1,0 +1,30 @@
+<div class="close-div">
+  <mat-icon class="close-icon" (click)="close()" matTooltip="Close">close</mat-icon>
+</div>
+<div class="heading-div">
+  <p class="heading">Upload Engineer Data</p>
+</div>
+<div class="input-div">
+  <div fxLayout="row" style="height: 40%;">
+    <label for="file-upload" class="custom-file-upload">
+      Choose File
+    </label>
+    <input id="file-upload" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      class="file" (change)="selectedfile($event)">
+    <p class="filename">{{fileName}}</p>
+  </div>
+  <p class="fileformat">File format:(xlsx,xls,xlsm), Max File Size:1MB</p>
+  <mat-error *ngIf="extensionCheck==true">Invalid File extension!!</mat-error>
+  <mat-error *ngIf="fileSizeCheck==true">File exceeds the maximum file-size!!</mat-error>
+
+</div>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <button mat-flat-button class="upload-button" disabled="{{disableCheck}}" (click)="uploadFile()">
+    <mat-icon class="upload-icon">cloud_upload</mat-icon>
+    Upload
+  </button>
+
+</div>
+
+<mat-error style="margin-top: 1%;" fxLayoutAlign="center center" *ngIf="errorDialog==true">Failed to upload data. <span
+    class="click-span" (click)="openDialog()"><u>Click here &nbsp;</u></span> for more info</mat-error>
